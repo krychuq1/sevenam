@@ -1,0 +1,24 @@
+<div class="header-holder">
+  <div class="header" [ngClass]="navBurger ? 'is-active' : ''">
+    <img src="../../assets/images/header/logo.png">
+    <button class="hamburger hamburger--collapse"
+            (click)="openBurger()" [ngClass]="navBurger ? 'is-active' : ''"
+            type="button">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+    </button>
+  </div>
+  <div class="navigation" [ngClass]="navBurger ? 'is-active' : ''">
+    <ul>
+      <li>home</li>
+      <li>projects</li>
+      <li>services</li>
+      <li>about</li>
+      <li>contact</li>
+    </ul>
+    <div class="icons">
+      <div class="icon fb"></div>
+    </div>
+  </div>
+</div>

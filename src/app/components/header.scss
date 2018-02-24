@@ -1,0 +1,58 @@
+@import "../../../node_modules/hamburgers/dist/hamburgers.css";
+@import "../../styles";
+.header-holder{
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  .header{
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px $wrapper;
+    width: calc(100% - 60px);
+    display: flex;
+    &.is-active{
+      background: $navigation-background;
+      justify-content: flex-end;
+      img{
+        display: none;
+      }
+      .hamburger-inner{
+        background-color: #c5c5c5;
+
+        &:before{
+          background-color: #c5c5c5;
+
+        }
+        &:after{
+          background-color: #c5c5c5;
+        }
+      }
+    }
+    .hamburger{
+      display: flex;
+      padding: 0;
+    }
+  }
+  .navigation{
+    background: $navigation-background;
+    height: calc(100vh - 104px);
+    display: none;
+    &.is-active{
+      display: block;
+    }
+    ul{
+      margin: 0;
+      list-style: none;
+      li{
+        color: #c5c5c5;
+        text-transform: uppercase;
+        font-weight: bold;
+        //border: 1px solid red;
+        text-align: center;
+        font-size: 1.8rem;
+        padding: 10px 0;
+        cursor: pointer;
+      }
+    }
+  }
+}
