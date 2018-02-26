@@ -1,0 +1,31 @@
+<div class="contact-holder">
+  <div class="contact">
+    <div class="contact-inner">
+      <h1>Say Hello!</h1>
+      <h3>For business and coffee, please ask here</h3>
+      <div class="form">
+        <form *ngIf="!isProcessing" [formGroup]="contactForm" (ngSubmit)="onSubmitForm()">
+          <input formControlName="name" type="text" placeholder="name">
+          <div *ngIf="nameControl.errors && nameControl.touched">
+            <p *ngIf="nameControl.errors.required">name is required</p>
+            <p *ngIf="nameControl.errors.minlength">Name should be at least
+              {{nameControl.errors.minlength.requiredLength}} characters.</p>
+          </div>
+          <input formControlName="email" class="mail" type="email" placeholder="email">
+          <div *ngIf="emailControl.errors && emailControl.touched">
+            <p *ngIf="emailControl.errors.required">Email is required.</p>
+            <p *ngIf="emailControl.errors.pattern">Please insert correct email.</p>
+          </div>
+          <textarea formControlName="message" autosize rows="1" type="text" placeholder="message">
+          </textarea>
+          <div *ngIf="messageControl.errors && messageControl.touched">
+            <p *ngIf="messageControl.errors.required">Message is required.</p>
+            <p *ngIf="messageControl.errors.minlength">Message should be at least
+              {{messageControl.errors.minlength.requiredLength}} characters.</p>
+          </div>
+          <button type="submit" class="button" [disabled]="!contactForm.valid">send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

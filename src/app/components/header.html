@@ -1,6 +1,6 @@
 <div class="header-holder">
   <div class="header" [ngClass]="navBurger ? 'is-active' : ''">
-    <img src="../../assets/images/header/logo.png">
+    <img src="../../assets/images/header/logo.png"  routerLink="" class="logo">
     <button class="hamburger hamburger--collapse"
             (click)="openBurger()" [ngClass]="navBurger ? 'is-active' : ''"
             type="button">
@@ -15,10 +15,15 @@
       <li>projects</li>
       <li>services</li>
       <li>about</li>
-      <li>contact</li>
+      <li routerLink="/contact" (click)="openBurger()">contact</li>
     </ul>
     <div class="icons">
       <div class="icon fb"></div>
+      <div class="icon insta"></div>
+      <div class="icon blog"></div>
+      <div class="icon twitter"></div>
+      <div class="icon fb"></div>
+
     </div>
   </div>
 </div>

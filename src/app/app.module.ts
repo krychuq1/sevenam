@@ -8,16 +8,20 @@ import {RouterModule} from "@angular/router";
 import {routes} from "./app.routers";
 import {HeaderComponent} from "./components/header.component";
 import {BurgerService} from "./services/burger.service";
+import {ContactComponent} from "./pages/contanct/contact.component";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
 
   ],
