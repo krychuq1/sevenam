@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {Autosize} from 'angular2-autosize';
 
 
 import { AppComponent } from './app.component';
@@ -17,7 +18,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    ContactComponent
+    ContactComponent,
+    Autosize
   ],
   imports: [
     BrowserModule,

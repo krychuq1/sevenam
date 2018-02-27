@@ -5,7 +5,8 @@
       <h3>For business and coffee, please ask here</h3>
       <div class="form">
         <form *ngIf="!isProcessing" [formGroup]="contactForm" (ngSubmit)="onSubmitForm()">
-          <input formControlName="name" type="text" placeholder="name">
+          <input formControlName="name" type="text" placeholder="name"
+                 [class.input-error]="nameControl.errors && nameControl.touched">
           <div *ngIf="nameControl.errors && nameControl.touched">
             <p *ngIf="nameControl.errors.required">name is required</p>
             <p *ngIf="nameControl.errors.minlength">Name should be at least
@@ -16,7 +17,8 @@
             <p *ngIf="emailControl.errors.required">Email is required.</p>
             <p *ngIf="emailControl.errors.pattern">Please insert correct email.</p>
           </div>
-          <textarea formControlName="message" autosize rows="1" type="text" placeholder="message">
+          <textarea formControlName="message" autosize
+                    rows="1" type="text" placeholder="message">
           </textarea>
           <div *ngIf="messageControl.errors && messageControl.touched">
             <p *ngIf="messageControl.errors.required">Message is required.</p>
@@ -25,6 +27,29 @@
           </div>
           <button type="submit" class="button" [disabled]="!contactForm.valid">send</button>
         </form>
+      </div>
+      <div class="contact-footer">
+        <div class="contact-footer-inner">
+          <h1>Info</h1>
+          <p class="bold amparagraph">Sevenam design studio</p>
+          <p>Telephone: <span class="bold">91 82 78 16, 52 22 00 49</span></p>
+          <p>Email: <span class="bold">sevenaminfo@gmail.com</span></p>
+          <!--image holder-->
+          <div class="contact--footer--text--socialMedia">
+            <a  target="_blank" href="https://www.facebook.com/sevenamstudio" class="logo-margin">
+              <div class="social-icon facebook"> </div>
+            </a>
+            <a target="_blank" href="https://www.instagram.com/sevenamstudio/">
+              <div class="social-icon instagram"></div>
+            </a>
+          </div>
+        </div>
+        <div class="icons icons-contact">
+          <div class="icon fb"></div>
+          <div class="icon insta"></div>
+          <div class="icon blog"></div>
+          <div class="icon twitter"></div>
+        </div>
       </div>
     </div>
   </div>
