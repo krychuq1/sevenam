@@ -1,0 +1,11 @@
+@import "../../../styles";
+.services-holder{
+  padding: 100px $wrapper 0 $wrapper;
+  background: $yellow-color;
+  img{
+    max-width: 100%;
+  }
+  .packages{
+    padding-top: 60px;
+  }
+}

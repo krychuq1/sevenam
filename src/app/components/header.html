@@ -11,9 +11,9 @@
   </div>
   <div class="navigation" [ngClass]="navBurger ? 'is-active' : ''">
     <ul>
-      <li>home</li>
+      <li routerLink="" (click)="openBurger()">home</li>
       <li>projects</li>
-      <li>services</li>
+      <li routerLink="/services" (click)="openBurger()">services</li>
       <li>about</li>
       <li routerLink="/contact" (click)="openBurger()">contact</li>
     </ul>

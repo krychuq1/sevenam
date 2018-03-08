@@ -1,0 +1,40 @@
+<div class="services-holder">
+  <h3>services</h3>
+  <p>We offer the full range of services such as graphic design,
+    digital advertising, visual identity design, logos,
+    print materials, posters and customized projects.
+    Below you can see three basic packages, check them out,
+    but if you already have a project in your mind, let us know
+    <span class="pink">here!</span></p>
+  <p></p>
+  <p>To get more details about packages and prices
+    click <span class="pink">here</span> and you will see
+    <span class="pink">"Sevenam design studio - GETTING STARTED GUIDE".</span>
+  </p>
+  <div class="packages">
+    <p class="pink link" (click)="setPackages('first')">FULL PACKAGE ></p>
+    <div *ngIf="packages.first">
+      <p>Are you looking for the perfect <span class="bold">design for your business?</span>
+        This offer includes all materials that you need to succeed.
+        We will start with creating Visual Identity, then website,
+        and all digital and printed materials.<br></p>
+      <p class="bold">Visual Identity:</p>
+      <p>Color palette, typeface, page layouts, logo Website:
+        Responsive layout: for mobile, tablet, desktop, easily editable content</p>
+      <p class="bold">Business card:</p>
+      <p>Design based on Visual Identity</p>
+      <p class="bold">Social Media:</p>
+      <p>Banners design for Instagram, Facebook etc.</p>
+      <p class="bold">Additional print materials:</p>
+      <p>Such as: posters, leaflets, stickers, catalogs, folders, business papers</p>
+    </div>
+
+
+    <p class="pink link">SINGLE PACKAGE ></p>
+    <p class="pink link">SOMETHING ELSE? ></p>
+  </div>
+
+  <div>
+    <img src="../../../assets/images/services/yellow.jpg">
+  </div>
+</div>

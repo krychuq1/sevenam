@@ -1,3 +1,24 @@
+@import "variables";
 body{
   font-family: 'Poppins', sans-serif;;
+}
+h3{
+  color: $header-color;
+  text-transform: uppercase;
+}
+p{
+  font-size: 0.9rem;
+  line-height: 2rem;
+  color: $paragraph-color;
+  margin: 0;
+}
+.pink{
+  color: $pink-color;
+  font-weight: bold;
+}
+.link{
+  cursor: pointer;
+}
+.bold{
+  font-weight: bold;
 }

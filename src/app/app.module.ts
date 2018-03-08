@@ -11,6 +11,8 @@ import {HeaderComponent} from "./components/header.component";
 import {BurgerService} from "./services/burger.service";
 import {ContactComponent} from "./pages/contanct/contact.component";
 import {ReactiveFormsModule} from "@angular/forms";
+import {AboutUsComponent} from "./pages/about-us/about-us.component";
+import {ServicesComponent} from "./pages/services/services.component";
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     HomeComponent,
     HeaderComponent,
     ContactComponent,
+    AboutUsComponent,
+    ServicesComponent,
     Autosize
   ],
   imports: [
