@@ -1,0 +1,18 @@
+<div class="projects-holder">
+  <ul>
+    <li [ngClass]="{'pink' : filter ==='website'}"
+        (click)="setFilter('website')">Website</li>
+    <li>|</li>
+    <li [ngClass]="{'pink' : filter ==='visual'}"
+        (click)="setFilter('visual')">Visual identity</li>
+    <li>|</li>
+    <li [ngClass]="{'pink' : filter ==='logos'}"
+        (click)="setFilter('logos')">logos</li>
+    <li>|</li>
+    <li [ngClass]="{'pink' : filter ==='print'}"
+        (click)="setFilter('print')">Print</li>
+    <li>|</li>
+    <li [ngClass]="{'pink' : filter ==='other'}"
+        (click)="setFilter('other')">Other</li>
+  </ul>
+</div>

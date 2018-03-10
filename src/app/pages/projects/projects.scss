@@ -1,0 +1,16 @@
+@import "../../../styles";
+
+.projects-holder{
+  padding: 100px $wrapper 0 $wrapper;
+  ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    font-size: 0.75rem;
+    li{
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+  }
+}

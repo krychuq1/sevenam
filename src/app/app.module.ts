@@ -13,6 +13,7 @@ import {ContactComponent} from "./pages/contanct/contact.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AboutUsComponent} from "./pages/about-us/about-us.component";
 import {ServicesComponent} from "./pages/services/services.component";
+import {ProjectsComponent} from "./pages/projects/projects.component";
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import {ServicesComponent} from "./pages/services/services.component";
     ContactComponent,
     AboutUsComponent,
     ServicesComponent,
+    ProjectsComponent,
     Autosize
   ],
   imports: [

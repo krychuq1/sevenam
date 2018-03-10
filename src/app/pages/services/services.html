@@ -30,8 +30,30 @@
     </div>
 
 
-    <p class="pink link">SINGLE PACKAGE ></p>
+    <p class="pink link" (click)="setPackages('second')">SINGLE PACKAGE ></p>
+    <div *ngIf="packages.second">
+      <p>Are you missing some graphical materials?
+        Maybe you need a nice poster design or an original logo.
+        This offer allows you to choose one product that will
+        be designed and delivered to you in the highest quality..</p>
+      <p class="bold">
+        Logo / Website / Business card / Business papers /
+        Social media banner / Poster / Stickers / Leaflet / Catalog / Folder / Other materials</p>
+    </div>
+
     <p class="pink link">SOMETHING ELSE? ></p>
+    <div>
+      <p>Do you have something specific on your mind? Just a draft or idea?
+        Let us know! You could also combine few different products,
+        see example below:</p>
+      <p class="bold">
+        Visual Identity + Logo + Website<br>
+        Business card + Logo <br>
+        Website + Social media banners<br>
+        Poster + Stickers <br>
+        Custom Illustrations <br>
+        Anything you choose + Anything you choose</p>
+    </div>
   </div>
 
   <div>
