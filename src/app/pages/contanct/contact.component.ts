@@ -11,7 +11,7 @@ export class ContactComponent {
   nameControl;
   emailControl;
   messageControl;
-  EMAIL_PATTERN = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
+  EMAIL_PATTERN = /^[a-z]+[a-z0-9._-]+@[a-z]+\.[a-z.]{2,5}$/;
   isProcessing: boolean;
   isSent : boolean
   constructor(private formBuilder : FormBuilder){
@@ -48,5 +48,12 @@ export class ContactComponent {
     //
     //   }
     // )
+  }
+  public onNavigate(url){
+    console.log('yo');
+    window.open(url, "_blank");
+  }
+  public yo(){
+    console.log('yo');
   }
 }

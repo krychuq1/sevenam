@@ -5,12 +5,13 @@
     print materials, posters and customized projects.
     Below you can see three basic packages, check them out,
     but if you already have a project in your mind, let us know
-    <span class="pink">here!</span></p>
+    <span class="pink" routerLink="/contact">here!</span></p>
   <p></p>
   <p>To get more details about packages and prices
-    click <span class="pink">here</span> and you will see
+    click <span class="pink" routerLink="/projects">here</span> and you will see
     <span class="pink">"Sevenam design studio - GETTING STARTED GUIDE".</span>
   </p>
+
   <div class="packages">
     <p class="pink link" (click)="setPackages('first')">FULL PACKAGE ></p>
     <div *ngIf="packages.first">
@@ -41,8 +42,8 @@
         Social media banner / Poster / Stickers / Leaflet / Catalog / Folder / Other materials</p>
     </div>
 
-    <p class="pink link">SOMETHING ELSE? ></p>
-    <div>
+    <p class="pink link" (click)="setPackages('third')">SOMETHING ELSE? ></p>
+    <div *ngIf="packages.third">
       <p>Do you have something specific on your mind? Just a draft or idea?
         Let us know! You could also combine few different products,
         see example below:</p>
@@ -56,7 +57,7 @@
     </div>
   </div>
 
-  <div>
-    <img src="../../../assets/images/services/yellow.jpg">
+  <div class="img-holder">
+    <img src="../../../assets/images/services/yellow.png">
   </div>
 </div>

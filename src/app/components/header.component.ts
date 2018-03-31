@@ -13,8 +13,17 @@ export class HeaderComponent {
   }
   public openBurger(){
     this.navBurger = !this.navBurger;
+    if(this.navBurger){
+      document.body.style.height = '100vh';
+      document.body.style.overflow = 'hidden';
+    }else{
+      document.body.style.height = 'auto';
+      document.body.style.overflow = 'visible';
+    }
     this.burgerService.navigation.next(this.navBurger);
-
+  }
+  public onNavigate(url){
+    window.open(url, "_blank");
   }
 
 }

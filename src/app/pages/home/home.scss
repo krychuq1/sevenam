@@ -31,6 +31,7 @@
       bottom: 0;
       width: 100%;
       justify-content: flex-end;
+      padding-bottom: 10px;
 
       p{
         text-transform: uppercase;
@@ -38,6 +39,7 @@
         color: $home-light;
       }
       img{
+        width: 20px;
         margin-left: 10px;
         margin-right: $wrapper;
       }

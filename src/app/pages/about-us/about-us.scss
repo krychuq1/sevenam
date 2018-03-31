@@ -1,5 +1,7 @@
 @import "../../../styles";
 .about-us-holder{
   padding: 100px $wrapper 0 $wrapper;
+  background-color: $navigation-background;
+  min-height: 100vh;
 
 }
