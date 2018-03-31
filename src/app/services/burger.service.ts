@@ -7,7 +7,6 @@ export class BurgerService{
   navBurger:boolean;
   public navigation: Subject<boolean> = new Subject();
   constructor(){
-
   }
 
 }

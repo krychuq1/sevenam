@@ -1,4 +1,4 @@
-<div class="header-holder">
+<div class="header-holder" *ngIf="isHomeLoaded">
   <div class="header" [ngClass]="navBurger ? 'is-active' : ''">
     <img src="../../assets/images/header/logo.png"  routerLink="" class="logo">
     <button class="hamburger hamburger--collapse"

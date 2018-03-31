@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {BurgerService} from "../services/burger.service";
+import {LoadingService} from "../services/loading.service";
 
 @Component({
   selector: 'header',
@@ -8,8 +9,11 @@ import {BurgerService} from "../services/burger.service";
 })
 export class HeaderComponent {
   navBurger:boolean;
-  constructor(private burgerService: BurgerService){
+  isHomeLoaded: boolean;
+  constructor(private burgerService: BurgerService, private loadingService: LoadingService){
     this.navBurger = false;
+    this.isHomeLoaded = false;
+    this.homeLoader();
   }
   public openBurger(){
     this.navBurger = !this.navBurger;
@@ -25,5 +29,11 @@ export class HeaderComponent {
   public onNavigate(url){
     window.open(url, "_blank");
   }
+  public homeLoader(){
+    this.loadingService.homeLoader.subscribe(value => {
+        this.isHomeLoaded = value;
+    })
+  }
+
 
 }

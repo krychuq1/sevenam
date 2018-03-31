@@ -1,23 +1,44 @@
-<div class="home-holder" *ngIf="!navBurger">
+<div class="lds-dual-ring" *ngIf="isLoading"></div>
+
+<div class="home-holder" *ngIf="!navBurger && !isLoading">
   <!--about section-->
-  <div class="section">
+  <div class="section"
+       [ngStyle]="{'background-image': 'url(../../../assets/images/home/VIDEO.png)'}">
     <div class="footer" routerLink="about-us">
       <p>about us</p>
       <img src="../../../assets/images/home/light-arrow.png">
     </div>
   </div>
   <!--products section-->
-  <div class="section products">
+  <div class="products" id="products">
+    <!--(@fade.done)="onDone($event)"-->
+    <img [@fade]="state"  [src]="imgUrl" (@fade.done)="onDone($event)"  />
     <div class="footer">
       <p>projects</p>
       <img src="../../../assets/images/home/arrow.png">
     </div>
   </div>
+  <!--[style.background-image]="'url(' + imgUrl + ')'"-->
   <!--products section-->
-  <div class="section services">
+  <div class="section services"
+       [ngStyle]="{'background-image': 'url(../../../assets/images/home/yellow.jpg)'}">
     <div class="footer" routerLink="services">
       <p>services</p>
       <img src="../../../assets/images/home/arrow.png">
     </div>
   </div>
 </div>
+<img src="../../../assets/images/home/animated-box/booky.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/booky_logo.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/bug.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/letsgo.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/moha.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/moha_logo.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/numbers.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/otis.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/pieceofplant.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/rowforwater.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/valentines.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/well.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/VIDEO.png" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/yellow.jpg" style="display: none;" (load)="imgLoaded()">
