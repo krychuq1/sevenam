@@ -10,7 +10,7 @@
     </div>
   </div>
   <!--products section-->
-  <div class="products" id="products">
+  <div class="products" id="products" routerLink="projects">
     <!--(@fade.done)="onDone($event)"-->
     <img [@fade]="state"  [src]="imgUrl" (@fade.done)="onDone($event)"  />
     <div class="footer">
@@ -20,9 +20,9 @@
   </div>
   <!--[style.background-image]="'url(' + imgUrl + ')'"-->
   <!--products section-->
-  <div class="section services"
+  <div class="section services" routerLink="services"
        [ngStyle]="{'background-image': 'url(../../../assets/images/home/yellow.jpg)'}">
-    <div class="footer" routerLink="services">
+    <div class="footer">
       <p>services</p>
       <img src="../../../assets/images/home/arrow.png">
     </div>
@@ -36,7 +36,7 @@
 <img src="../../../assets/images/home/animated-box/moha_logo.jpg" style="display: none;" (load)="imgLoaded()">
 <img src="../../../assets/images/home/animated-box/numbers.jpg" style="display: none;" (load)="imgLoaded()">
 <img src="../../../assets/images/home/animated-box/otis.jpg" style="display: none;" (load)="imgLoaded()">
-<img src="../../../assets/images/home/animated-box/pieceofplant.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/pieceofplant.jpg" style="display: none;" (load)="imgLoaded()"  >
 <img src="../../../assets/images/home/animated-box/rowforwater.jpg" style="display: none;" (load)="imgLoaded()">
 <img src="../../../assets/images/home/animated-box/valentines.jpg" style="display: none;" (load)="imgLoaded()">
 <img src="../../../assets/images/home/animated-box/well.jpg" style="display: none;" (load)="imgLoaded()">

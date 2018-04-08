@@ -79,20 +79,22 @@ export class HomeComponent {
     console.log('animation done', this.state);
     if(this.state === 'out'){
       this.imgUrl = this.urlArray[this.counter];
-      // this.toggleState();
-    }
+      if(this.state === 'out'){
+        this.toggleState();
 
+      }
+    }
   }
 
   toggleState() {
     this.state = this.state === 'in' ? 'out' : 'in';
     if(this.state === 'out'){
 
-      setTimeout(()=>{
-        this.toggleState();
-        this.imgUrl = this.urlArray[this.counter];
-
-      }, 500)
+      // setTimeout(()=>{
+      //   this.toggleState();
+      //   this.imgUrl = this.urlArray[this.counter];
+      //
+      // }, 510)
     }
   }
 }
