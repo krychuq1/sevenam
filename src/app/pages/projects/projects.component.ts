@@ -1,14 +1,15 @@
 import {AfterViewInit, Component} from '@angular/core';
 import {LoadingService} from "../../services/loading.service";
-import {scrollUp} from "../../animations";
+// import {scrollUp} from "../../animations";
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {Observable} from "rxjs/Observable";
 
 @Component({
   templateUrl: './projects.html',
-  styleUrls: ['./projects.scss'],
-  animations: scrollUp
+  styleUrls: ['./projects.scss']
 })
+// animations: scrollUp
+
 export class ProjectsComponent  implements AfterViewInit{
   filter: string;
   imgHolder: HTMLElement;
@@ -23,10 +24,11 @@ export class ProjectsComponent  implements AfterViewInit{
     this.state = 'in';
   }
 
+
   setFilter(filter){
     this.filter = filter;
    // this.imgHolder = document.getElementById('image-holder');
- //   console.log(window.innerHeight, ' <----- this is height');
+   console.log(window.innerHeight, ' <----- this is height');
    let testimg;
    /*
       // timeout

@@ -18,6 +18,7 @@
     <li [ngClass]="{'pink' : filter ==='games'}"
         (click)="setFilter('games')">Games</li>
   </ul>
+
   <div class="image-holder" id="image-holder">
     <!--print-->
     <img src="../../../assets/images/home/animated-box/well.jpg"
@@ -26,7 +27,7 @@
     <img src="../../../assets/images/home/animated-box/moha.jpg"
          [ngClass]="{'show' :filter ==='visual' || filter ==='all'}">
     <!--website-->
-    <img src="../../../assets/images/home/animated-box/pieceofplantwebsite.jpg" [@scrollUp]="state"
+    <img src="../../../assets/images/home/animated-box/pieceofplantwebsite.jpg"
          [ngClass]="{'show' :filter ==='website' || filter ==='all'}">
     <!--website-->
     <img src="../../../assets/images/home/animated-box/booky.jpg"
@@ -44,24 +45,23 @@
     <img src="../../../assets/images/home/animated-box/valentines.jpg"
          [ngClass]="{'show' :filter ==='games' || filter ==='all'}">
     <!--logo-->
-    <!--<img src="../../../assets/images/home/animated-box/rowforwater.jpg"-->
-         <!--[ngClass]="{'show' :filter ==='games' || filter ==='all'}"-->
-         <!--*ngIf="filter ==='logos' || filter ==='all' ">-->
-    <!--&lt;!&ndash;website&ndash;&gt;-->
-    <!--<img src="../../../assets/images/home/animated-box/website_bug.jpg"-->
-         <!--*ngIf="filter ==='website' || filter ==='all' ">-->
-    <!--&lt;!&ndash;logo&ndash;&gt;-->
-    <!--<img src="../../../assets/images/home/animated-box/pieceofplant.jpg"-->
-         <!--*ngIf="filter ==='logos' || filter ==='all' ">-->
-    <!--&lt;!&ndash;print&ndash;&gt;-->
-    <!--<img src="../../../assets/images/home/animated-box/numbers.jpg"-->
-         <!--*ngIf="filter ==='print' || filter ==='all' ">-->
-    <!--&lt;!&ndash;logo&ndash;&gt;-->
-    <!--<img src="../../../assets/images/home/animated-box/moha_logo.jpg"-->
-         <!--*ngIf="filter ==='logos' || filter ==='all' ">-->
-    <!--&lt;!&ndash;logo&ndash;&gt;-->
-    <!--<img src="../../../assets/images/home/animated-box/booky_logo.jpg"-->
-         <!--*ngIf="filter ==='logos' || filter ==='all' ">-->
+    <img src="../../../assets/images/home/animated-box/rowforwater.jpg"
+         [ngClass]="{'show' :filter ==='games' || filter ==='all'}">
+    <!--website-->
+    <img src="../../../assets/images/home/animated-box/website_bug.jpg"
+         [ngClass]="{'show' :filter ==='website' || filter ==='all'}">
+    <!--logo-->
+    <img src="../../../assets/images/home/animated-box/pieceofplant.jpg"
+         [ngClass]="{'show' :filter ==='logos' || filter ==='all'}">
+    <!--print-->
+    <img src="../../../assets/images/home/animated-box/numbers.jpg"
+         [ngClass]="{'show' :filter ==='print' || filter ==='all'}">
+    <!--logo-->
+    <img src="../../../assets/images/home/animated-box/moha_logo.jpg"
+         [ngClass]="{'show' :filter ==='logos' || filter ==='all'}">
+    <!--logo-->
+    <img src="../../../assets/images/home/animated-box/booky_logo.jpg"
+         [ngClass]="{'show' :filter ==='logos' || filter ==='all'}">
 
   </div>
 

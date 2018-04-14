@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {LoadingService} from "../../services/loading.service";
 
 @Component({
   selector: 'contact',
@@ -14,8 +15,10 @@ export class ContactComponent {
   EMAIL_PATTERN = /^[a-z]+[a-z0-9._-]+@[a-z]+\.[a-z.]{2,5}$/;
   isProcessing: boolean;
   isSent : boolean
-  constructor(private formBuilder : FormBuilder){
+  constructor(private formBuilder : FormBuilder, private loadingService: LoadingService){
     this.buildForm();
+    this.loadingService.homeLoader.next(true);
+
   }
   private buildForm(){
     this.contactForm = this.formBuilder.group({
