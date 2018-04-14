@@ -1,14 +1,15 @@
 import {AfterViewInit, Component} from '@angular/core';
 import {LoadingService} from "../../services/loading.service";
-import {scrollUp} from "../../animations";
+// import {scrollUp} from "../../animations";
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {Observable} from "rxjs/Observable";
 
 @Component({
   templateUrl: './projects.html',
-  styleUrls: ['./projects.scss'],
-  animations: scrollUp
+  styleUrls: ['./projects.scss']
 })
+// animations: scrollUp
+
 export class ProjectsComponent  implements AfterViewInit{
   filter: string;
   imgHolder: HTMLElement;
@@ -23,22 +24,24 @@ export class ProjectsComponent  implements AfterViewInit{
     this.state = 'in';
   }
 
+
   setFilter(filter){
     this.filter = filter;
    // this.imgHolder = document.getElementById('image-holder');
- //   console.log(window.innerHeight, ' <----- this is height');
+   console.log(window.innerHeight, ' <----- this is height');
    let testimg;
       // timeout
-    setTimeout( ()=> {
-      let visibleImages = document.getElementsByClassName("show");
-      for(let img of <any>visibleImages){
-        img.style.position = 'absolute';
-        img.style.bottom = '0';
-        testimg = img;
-
-      }
-      let bottom = 0;
-    },20);
+    // setTimeout( ()=> {
+    //   let visibleImages = document.getElementsByClassName("show");
+    //   for(let img of <any>visibleImages){
+    //     img.style.position = 'absolute';
+    //     img.style.top = window.innerHeight +'px';
+    //     testimg = img;
+    //     this.state = 'in';
+    //
+    //   }
+    //   let bottom = 0;
+    // },20);
   }
 
   ngAfterViewInit(): void {

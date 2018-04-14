@@ -1,23 +1,22 @@
-import { trigger, style, animate, transition, state } from '@angular/animations';
+import {trigger, style, animate, transition, state, keyframes} from '@angular/animations';
 
 
 export const scrollUp = [
   trigger('scrollUp', [
     state('inactive', style({ 'top': '0' })),
-    state('in', style({ 'bottom': '3500px', 'position': 'absolute' })),
+    state('in', style({ 'top': '{{topPos}}px', 'position': 'absolute' })),
     transition('* <=> *', [
-      animate(4000)
+      animate(600)
     ])
   ])
-
 ];
 export const fade = [
   trigger('fade', [
-    state('in', style({ 'opacity': '1' })),
-    state('out', style({ 'opacity': '0' })),
-    transition('* <=> *', [
-      animate(500)
-    ])
+    transition(':leave', [
+      animate("500ms ease-in", keyframes([
+        style({'top': "-{{topPos}}px"}),
+      ]))
+    ], {params : { topPos: "30" }})
   ])
 
 ];
