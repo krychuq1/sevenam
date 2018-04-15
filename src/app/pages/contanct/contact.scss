@@ -14,6 +14,16 @@
       padding-right: $wrapper;
       position: absolute;
       top: 80px;
+      width: calc(100% - 60px);
+      height: calc(100% - 114px);
+      .text-holder{
+        margin-top: 40px;
+      }
+
+      .spinner-contact{
+        margin: 100px  auto 150px auto;
+      }
+
       h1{
         margin-bottom: 0;
         color: $contact-color;
@@ -31,7 +41,7 @@
     //  form
       .form{
         width: 100%;
-        padding-top: 30px;
+        //padding-top: 30px;
         padding-bottom: 30px;
         input{
           border: none;
@@ -70,11 +80,11 @@
           font-family: 'Poppins';
           color: #868686;
           background: none;
-          &:hover{
-            color: white;
-            border: none;
-            //background-color: $pinkColor;
-          }
+          //&:hover{
+          //  color: white;
+          //  border: none;
+          //  //background-color: $pinkColor;
+          //}
         }
         textarea{
           background: transparent;
@@ -94,7 +104,12 @@
     .contact-footer{
       display: flex;
       flex-direction: column;
-      width: 100%;
+      //width: 100%;
+      position: absolute;
+      bottom: 0;
+      &.isSent{
+        bottom : auto;
+      }
 
       .contact-footer-inner{
         //width: 60%;

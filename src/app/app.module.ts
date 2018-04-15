@@ -15,6 +15,7 @@ import {ProjectsComponent} from "./pages/projects/projects.component";
 import {HttpClientModule} from "@angular/common/http";
 import {LoadingService} from "./services/loading.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MailerService} from "./services/mailer.service";
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ProjectsComponent,
     Autosize
   ],
-  providers: [BurgerService, LoadingService],
+  providers: [BurgerService, LoadingService, MailerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {LoadingService} from "../../services/loading.service";
+import {MailerService} from "../../services/mailer.service";
 
 @Component({
   selector: 'contact',
@@ -14,10 +15,13 @@ export class ContactComponent {
   messageControl;
   EMAIL_PATTERN = /^[a-z]+[a-z0-9._-]+@[a-z]+\.[a-z.]{2,5}$/;
   isProcessing: boolean;
-  isSent : boolean
-  constructor(private formBuilder : FormBuilder, private loadingService: LoadingService){
+  isSent : boolean;
+  isError: boolean;
+  constructor(private formBuilder : FormBuilder, private loadingService: LoadingService,
+              private mailerService: MailerService){
     this.buildForm();
     this.loadingService.homeLoader.next(true);
+    // this.isProcessing = true;
 
   }
   private buildForm(){
@@ -37,23 +41,30 @@ export class ContactComponent {
       name : this.nameControl.value,
       from : this.emailControl.value,
       message : this.messageControl.value,
-      // language : this.trans.currentLang
+      language : 'en'
     };
-    // this.mailerService.sentMail(data).subscribe(
-    //   success => {
-    //     this.isSent = true;
-    //     this.isProcessing = false;
-    //     this.contactForm.reset();
-    //   },
-    //   err => {
-    //     this.isProcessing = false;
-    //     this.contactForm.reset();
-    //
-    //   }
-    // )
+    this.mailerService.sentMail(data).subscribe(
+      success => {
+        this.isSent = true;
+        this.isProcessing = false;
+        this.contactForm.reset();
+      },
+      err => {
+        this.isProcessing = false;
+        this.contactForm.reset();
+
+      }
+    )
+  }
+  public openChat(){
+    window['Tawk_API'].maximize();
+  }
+
+  public reset(){
+    this.isError = false;
+    this.isSent = false;
   }
   public onNavigate(url){
-    console.log('yo');
     window.open(url, "_blank");
   }
   public yo(){
