@@ -14,7 +14,7 @@
 
   <div class="packages">
     <p class="pink link" (click)="setPackages('first')">FULL PACKAGE ></p>
-    <div *ngIf="packages.first">
+    <div class="container" [ngClass]="{'show': packages.first}">
       <p>Are you looking for the perfect <span class="bold">design for your business?</span>
         This offer includes all materials that you need to succeed.
         We will start with creating Visual Identity, then website,
@@ -32,7 +32,7 @@
 
 
     <p class="pink link" (click)="setPackages('second')">SINGLE PACKAGE ></p>
-    <div *ngIf="packages.second">
+    <div class="container" [ngClass]="{'show': packages.second}">
       <p>Are you missing some graphical materials?
         Maybe you need a nice poster design or an original logo.
         This offer allows you to choose one product that will
@@ -43,7 +43,7 @@
     </div>
 
     <p class="pink link" (click)="setPackages('third')">SOMETHING ELSE? ></p>
-    <div *ngIf="packages.third">
+    <div class="container" [ngClass]="{'show': packages.third}">
       <p>Do you have something specific on your mind? Just a draft or idea?
         Let us know! You could also combine few different products,
         see example below:</p>

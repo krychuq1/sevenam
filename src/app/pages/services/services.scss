@@ -20,5 +20,14 @@
 
   .packages{
     padding-top: 60px;
+    .container{
+      max-height: 0;
+      transition: max-height 0.4s ease-out;
+      overflow: hidden;
+      &.show{
+        max-height: 700px;
+      }
+
+    }
   }
 }

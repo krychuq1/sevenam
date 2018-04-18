@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {LoadingService} from "../../services/loading.service";
 
 @Component({
   selector: 'services',
@@ -7,12 +8,14 @@ import { Component } from '@angular/core';
 })
 export class ServicesComponent {
   packages;
-  constructor(){
+  constructor(private loadingService: LoadingService){
     this.packages = {
       first: false,
       second: false,
       third: false
     }
+    this.loadingService.homeLoader.next(true);
+
   }
   setPackages(packageName){
     switch(packageName) {
