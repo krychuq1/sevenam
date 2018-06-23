@@ -13,36 +13,46 @@ import {Observable} from "rxjs/Observable";
 export class ProjectsComponent  implements AfterViewInit{
   filter: string;
   imgHolder: HTMLElement;
-  obsVar;
+  imagesArray: Array<string>;
   state: string;
+  isLoading:boolean;
+  enableAnimation: boolean;
   constructor( private loadingService: LoadingService){
+    this.imagesArray = [];
     this.filter = 'all';
-    this.loadingService.homeLoader.next(true);
+    // this.loadingService.homeLoader.next(true);
     this.state = '';
+    this.isLoading = true;
+    this.enableAnimation = true;
+
   }
   test(){
     this.state = 'in';
   }
 
-
+  public imgLoaded(){
+    this.imagesArray.push('loaded');
+    console.log('loade', this.imagesArray.length);
+    if(this.imagesArray.length === 14){
+      // console.log('loaded fucker')
+      this.isLoading = false;
+      this.loadingService.homeLoader.next(true);
+    }
+  }
   setFilter(filter){
-    this.filter = filter;
-   // this.imgHolder = document.getElementById('image-holder');
-   console.log(window.innerHeight, ' <----- this is height');
-   let testimg;
-   /*
-      // timeout
-      setTimeout( ()=> {
-        let visibleImages = document.getElementsByClassName("show");
-        for(let img of <any>visibleImages){
-          img.style.position = 'absolute';
-          img.style.bottom = '0';
-          testimg = img;
+    console.log('here here here here');
+    console.log(this.filter, filter);
+    if(this.filter !== filter){
+      this.filter = filter;
+      this.enableAnimation = false;
 
-        }
-        let bottom = 0;
-      },20);
-  */
+      // this.enableAnimation = true;
+      setTimeout(() => {
+        this.enableAnimation = true;
+      },100);
+    }
+
+
   }
 
   ngAfterViewInit(): void {

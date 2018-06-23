@@ -1,25 +1,31 @@
-<div class="projects-holder">
+<div class="spinner" *ngIf="isLoading" ></div>
+
+
+<div class="projects-holder" *ngIf="!isLoading">
   <ul>
-    <li [ngClass]="{'pink' : filter ==='all'}"
+    <li class="nav" [ngClass]="{'pink' : filter ==='all'}"
         (click)="setFilter('all')">all</li>
     <li>|</li>
-    <li [ngClass]="{'pink' : filter ==='website'}"
+    <li class="nav"  [ngClass]="{'pink' : filter ==='website'}"
         (click)="setFilter('website')">Website</li>
     <li>|</li>
-    <li [ngClass]="{'pink' : filter ==='visual'}"
+    <li class="nav"  [ngClass]="{'pink' : filter ==='visual'}"
         (click)="setFilter('visual')">Visual identity</li>
     <li>|</li>
-    <li [ngClass]="{'pink' : filter ==='logos'}"
+    <li class="nav" [ngClass]="{'pink' : filter ==='logos'}"
         (click)="setFilter('logos')">logos</li>
     <li>|</li>
-    <li [ngClass]="{'pink' : filter ==='print'}"
+    <li class="nav"  [ngClass]="{'pink' : filter ==='print'}"
         (click)="setFilter('print')">Print</li>
     <li>|</li>
-    <li [ngClass]="{'pink' : filter ==='games'}"
+    <li class="nav"  [ngClass]="{'pink' : filter ==='games'}"
         (click)="setFilter('games')">Games</li>
   </ul>
 
   <div class="image-holder" id="image-holder">
+    <div class="cover" [ngClass]="{'active': enableAnimation}">
+
+    </div>
     <!--print-->
     <img src="../../../assets/images/home/animated-box/well.jpg"
          [ngClass]="{'show' :filter ==='print' || filter ==='all'}">
@@ -65,5 +71,18 @@
 
   </div>
 
-
 </div>
+<img src="../../../assets/images/home/animated-box/booky.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/booky_logo.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/bug.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/letsgo.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/moha.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/moha_logo.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/numbers.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/otis.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/pieceofplant.jpg" style="display: none;" (load)="imgLoaded()"  >
+<img src="../../../assets/images/home/animated-box/rowforwater.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/valentines.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/well.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/VIDEO.png" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/yellow.jpg" style="display: none;" (load)="imgLoaded()">

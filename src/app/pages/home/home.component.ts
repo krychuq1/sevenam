@@ -67,11 +67,6 @@ export class HomeComponent {
       }, 4000);
     }
   }
-  onClick() {
-    this.enableAnimation = true;
-    this.counter = 0;
-    this.toggleState();
-  }
 
 
 
