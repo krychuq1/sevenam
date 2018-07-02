@@ -53,7 +53,6 @@ export class HomeComponent {
     this.urlArray.push("../../../assets/images/home/animated-box/rowforwater.jpg");
     this.urlArray.push("../../../assets/images/home/animated-box/valentines.jpg");
     this.urlArray.push("../../../assets/images/home/animated-box/well.jpg");
-
   }
   public imgLoaded(){
     this.imagesArray.push('loaded');
@@ -67,9 +66,6 @@ export class HomeComponent {
       }, 4000);
     }
   }
-
-
-
   onDone($event) {
     console.log('animation done', this.state);
     if(this.state === 'out'){

@@ -1,27 +1,56 @@
 @import "../../../styles";
 .contact-holder{
-  .contact{
-    position: relative;
-    background-image: url("../../../assets/images/contact/spinacze_mobile.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 0;
-    padding-top: 218.00%;/* (img-height / img-width * container-width) */
-    /* (853 / 1280 * 100) */
-    .contact-inner{
-      padding-left: $wrapper;
-      padding-right: $wrapper;
-      position: absolute;
-      top: 80px;
-      width: calc(100% - 60px);
-      height: calc(100% - 114px);
+    min-height: 100vh;
+    display: flex;
+    background-color: #e5dfe8;
+    .contact{
+      position: relative;
+      width: 100%;
+      display: flex;
+      padding: 50px 20px;
+      flex-direction: column;
+      .confirm {
+        padding-top: 70px;
+      }
+      div{
+        z-index: 2;
+      }
+      &.processing{
+        justify-content: center;
+        align-items: center;
+      }
+      .spinacz{
+        z-index: 1;
+        width: 100px;
+        position: absolute;
+        &.one{
+          right: 20px;
+          top: 155px;
+        }
+        &.two{
+          top: 308px;
+          right: 0;
+          width: 55px;
+        }
+        &.three{
+          top: 396px;
+          right: 10px;
+          width: 122px;
+        }
+        &.four{
+          right: 0;
+          width: 24px;
+          top: 445px;
+        }
+      }
+
+      //height: inherit;
       .text-holder{
         margin-top: 40px;
       }
 
       .spinner-contact{
-        margin: 100px  auto 150px auto;
+        //margin: 100px  auto 150px auto;
       }
 
       h1{
@@ -105,10 +134,11 @@
       display: flex;
       flex-direction: column;
       //width: 100%;
-      position: absolute;
-      bottom: 0;
-      &.isSent{
-        bottom : auto;
+
+
+      &.processing, &.isSent{
+        position: absolute;
+        bottom: 20px;
       }
 
       .contact-footer-inner{
@@ -118,12 +148,7 @@
           font-weight: bold;
         }
         p{
-          margin-bottom: 5px;
-          margin-top: 10px;
-          &.amparagraph{
-            text-align: left;
-            color: $pink-color;
-          }
+         line-height: 1.5rem;
           .bold{
             font-weight: bold;
             color: $contact-color;
@@ -138,8 +163,13 @@
               margin-bottom: 10px;
             }
           }
+          &.amparagraph{
+            margin-top: 7px;
+            //margin-bottom: 5px;
+            text-align: left;
+            color: $pink-color;
+          }
         }
       }
     }
-  }
 }

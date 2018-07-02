@@ -1,8 +1,6 @@
 import {AfterViewInit, Component} from '@angular/core';
 import {LoadingService} from "../../services/loading.service";
-// import {scrollUp} from "../../animations";
-import {animate, state, style, transition, trigger} from "@angular/animations";
-import {Observable} from "rxjs/Observable";
+
 
 @Component({
   templateUrl: './projects.html',
@@ -16,14 +14,14 @@ export class ProjectsComponent  implements AfterViewInit{
   imagesArray: Array<string>;
   state: string;
   isLoading:boolean;
-  enableAnimation: boolean;
+  // enableAnimation: boolean;
   constructor( private loadingService: LoadingService){
     this.imagesArray = [];
     this.filter = 'all';
     // this.loadingService.homeLoader.next(true);
     this.state = '';
     this.isLoading = true;
-    this.enableAnimation = true;
+    // this.enableAnimation = true;
 
   }
   test(){
@@ -39,22 +37,12 @@ export class ProjectsComponent  implements AfterViewInit{
       this.loadingService.homeLoader.next(true);
     }
   }
-  setFilter(filter){
-    console.log('here here here here');
-    console.log(this.filter, filter);
-    if(this.filter !== filter){
+  setFilter(filter) {
+    // setTimeout(()=>{
       this.filter = filter;
-      this.enableAnimation = false;
 
-      // this.enableAnimation = true;
-      setTimeout(() => {
-        this.enableAnimation = true;
-      },100);
-    }
-
-
+    // },500)
   }
-
   ngAfterViewInit(): void {
     this.imgHolder = document.getElementById('image-holder');
     console.log(this.imgHolder);

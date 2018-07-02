@@ -21,8 +21,6 @@ export class ContactComponent {
               private mailerService: MailerService){
     this.buildForm();
     this.loadingService.homeLoader.next(true);
-    // this.isProcessing = true;
-
   }
   private buildForm(){
     this.contactForm = this.formBuilder.group({
