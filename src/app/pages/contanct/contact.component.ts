@@ -21,7 +21,10 @@ export class ContactComponent {
               private mailerService: MailerService){
     this.buildForm();
     this.loadingService.homeLoader.next(true);
+    // this.isError = true;
+    // this.isProcessing = false;
   }
+
   private buildForm(){
     this.contactForm = this.formBuilder.group({
       name  : this.formBuilder.control(null, [Validators.required, Validators.minLength(3)]),
