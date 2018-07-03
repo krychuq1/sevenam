@@ -1,4 +1,4 @@
-import {AfterViewInit, Component} from '@angular/core';
+import {AfterViewInit, Component, ElementRef} from '@angular/core';
 import {LoadingService} from "../../services/loading.service";
 
 
@@ -15,14 +15,13 @@ export class ProjectsComponent  implements AfterViewInit{
   state: string;
   isLoading:boolean;
   // enableAnimation: boolean;
-  constructor( private loadingService: LoadingService){
+  constructor( private loadingService: LoadingService, private elRef: ElementRef){
     this.imagesArray = [];
     this.filter = 'all';
     // this.loadingService.homeLoader.next(true);
     this.state = '';
     this.isLoading = true;
     // this.enableAnimation = true;
-
   }
   test(){
     this.state = 'in';
@@ -31,17 +30,35 @@ export class ProjectsComponent  implements AfterViewInit{
   public imgLoaded(){
     this.imagesArray.push('loaded');
     console.log('loade', this.imagesArray.length);
-    if(this.imagesArray.length === 14){
-      // console.log('loaded fucker')
+    if(this.imagesArray.length === 17){
       this.isLoading = false;
       this.loadingService.homeLoader.next(true);
     }
   }
   setFilter(filter) {
-    // setTimeout(()=>{
+    this.filter = 'off';
+    setTimeout(()=>{
+      this.filter = filter;
+    },450)
+    setTimeout(()=> {
       this.filter = filter;
 
-    // },500)
+      let hideEl: HTMLCollection;
+      hideEl = document.getElementsByClassName('projectImage');
+
+      // let i = 0;
+      for(let i = 0 ; i < hideEl.length; i++){
+        // console.log(i)
+        let tempEl: HTMLElement;
+        tempEl = hideEl[i] as HTMLElement;
+        if(tempEl.classList.contains('hide')){
+          tempEl.style.maxHeight = 0 + 'px';
+        }else{
+          tempEl.style.maxHeight = 1400 + 'px';
+        }
+      }
+
+    },500)
   }
   ngAfterViewInit(): void {
     this.imgHolder = document.getElementById('image-holder');

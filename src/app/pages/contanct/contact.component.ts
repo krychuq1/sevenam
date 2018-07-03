@@ -23,6 +23,7 @@ export class ContactComponent {
     this.loadingService.homeLoader.next(true);
     // this.isError = true;
     // this.isProcessing = false;
+
   }
 
   private buildForm(){

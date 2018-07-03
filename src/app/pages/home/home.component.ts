@@ -35,7 +35,7 @@ export class HomeComponent {
   }
   public animateBackground(){
 
-    if(this.counter == 11)
+    if(this.counter == 15)
       this.counter = 0;
       this.toggleState();
     this.counter++;
@@ -53,10 +53,16 @@ export class HomeComponent {
     this.urlArray.push("../../../assets/images/home/animated-box/rowforwater.jpg");
     this.urlArray.push("../../../assets/images/home/animated-box/valentines.jpg");
     this.urlArray.push("../../../assets/images/home/animated-box/well.jpg");
+    this.urlArray.push("../../../assets/images/home/animated-box/bookcover.jpg");
+    this.urlArray.push("../../../assets/images/home/animated-box/esport.jpg");
+    this.urlArray.push("../../../assets/images/home/animated-box/posterchallange.jpg");
+    this.urlArray.push("../../../assets/images/home/animated-box/stpatrick.jpg");
+
+
   }
   public imgLoaded(){
     this.imagesArray.push('loaded');
-    if(this.imagesArray.length === 14){
+    if(this.imagesArray.length === 17){
       this.addUrlToArray();
       this.imgUrl = this.urlArray[0];
       this.isLoading = false;

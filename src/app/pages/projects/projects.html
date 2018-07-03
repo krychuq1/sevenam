@@ -1,7 +1,8 @@
 <div class="spinner" *ngIf="isLoading" ></div>
 
-
 <div class="projects-holder" *ngIf="!isLoading">
+  <!--<p (click)="setFilter('off')">fade out {{filter}}</p>-->
+
   <ul>
     <li class="nav" [ngClass]="{'pink' : filter ==='all'}"
         (click)="setFilter('all')">all</li>
@@ -27,47 +28,81 @@
 
     </div>
     <!--print-->
+    <img src="../../../assets/images/home/animated-box/bookcover.jpg"
+         class="projectImage"
+         [ngClass]="(filter ==='print' || filter ==='all') ? 'show' : 'hide'"
+    >
+
+    <!--print-->
     <img src="../../../assets/images/home/animated-box/well.jpg"
-         [ngClass]="{'show' :filter ==='print' || filter ==='all'}">
+         class="projectImage"
+         [ngClass]="(filter ==='print' || filter ==='all') ? 'show' : 'hide'"
+    >
     <!--visual id-->
     <img src="../../../assets/images/home/animated-box/moha.jpg"
-         [ngClass]="{'show' :filter ==='visual' || filter ==='all'}">
+         class="projectImage"
+         [ngClass]="(filter ==='visual' || filter ==='all') ? 'show' : 'hide'">
     <!--website-->
     <img src="../../../assets/images/home/animated-box/pieceofplantwebsite.jpg"
-         [ngClass]="{'show' :filter ==='website' || filter ==='all'}">
+         class="projectImage"
+         [ngClass]="(filter ==='website' || filter ==='all') ? 'show' : 'hide'">
+   <!--print-->
+    <img src="../../../assets/images/home/animated-box/posterchallange.jpg"
+         class="projectImage"
+         [ngClass]="(filter ==='print' || filter ==='all') ? 'show' : 'hide'">
     <!--website-->
     <img src="../../../assets/images/home/animated-box/booky.jpg"
-         [ngClass]="{'show' :filter ==='website' || filter ==='all'}">
+         class="projectImage"
+         [ngClass]="(filter ==='website' || filter ==='all') ? 'show' : 'hide'">
     <!--print-->
     <img src="../../../assets/images/home/animated-box/otis.jpg"
-         [ngClass]="{'show' :filter ==='print' || filter ==='all'}">
+         class="projectImage"
+         [ngClass]="(filter ==='website' || filter ==='all') ? 'show' : 'hide'">
     <!--print-->
     <img src="../../../assets/images/home/animated-box/letsgo.jpg"
-         [ngClass]="{'show' :filter ==='print' || filter ==='all'}">
-    <!--logo-->
+         class="projectImage"
+         [ngClass]="(filter ==='print' || filter ==='all') ? 'show' : 'hide'">
+    <!--logos-->
     <img src="../../../assets/images/home/animated-box/bug.jpg"
-         [ngClass]="{'show' :filter ==='logos' || filter ==='all'}">
+         class="projectImage"
+         [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'">
     <!--games-->
     <img src="../../../assets/images/home/animated-box/valentines.jpg"
-         [ngClass]="{'show' :filter ==='games' || filter ==='all'}">
-    <!--logo-->
+         class="projectImage"
+         [ngClass]="(filter ==='games' || filter ==='all') ? 'show' : 'hide'">
+    <!--logos-->
     <img src="../../../assets/images/home/animated-box/rowforwater.jpg"
-         [ngClass]="{'show' :filter ==='games' || filter ==='all'}">
+         class="projectImage"
+         [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'">
     <!--website-->
     <img src="../../../assets/images/home/animated-box/website_bug.jpg"
-         [ngClass]="{'show' :filter ==='website' || filter ==='all'}">
+         class="projectImage"
+         [ngClass]="(filter ==='website' || filter ==='all') ? 'show' : 'hide'">
     <!--logo-->
     <img src="../../../assets/images/home/animated-box/pieceofplant.jpg"
-         [ngClass]="{'show' :filter ==='logos' || filter ==='all'}">
+         class="projectImage"
+         [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'">
     <!--print-->
     <img src="../../../assets/images/home/animated-box/numbers.jpg"
-         [ngClass]="{'show' :filter ==='print' || filter ==='all'}">
+         class="projectImage"
+         [ngClass]="(filter ==='print' || filter ==='all') ? 'show' : 'hide'">
     <!--logo-->
     <img src="../../../assets/images/home/animated-box/moha_logo.jpg"
-         [ngClass]="{'show' :filter ==='logos' || filter ==='all'}">
+         class="projectImage"
+         [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'">
     <!--logo-->
     <img src="../../../assets/images/home/animated-box/booky_logo.jpg"
-         [ngClass]="{'show' :filter ==='logos' || filter ==='all'}">
+         class="projectImage"
+         [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'">
+    <!--logo-->
+    <img src="../../../assets/images/home/animated-box/esport.jpg"
+         class="projectImage"
+         [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'">
+    <!--games-->
+    <img src="../../../assets/images/home/animated-box/stpatrick.jpg"
+         class="projectImage"
+         [ngClass]="(filter ==='games' || filter ==='all') ? 'show' : 'hide'">
+
 
   </div>
 
@@ -86,3 +121,7 @@
 <img src="../../../assets/images/home/animated-box/well.jpg" style="display: none;" (load)="imgLoaded()">
 <img src="../../../assets/images/home/VIDEO.png" style="display: none;" (load)="imgLoaded()">
 <img src="../../../assets/images/home/yellow.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/bookcover.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/esport.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/posterchallange.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/stpatrick.jpg" style="display: none;" (load)="imgLoaded()">
