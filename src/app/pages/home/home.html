@@ -2,29 +2,33 @@
 
 <div class="home-holder" *ngIf="!navBurger && !isLoading">
   <!--about section-->
-  <div class="section" routerLink="about-us"
+  <div class="section home" routerLink="about-us"
        [ngStyle]="{'background-image': 'url(../../../assets/images/home/VIDEO.png)'}">
     <div class="footer" routerLink="about-us">
       <p>about us</p>
       <img src="../../../assets/images/home/light-arrow.png">
     </div>
   </div>
-  <!--products section-->
-  <div class="products" id="products" routerLink="projects">
-    <!--(@fade.done)="onDone($event)"-->
-    <img [@fade]="state"  [src]="imgUrl" (@fade.done)="onDone($event)"  />
-    <div class="footer">
-      <p>projects</p>
-      <img src="../../../assets/images/home/arrow.png">
+  <div class="right-elements">
+    <!--products section-->
+    <div class="products" id="products" routerLink="projects">
+      <!--(@fade.done)="onDone($event)"-->
+      <img [@fade]="state"  [src]="imgUrl" (@fade.done)="onDone($event)"  />
+      <div class="footer">
+        <p>projects</p>
+        <img src="../../../assets/images/home/arrow.png">
+      </div>
+    </div>
+    <!--services section-->
+    <div class="section services" routerLink="services"
+         [ngStyle]="{'background-image': 'url(../../../assets/images/home/yellow.jpg)'}">
+      <div class="footer">
+        <p>services</p>
+        <img src="../../../assets/images/home/arrow.png">
+      </div>
     </div>
   </div>
-  <div class="section services" routerLink="services"
-       [ngStyle]="{'background-image': 'url(../../../assets/images/home/yellow.jpg)'}">
-    <div class="footer">
-      <p>services</p>
-      <img src="../../../assets/images/home/arrow.png">
-    </div>
-  </div>
+
 </div>
 
 

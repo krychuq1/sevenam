@@ -38,11 +38,6 @@
     width: 100%;
     height: 0;
     padding-top: 102%; /* (img-height / img-width * container-width) */
-    /* (853 / 1280 * 100) */
-    //&.products{
-    //  padding-top: 87.52%; /* (img-height / img-width * container-width) */
-    //
-    //}
     &.services{
       padding-top: 87.53%; /* (img-height / img-width * container-width) */
       margin-top: -10px;
@@ -81,4 +76,23 @@
       }
     }
   }
+}
+
+@include breakpoint(laptop) {
+  .home-holder{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    .section{
+      &.home{
+        padding-top: 69.7%;
+        width: 60%;
+      }
+    }
+    .right-elements{
+      width: 40%
+    }
+
+  }
+
 }

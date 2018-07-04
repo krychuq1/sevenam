@@ -57,8 +57,6 @@ export class HomeComponent {
     this.urlArray.push("../../../assets/images/home/animated-box/esport.jpg");
     this.urlArray.push("../../../assets/images/home/animated-box/posterchallange.jpg");
     this.urlArray.push("../../../assets/images/home/animated-box/stpatrick.jpg");
-
-
   }
   public imgLoaded(){
     this.imagesArray.push('loaded');
