@@ -2,8 +2,9 @@
 
 <div class="home-holder" *ngIf="!navBurger && !isLoading">
   <!--about section-->
-  <div class="section home" routerLink="about-us"
-       [ngStyle]="{'background-image': 'url(../../../assets/images/home/VIDEO.png)'}">
+  <!-- [ngStyle]="{'background-image': 'url(../../../assets/images/home/VIDEO.png)'}"-->
+  <div class="section home" routerLink="about-us">
+    <img src="../../../assets/images/home/VIDEO.png" class="video">
     <div class="footer" routerLink="about-us">
       <p>about us</p>
       <img src="../../../assets/images/home/light-arrow.png">
@@ -13,15 +14,20 @@
     <!--products section-->
     <div class="products" id="products" routerLink="projects">
       <!--(@fade.done)="onDone($event)"-->
-      <img [@fade]="state"  [src]="imgUrl" (@fade.done)="onDone($event)"  />
-      <div class="footer">
-        <p>projects</p>
-        <img src="../../../assets/images/home/arrow.png">
+      <div class="products-holder" [ngStyle]="{'backgroundColor': animationBackground}">
+        <img [@fade]="state"  [src]="imgUrl" (@fade.done)="onDone($event)"  />
+        <div class="footer">
+          <p>projects</p>
+          <img src="../../../assets/images/home/arrow.png">
+        </div>
       </div>
     </div>
     <!--services section-->
-    <div class="section services" routerLink="services"
-         [ngStyle]="{'background-image': 'url(../../../assets/images/home/yellow.jpg)'}">
+    <div class="section services" routerLink="services">
+      <div class="services-holder">
+        <img src="../../../assets/images/services/yellow.png">
+
+      </div>
       <div class="footer">
         <p>services</p>
         <img src="../../../assets/images/home/arrow.png">
@@ -33,20 +39,41 @@
 
 
 
-<img src="../../../assets/images/home/animated-box/booky.jpg" style="display: none;" (load)="imgLoaded()">
-<img src="../../../assets/images/home/animated-box/booky_logo.jpg" style="display: none;" (load)="imgLoaded()">
-<img src="../../../assets/images/home/animated-box/bug.jpg" style="display: none;" (load)="imgLoaded()">
-<img src="../../../assets/images/home/animated-box/letsgo.jpg" style="display: none;" (load)="imgLoaded()">
-<img src="../../../assets/images/home/animated-box/moha.jpg" style="display: none;" (load)="imgLoaded()">
-<img src="../../../assets/images/home/animated-box/moha_logo.jpg" style="display: none;" (load)="imgLoaded()">
-<img src="../../../assets/images/home/animated-box/numbers.jpg" style="display: none;" (load)="imgLoaded()">
-<img src="../../../assets/images/home/animated-box/otis.jpg" style="display: none;" (load)="imgLoaded()">
-<img src="../../../assets/images/home/animated-box/pieceofplant.jpg" style="display: none;" (load)="imgLoaded()"  >
-<img src="../../../assets/images/home/animated-box/rowforwater.jpg" style="display: none;" (load)="imgLoaded()">
-<img src="../../../assets/images/home/animated-box/valentines.jpg" style="display: none;" (load)="imgLoaded()">
-<img src="../../../assets/images/home/animated-box/well.jpg" style="display: none;" (load)="imgLoaded()">
-<img src="../../../assets/images/home/VIDEO.png" style="display: none;" (load)="imgLoaded()">
-<img src="../../../assets/images/home/animated-box/bookcover.jpg" style="display: none;" (load)="imgLoaded()">
-<img src="../../../assets/images/home/animated-box/esport.jpg" style="display: none;" (load)="imgLoaded()">
-<img src="../../../assets/images/home/animated-box/posterchallange.jpg" style="display: none;" (load)="imgLoaded()">
-<img src="../../../assets/images/home/animated-box/stpatrick.jpg" style="display: none;" (load)="imgLoaded()">
+<!--<img src="../../../assets/images/home/animated-box/booky.jpg" style="display: none;" (load)="imgLoaded()">-->
+<!--<img src="../../../assets/images/home/animated-box/booky_logo.jpg" style="display: none;" (load)="imgLoaded()">-->
+<img src="../../../assets/images/home/animated-box/bug.jpg" style="display: none;" (load)="imgLoaded(
+     {imgUrl: '../../../assets/images/home/animated-box/bug.png',
+      background: '#323232'})">
+<img src="../../../assets/images/home/animated-box/letsgo.png" style="display: none;"
+     (load)="imgLoaded(
+     {imgUrl: '../../../assets/images/home/animated-box/letsgo.png',
+      background: '#efefef'})" >
+<!--<img src="../../../assets/images/home/animated-box/moha.jpg" style="display: none;" (load)="imgLoaded()">-->
+<!--<img src="../../../assets/images/home/animated-box/moha_logo.jpg" style="display: none;" (load)="imgLoaded()">-->
+<!--<img src="../../../assets/images/home/animated-box/numbers.jpg" style="display: none;" (load)="imgLoaded()">-->
+<!--<img src="../../../assets/images/home/animated-box/otis.jpg" style="display: none;" (load)="imgLoaded()">-->
+<img src="../../../assets/images/home/animated-box/pieceofplant.png" style="display: none;"
+     (load)="imgLoaded(
+     {imgUrl: '../../../assets/images/home/animated-box/pieceofplant.png',
+      background: '#fae4f9'})"  >
+<img src="../../../assets/images/home/animated-box/rowforwater.png" style="display: none;"
+     (load)="imgLoaded(
+     {imgUrl: '../../../assets/images/home/animated-box/rowforwater.png',
+      background: '#f4f4f4'})">
+<!--#ededed-->
+<img src="../../../assets/images/home/animated-box/valentines.png" style="display: none;"
+     (load)="imgLoaded(
+     {imgUrl: '../../../assets/images/home/animated-box/valentines.png',
+      background: '#ededed'})">
+<!--<img src="../../../assets/images/home/animated-box/well.jpg" style="display: none;" (load)="imgLoaded()">-->
+<!--<img src="../../../assets/images/home/VIDEO.png" style="display: none;" (load)="imgLoaded()">-->
+<img src="../../../assets/images/home/animated-box/bookcover.png" style="display: none;"
+     (load)="imgLoaded({
+     imgUrl: '../../../assets/images/home/animated-box/bookcover.png',
+     background: '#eeeeee'})">
+<!--<img src="../../../assets/images/home/animated-box/esport.jpg" style="display: none;" (load)="imgLoaded()">-->
+<!--<img src="../../../assets/images/home/animated-box/posterchallange.jpg" style="display: none;" (load)="imgLoaded()">-->
+<img src="../../../assets/images/home/animated-box/stpatrick.jpg" style="display: none;"
+     (load)="imgLoaded({
+     imgUrl: '../../../assets/images/home/animated-box/stpatrick.png',
+     background: '#eaeaea'})">
