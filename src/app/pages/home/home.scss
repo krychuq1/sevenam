@@ -133,6 +133,9 @@
         margin-top: 0;
         .products-holder{
           @extend .services-holder;
+          align-items: center;
+          //background-image: url("../../../assets/images/home/animated-box/moha.jpg");
+          background-size: contain;
           //background-color: #eeeeee;
         }
 

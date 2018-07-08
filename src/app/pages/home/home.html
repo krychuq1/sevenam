@@ -13,14 +13,20 @@
   <div class="right-elements">
     <!--products section-->
     <div class="products" id="products" routerLink="projects">
+    <!--{{backgroundImageCustom}}-->
       <!--(@fade.done)="onDone($event)"-->
-      <div class="products-holder" [ngStyle]="{'backgroundColor': animationBackground}">
-        <img [@fade]="state"  [src]="imgUrl" (@fade.done)="onDone($event)"  />
+      <div class="products-holder"
+           [@fade]="state" (@fade.done)="onDone($event)"
+           [ngStyle]="{'backgroundColor': animationBackground,
+      'background-image': backgroundImageCustom ? 'url(' + backgroundImageCustom +')' : 'none'}" >
+        <img   [src]="imgUrl"
+             [ngStyle]="{'maxHeight': maxHeight}"/>
         <div class="footer">
           <p>projects</p>
           <img src="../../../assets/images/home/arrow.png">
         </div>
       </div>
+
     </div>
     <!--services section-->
     <div class="section services" routerLink="services">
@@ -39,41 +45,160 @@
 
 
 
-<!--<img src="../../../assets/images/home/animated-box/booky.jpg" style="display: none;" (load)="imgLoaded()">-->
-<!--<img src="../../../assets/images/home/animated-box/booky_logo.jpg" style="display: none;" (load)="imgLoaded()">-->
-<img src="../../../assets/images/home/animated-box/bug.jpg" style="display: none;" (load)="imgLoaded(
-     {imgUrl: '../../../assets/images/home/animated-box/bug.png',
-      background: '#323232'})">
+<img src="../../../assets/images/home/animated-box/posterchallange.jpg" style="display: none;"
+     (load)="imgLoaded({
+     imgUrl: '../../../assets/images/home/animated-box/posterchallange.jpg',
+     background: '#f57bae',
+     maxHeight: '90%'})">
+
+<img src="../../../assets/images/home/animated-box/moha_logo.png" style="display: none;" (load)="imgLoaded(
+  {imgUrl: '../../../assets/images/home/animated-box/moha_logo.png',
+  background: '#faefdd',
+  maxHeight: '30%',
+  backgroundImage: '../../../assets/images/home/animated-box/moha.jpg'})">
+
 <img src="../../../assets/images/home/animated-box/letsgo.png" style="display: none;"
      (load)="imgLoaded(
      {imgUrl: '../../../assets/images/home/animated-box/letsgo.png',
-      background: '#efefef'})" >
-<!--<img src="../../../assets/images/home/animated-box/moha.jpg" style="display: none;" (load)="imgLoaded()">-->
-<!--<img src="../../../assets/images/home/animated-box/moha_logo.jpg" style="display: none;" (load)="imgLoaded()">-->
-<!--<img src="../../../assets/images/home/animated-box/numbers.jpg" style="display: none;" (load)="imgLoaded()">-->
-<!--<img src="../../../assets/images/home/animated-box/otis.jpg" style="display: none;" (load)="imgLoaded()">-->
+      background: '#efefef',
+      maxHeight: '42%'})">
+
 <img src="../../../assets/images/home/animated-box/pieceofplant.png" style="display: none;"
      (load)="imgLoaded(
      {imgUrl: '../../../assets/images/home/animated-box/pieceofplant.png',
-      background: '#fae4f9'})"  >
+      background: '#fae4f9',
+      maxHeight: '42%'})"  >
 <img src="../../../assets/images/home/animated-box/rowforwater.png" style="display: none;"
      (load)="imgLoaded(
      {imgUrl: '../../../assets/images/home/animated-box/rowforwater.png',
-      background: '#f4f4f4'})">
+      background: '#f4f4f4',
+      maxHeight: '40%'})">
 <!--#ededed-->
 <img src="../../../assets/images/home/animated-box/valentines.png" style="display: none;"
      (load)="imgLoaded(
      {imgUrl: '../../../assets/images/home/animated-box/valentines.png',
-      background: '#ededed'})">
-<!--<img src="../../../assets/images/home/animated-box/well.jpg" style="display: none;" (load)="imgLoaded()">-->
-<!--<img src="../../../assets/images/home/VIDEO.png" style="display: none;" (load)="imgLoaded()">-->
+      background: '#ededed',
+      maxHeight: '55%'})">
+
 <img src="../../../assets/images/home/animated-box/bookcover.png" style="display: none;"
      (load)="imgLoaded({
      imgUrl: '../../../assets/images/home/animated-box/bookcover.png',
-     background: '#eeeeee'})">
-<!--<img src="../../../assets/images/home/animated-box/esport.jpg" style="display: none;" (load)="imgLoaded()">-->
-<!--<img src="../../../assets/images/home/animated-box/posterchallange.jpg" style="display: none;" (load)="imgLoaded()">-->
+     background: '#eeeeee',
+     maxHeight: '70%'})">
+
 <img src="../../../assets/images/home/animated-box/stpatrick.jpg" style="display: none;"
      (load)="imgLoaded({
      imgUrl: '../../../assets/images/home/animated-box/stpatrick.png',
-     background: '#eaeaea'})">
+     background: '#eaeaea',
+     maxHeight: '65%'})">
+
+<img src="../../../assets/images/home/animated-box/booky.png" style="display: none;"
+     (load)="imgLoaded({
+     imgUrl: '../../../assets/images/home/animated-box/booky.png',
+     background: '#f2f2f2',
+     maxHeight: '26%'})">
+<img src="../../../assets/images/home/animated-box/esport.png" style="display: none;"
+     (load)="imgLoaded({
+     imgUrl: '../../../assets/images/home/animated-box/esport.png',
+     background: '#e8e8e8',
+     maxHeight: '20%'})">
+<img src="../../../assets/images/home/animated-box/bug.png" style="display: none;" (load)="imgLoaded(
+     {imgUrl: '../../../assets/images/home/animated-box/bug.png',
+      background: '#323232',
+      maxHeight: '48%'})">
+
+<img src="../../../assets/images/home/animated-box/leaf.png" style="display: none;"
+     (load)="imgLoaded({
+     imgUrl: '../../../assets/images/home/animated-box/leaf.png',
+     background: '#fce7fa',
+     maxHeight: '50%'})">
+
+
+<img src="../../../assets/images/home/animated-box/otis.png" style="display: none;"
+     (load)="imgLoaded({
+     imgUrl: '../../../assets/images/home/animated-box/otis.png',
+     background: '#dbdbdb',
+     maxHeight: '70%'})">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<img src="../../../assets/images/home/animated-box/moha_logo.png" style="display: none;" (load)="imgLoaded(-->
+  <!--{imgUrl: '../../../assets/images/home/animated-box/moha_logo.png',-->
+  <!--background: '#faefdd',-->
+  <!--maxHeight: '30%',-->
+  <!--backgroundImage: '../../../assets/images/home/animated-box/moha.jpg'})">-->
+
+<!--<img src="../../../assets/images/home/animated-box/letsgo.png" style="display: none;"-->
+     <!--(load)="imgLoaded(-->
+     <!--{imgUrl: '../../../assets/images/home/animated-box/letsgo.png',-->
+      <!--background: '#efefef',-->
+      <!--maxHeight: '42%'})">-->
+
+<!--<img src="../../../assets/images/home/animated-box/pieceofplant.png" style="display: none;"-->
+     <!--(load)="imgLoaded(-->
+     <!--{imgUrl: '../../../assets/images/home/animated-box/pieceofplant.png',-->
+      <!--background: '#fae4f9',-->
+      <!--maxHeight: '42%'})"  >-->
+<!--<img src="../../../assets/images/home/animated-box/rowforwater.png" style="display: none;"-->
+     <!--(load)="imgLoaded(-->
+     <!--{imgUrl: '../../../assets/images/home/animated-box/rowforwater.png',-->
+      <!--background: '#f4f4f4',-->
+      <!--maxHeight: '40%'})">-->
+<!--&lt;!&ndash;#ededed&ndash;&gt;-->
+<!--<img src="../../../assets/images/home/animated-box/valentines.png" style="display: none;"-->
+     <!--(load)="imgLoaded(-->
+     <!--{imgUrl: '../../../assets/images/home/animated-box/valentines.png',-->
+      <!--background: '#ededed',-->
+      <!--maxHeight: '55%'})">-->
+
+<!--<img src="../../../assets/images/home/animated-box/bookcover.png" style="display: none;"-->
+     <!--(load)="imgLoaded({-->
+     <!--imgUrl: '../../../assets/images/home/animated-box/bookcover.png',-->
+     <!--background: '#eeeeee',-->
+     <!--maxHeight: '70%'})">-->
+
+<!--<img src="../../../assets/images/home/animated-box/stpatrick.jpg" style="display: none;"-->
+     <!--(load)="imgLoaded({-->
+     <!--imgUrl: '../../../assets/images/home/animated-box/stpatrick.png',-->
+     <!--background: '#eaeaea',-->
+     <!--maxHeight: '65%'})">-->
+
+<!--<img src="../../../assets/images/home/animated-box/booky.png" style="display: none;"-->
+     <!--(load)="imgLoaded({-->
+     <!--imgUrl: '../../../assets/images/home/animated-box/booky.png',-->
+     <!--background: '#f2f2f2',-->
+     <!--maxHeight: '26%'})">-->
+<!--<img src="../../../assets/images/home/animated-box/esport.png" style="display: none;"-->
+     <!--(load)="imgLoaded({-->
+     <!--imgUrl: '../../../assets/images/home/animated-box/esport.png',-->
+     <!--background: '#e8e8e8',-->
+     <!--maxHeight: '20%'})">-->
+
+<!--<img src="../../../assets/images/home/animated-box/esport.jpg" style="display: none;" (load)="imgLoaded()">-->
+<!--<img src="../../../assets/images/home/animated-box/posterchallange.jpg" style="display: none;" (load)="imgLoaded()">-->
+
+<!--<img src="../../../assets/images/home/animated-box/well.jpg" style="display: none;" (load)="imgLoaded()">-->
+<!--<img src="../../../assets/images/home/VIDEO.png" style="display: none;" (load)="imgLoaded()">-->
+
+<!--<img src="../../../assets/images/home/animated-box/moha.jpg" style="display: none;" (load)="imgLoaded()">-->
+<!--<img src="../../../assets/images/home/animated-box/moha_logo.jpg" style="display: none;" (load)="imgLoaded()">-->
+<!--<img src="../../../assets/images/home/animated-box/numbers.jpg" style="display: none;" (load)="imgLoaded()">-->
+<!--<img src="../../../assets/images/home/animated-box/otis.jpg" style="display: none;" (load)="imgLoaded()">-->
+<!--<img src="../../../assets/images/home/animated-box/booky.jpg" style="display: none;" (load)="imgLoaded()">-->
+<!--<img src="../../../assets/images/home/animated-box/booky_logo.jpg" style="display: none;" (load)="imgLoaded()">-->
