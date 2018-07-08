@@ -108,6 +108,21 @@
         height: 100vh;
         max-height: 100vh;
         width: 60%;
+        transition: width 1s;
+        //background-image: url("../../../assets/images/home/VIDEO.png");
+        //background-size: cover;
+
+        &.hover{
+          width: 65%;
+        }
+        &.hoverRight{
+          width: 55%;
+
+        }
+        &.hoverServices{
+          width: 55%;
+
+        }
         //height: 100vh;
         .video{
           //width: 100%;
@@ -118,7 +133,48 @@
     .right-elements{
       width: 40%;
       height: 100vh;
+      transition: width 1s;
+      &.hover{
+        width: 35%;
+      }
+
+      &.hoverRight{
+        width: 45%;
+        .products{
+          height: 60vh;
+
+          .products-holder{
+            height: 60vh;
+          }
+        }
+        .services{
+          height: 40vh;
+        }
+        .services-holder{
+          height: 40vh;
+        }
+
+      }
+      &.hoverServices{
+        width: 45%;
+        .products{
+          height: 40vh;
+
+          .products-holder{
+            height: 40vh;
+          }
+        }
+        .services{
+          height: 60vh;
+        }
+        .services-holder{
+          height: 60vh;
+        }
+
+      }
       .services-holder{
+        transition: height 1s;
+
         height: 50vh;
         display: flex;
         justify-content: center;
@@ -131,9 +187,15 @@
       .products{
         height: 50vh;
         margin-top: 0;
+        transition: height 1s;
+
         .products-holder{
-          @extend .services-holder;
+          height: 50vh;
+          display: flex;
+          justify-content: center;
           align-items: center;
+          transition: height 1s;
+
           //background-image: url("../../../assets/images/home/animated-box/moha.jpg");
           background-size: contain;
           //background-color: #eeeeee;

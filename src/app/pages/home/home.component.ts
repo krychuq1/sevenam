@@ -22,12 +22,18 @@ export class HomeComponent {
   animationBackground: string;
   maxHeight: string;
   backgroundImageCustom: string;
+  homeHover: boolean;
+  animationBoxHover: boolean;
+  servicesHover: boolean;
   constructor(private burgerService: BurgerService, private http: HttpClient,
               private loadingService: LoadingService){
     this.isLoading = true;
+    this.homeHover = false;
     this.subscribe();
     this.urlArray = [];
     this.counter = 1;
+    // this.animationBoxHover = true;
+
   }
   public subscribe(){
     this.burgerService.navigation.subscribe(value => {
