@@ -42,7 +42,6 @@ export class HomeComponent {
   onResize(event?): void {
     this._checkDevice();
   }
-
   private _checkDevice() {
     const innerWidth = (window.innerWidth);
     this.isMobile = (innerWidth < 1024);
@@ -62,32 +61,11 @@ export class HomeComponent {
     }
     this.toggleState();
   }
-  public addUrlToArray(){
-    // this.urlArray.push(
-    //
-    //  );
-    // this.urlArray.push(
-    //   {imgUrl:  "../../../assets/images/home/animated-box/valentines.png",
-    //   background: "#ededed"}
-    // );
-    // this.urlArray.push("../../../assets/images/home/animated-box/booky.jpg");
-    // this.urlArray.push("../../../assets/images/home/animated-box/booky_logo.jpg");
-    // this.urlArray.push("../../../assets/images/home/animated-box/bug.jpg");
-    // this.urlArray.push("../../../assets/images/home/animated-box/letsgo.jpg");
-    // this.urlArray.push("../../../assets/images/home/animated-box/moha.jpg");
-    // this.urlArray.push("../../../assets/images/home/animated-box/moha_logo.jpg");
-    // this.urlArray.push("../../../assets/images/home/animated-box/numbers.jpg");
-    // this.urlArray.push("../../../assets/images/home/animated-box/otis.jpg");
-    // this.urlArray.push("../../../assets/images/home/animated-box/pieceofplant.jpg");
-    // this.urlArray.push("../../../assets/images/home/animated-box/rowforwater.jpg");
-    // this.urlArray.push("../../../assets/images/home/animated-box/well.jpg");
-    // this.urlArray.push("../../../assets/images/home/animated-box/esport.jpg");
-    // this.urlArray.push("../../../assets/images/home/animated-box/posterchallange.jpg");
-    // this.urlArray.push("../../../assets/images/home/animated-box/stpatrick.jpg");
-  }
+
   public imgLoaded(imgObj){
     this.urlArray.push(imgObj);
-    if(this.urlArray.length === 10){
+    if(this.urlArray.length === 13){
+
       this.imgUrl = this.urlArray[0]['imgUrl'];
       this.animationBackground = this.urlArray[0]['background'];
       this.maxHeight = this.urlArray[0]['maxHeight'];
