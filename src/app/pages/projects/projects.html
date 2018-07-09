@@ -1,5 +1,7 @@
-<div class="spinner" *ngIf="isLoading" ></div>
-
+<div class="container-loading" *ngIf="isLoading">
+  <span class="load" ></span>
+  <p>loading</p>
+</div>
 <div class="projects-holder" *ngIf="!isLoading">
   <!--<p (click)="setFilter('off')">fade out {{filter}}</p>-->
 

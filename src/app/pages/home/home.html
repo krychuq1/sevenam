@@ -1,4 +1,8 @@
-<div class="spinner" *ngIf="isLoading"></div>
+<!--<span class="spinner" *ngIf="isLoading"></span>-->
+<div class="container-loading" *ngIf="isLoading">
+  <span class="load" ></span>
+  <p>loading</p>
+</div>
 
 <div class="home-holder" *ngIf="!navBurger && !isLoading">
   <!--about section-->
@@ -8,7 +12,7 @@
        (mouseleave)="homeHover = false"
        routerLink="about-us"
         [ngClass]="{'hover' : homeHover, 'hoverRight': animationBoxHover, 'hoverServices': servicesHover}">
-    <!--<img src="../../../assets/images/home/VIDEO.png" class="video">-->
+    <img src="../../../assets/images/home/VIDEO.png" class="video">
     <div class="footer" routerLink="about-us">
       <p>about us</p>
       <img src="../../../assets/images/home/light-arrow.png">
@@ -22,14 +26,14 @@
          (mouseleave)="animationBoxHover = false">
     <!--{{backgroundImageCustom}}-->
       <!--(@fade.done)="onDone($event)"-->
-
       <div class="products-holder"
-
            [@fade]="state" (@fade.done)="onDone($event)"
-           [ngStyle]="{'backgroundColor': animationBackground,
-      'background-image': backgroundImageCustom ? 'url(' + backgroundImageCustom +')' : 'none'}" >
+           [ngStyle]="{
+           'backgroundColor': animationBackground,
+           'background-image': backgroundImageCustom ? 'url(' + backgroundImageCustom +')' : 'none'}" >
         <img   [src]="imgUrl"
-             [ngStyle]="{'maxHeight': maxHeight}"/>
+             [ngStyle]="
+             {'maxHeight': isMobile ? mobileHeight : maxHeight}"/>
         <div class="footer">
           <p>projects</p>
           <img src="../../../assets/images/home/arrow.png">
@@ -60,76 +64,91 @@
      (load)="imgLoaded({
      imgUrl: '../../../assets/images/home/animated-box/posterchallange.jpg',
      background: '#f57bae',
-     maxHeight: '90%'})">
+     maxHeight: '90%',
+     mobileHeight: '90%'})">
 
 <img src="../../../assets/images/home/animated-box/moha_logo.png" style="display: none;" (load)="imgLoaded(
   {imgUrl: '../../../assets/images/home/animated-box/moha_logo.png',
   background: '#faefdd',
   maxHeight: '30%',
+  mobileHeight: '25%',
   backgroundImage: '../../../assets/images/home/animated-box/moha.jpg'})">
 
 <img src="../../../assets/images/home/animated-box/letsgo.png" style="display: none;"
      (load)="imgLoaded(
      {imgUrl: '../../../assets/images/home/animated-box/letsgo.png',
       background: '#efefef',
-      maxHeight: '42%'})">
+      maxHeight: '42%',
+      mobileHeight: '25%'})">
 
 <img src="../../../assets/images/home/animated-box/pieceofplant.png" style="display: none;"
      (load)="imgLoaded(
      {imgUrl: '../../../assets/images/home/animated-box/pieceofplant.png',
       background: '#fae4f9',
-      maxHeight: '42%'})"  >
+      maxHeight: '42%',
+       mobileHeight: '32%'})"  >
 <img src="../../../assets/images/home/animated-box/rowforwater.png" style="display: none;"
      (load)="imgLoaded(
      {imgUrl: '../../../assets/images/home/animated-box/rowforwater.png',
       background: '#f4f4f4',
-      maxHeight: '40%'})">
+      maxHeight: '40%',
+      mobileHeight: '30%'})">
 <!--#ededed-->
 <img src="../../../assets/images/home/animated-box/valentines.png" style="display: none;"
      (load)="imgLoaded(
      {imgUrl: '../../../assets/images/home/animated-box/valentines.png',
       background: '#ededed',
-      maxHeight: '55%'})">
+      maxHeight: '55%',
+      mobileHeight: '55%'})">
 
 <img src="../../../assets/images/home/animated-box/bookcover.png" style="display: none;"
      (load)="imgLoaded({
      imgUrl: '../../../assets/images/home/animated-box/bookcover.png',
      background: '#eeeeee',
-     maxHeight: '70%'})">
+     maxHeight: '70%',
+     mobileHeight: '70%'})">
 
 <img src="../../../assets/images/home/animated-box/stpatrick.jpg" style="display: none;"
      (load)="imgLoaded({
      imgUrl: '../../../assets/images/home/animated-box/stpatrick.png',
      background: '#eaeaea',
-     maxHeight: '65%'})">
+     maxHeight: '65%',
+     mobileHeight: '55%'})">
 
 <img src="../../../assets/images/home/animated-box/booky.png" style="display: none;"
      (load)="imgLoaded({
      imgUrl: '../../../assets/images/home/animated-box/booky.png',
      background: '#f2f2f2',
-     maxHeight: '26%'})">
+     maxHeight: '26%',
+     mobileHeight: '19%'})">
 <img src="../../../assets/images/home/animated-box/esport.png" style="display: none;"
      (load)="imgLoaded({
      imgUrl: '../../../assets/images/home/animated-box/esport.png',
      background: '#e8e8e8',
-     maxHeight: '20%'})">
+     maxHeight: '20%',
+ mobileHeight: '13%'})">
+
 <img src="../../../assets/images/home/animated-box/bug.png" style="display: none;" (load)="imgLoaded(
      {imgUrl: '../../../assets/images/home/animated-box/bug.png',
       background: '#323232',
-      maxHeight: '48%'})">
+      maxHeight: '48%',
+      mobileHeight: '33%'})">
+
 
 <img src="../../../assets/images/home/animated-box/leaf.png" style="display: none;"
      (load)="imgLoaded({
      imgUrl: '../../../assets/images/home/animated-box/leaf.png',
      background: '#fce7fa',
-     maxHeight: '50%'})">
+     maxHeight: '50%',
+     mobileHeight: '42%'})">
 
 
 <img src="../../../assets/images/home/animated-box/otis.png" style="display: none;"
      (load)="imgLoaded({
      imgUrl: '../../../assets/images/home/animated-box/otis.png',
      background: '#dbdbdb',
-     maxHeight: '70%'})">
+     maxHeight: '70%',
+     mobileHeight: '55%'})">
 
 
 
