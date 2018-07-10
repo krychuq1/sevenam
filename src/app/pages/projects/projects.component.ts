@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener} from '@angular/core';
 import {LoadingService} from "../../services/loading.service";
 
 
@@ -13,6 +13,7 @@ export class ProjectsComponent  implements AfterViewInit{
   imgHolder: HTMLElement;
   imagesArray: Array<string>;
   state: string;
+  isMobile: boolean;
   isLoading:boolean;
   // enableAnimation: boolean;
   constructor( private loadingService: LoadingService, private elRef: ElementRef){
@@ -21,8 +22,18 @@ export class ProjectsComponent  implements AfterViewInit{
     // this.loadingService.homeLoader.next(true);
     this.state = '';
     this.isLoading = true;
+    this._checkDevice();
     // this.enableAnimation = true;
   }
+  @HostListener('window:resize', ['$event'])
+  onResize(event?): void {
+    this._checkDevice();
+  }
+  private _checkDevice() {
+    const innerWidth = (window.innerWidth);
+    this.isMobile = (innerWidth < 1024);
+  }
+
   test(){
     this.state = 'in';
   }
@@ -44,7 +55,7 @@ export class ProjectsComponent  implements AfterViewInit{
       this.filter = filter;
 
       let hideEl: HTMLCollection;
-      hideEl = document.getElementsByClassName('projectImage');
+      hideEl = document.getElementsByClassName('image-container');
 
       // let i = 0;
       for(let i = 0 ; i < hideEl.length; i++){
@@ -53,8 +64,14 @@ export class ProjectsComponent  implements AfterViewInit{
         tempEl = hideEl[i] as HTMLElement;
         if(tempEl.classList.contains('hide')){
           tempEl.style.maxHeight = 0 + 'px';
+          tempEl.style.width =  '0';
+
         }else{
-          tempEl.style.maxHeight = 1400 + 'px';
+
+          tempEl.style.maxHeight =  this.isMobile ? 1400 + 'px' : '100%';
+          tempEl.style.width =  this.isMobile ?  '100%' : '33%'
+
+
         }
       }
 

@@ -16,7 +16,7 @@ export class HomeComponent {
   urlArray: Array<any>;
   counter: number;
   state = 'in';
-  isMobile; boolean;
+  isMobile: boolean;
   enableAnimation = false;
   isLoading:boolean;
   imgUrl: string;
@@ -74,7 +74,6 @@ export class HomeComponent {
       if(this.urlArray[0]['backgroundImage']){
         this.backgroundImageCustom = this.urlArray[0]['backgroundImage'];
         // this.backgroundImageCustom = true;
-
       }else{
         this.backgroundImageCustom = undefined;
       }
