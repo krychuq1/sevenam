@@ -24,6 +24,7 @@ export class HomeComponent {
   maxHeight: string;
   mobileHeight: string;
   backgroundImageCustom: string;
+  justifyContent: string;
   homeHover: boolean;
   animationBoxHover: boolean;
   servicesHover: boolean;
@@ -64,7 +65,9 @@ export class HomeComponent {
 
   public imgLoaded(imgObj){
     this.urlArray.push(imgObj);
-    if(this.urlArray.length === 13){
+    console.log(this.urlArray.length);
+    //13
+    if(this.urlArray.length === 16){
 
       this.imgUrl = this.urlArray[0]['imgUrl'];
       this.animationBackground = this.urlArray[0]['background'];
@@ -77,6 +80,9 @@ export class HomeComponent {
       }else{
         this.backgroundImageCustom = undefined;
       }
+      if(this.urlArray[0]['justifyContent']){
+      }
+      this.justifyContent = this.urlArray[0]['justifyContent'] ? this.urlArray[0]['justifyContent']  : 'center';
       console.log(this.backgroundImageCustom);
       this.isLoading = false;
       this.loadingService.homeLoader.next(true);
@@ -87,7 +93,6 @@ export class HomeComponent {
   }
 
   onDone($event) {
-    console.log('animation done', this.state, this.counter, this.urlArray[this.counter]);
     if(this.state === 'out'){
       this.imgUrl = this.urlArray[this.counter - 1]['imgUrl'];
       this.animationBackground = this.urlArray[this.counter - 1]['background'];
@@ -98,7 +103,7 @@ export class HomeComponent {
       }else{
         this.backgroundImageCustom = undefined;
       }
-      console.log(this.backgroundImageCustom);
+      this.justifyContent = this.urlArray[this.counter -1]['justifyContent'] ? this.urlArray[this.counter -1]['justifyContent']  : 'center';
 
       if(this.state === 'out'){
         this.toggleState();

@@ -30,7 +30,8 @@
            [@fade]="state" (@fade.done)="onDone($event)"
            [ngStyle]="{
            'backgroundColor': animationBackground,
-           'background-image': backgroundImageCustom ? 'url(' + backgroundImageCustom +')' : 'none'}" >
+           'background-image': backgroundImageCustom ? 'url(' + backgroundImageCustom +')' : 'none',
+           'justify-content': justifyContent}" >
         <img   [src]="imgUrl"
              [ngStyle]="
              {'maxHeight': isMobile ? mobileHeight : maxHeight}"/>
@@ -58,6 +59,27 @@
 </div>
 
 
+<img src="../../../assets/images/home/animated-box/well.png" style="display: none;"
+     (load)="imgLoaded({
+  imgUrl: '../../../assets/images/home/animated-box/well.png',
+  background: '#262626',
+  maxHeight: '60%',
+  mobileHeight: '60%'})">
+
+<img src="../../../assets/images/home/animated-box/webBug.png" style="display: none;"
+     (load)="imgLoaded({
+  imgUrl: '../../../assets/images/home/animated-box/webBug.png',
+  background: '#323232',
+  maxHeight: '15%',
+  mobileHeight: '15%',
+  justifyContent: 'flex-end'})">
+<!---->
+<img src="../../../assets/images/home/animated-box/geomerty.png" style="display: none;"
+  (load)="imgLoaded({
+  imgUrl: '../../../assets/images/home/animated-box/geomerty.png',
+  background: '#efefef',
+  maxHeight: '60%',
+  mobileHeight: '60%'})">
 
 <img src="../../../assets/images/home/animated-box/posterchallange.jpg" style="display: none;"
      (load)="imgLoaded({
@@ -107,7 +129,7 @@
      maxHeight: '70%',
      mobileHeight: '70%'})">
 
-<img src="../../../assets/images/home/animated-box/stpatrick.jpg" style="display: none;"
+<img src="../../../assets/images/home/animated-box/stpatrick.png" style="display: none;"
      (load)="imgLoaded({
      imgUrl: '../../../assets/images/home/animated-box/stpatrick.png',
      background: '#eaeaea',

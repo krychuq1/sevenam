@@ -4,6 +4,9 @@
   position: absolute;
   width: 100%;
   z-index: 4;
+  &.is-active{
+    z-index: 999;
+  }
   .header{
     align-items: flex-end;
     justify-content: space-between;

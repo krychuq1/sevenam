@@ -44,18 +44,19 @@
       align-items: center;
       max-height: 0;
       opacity: 0;
-      transition: opacity .5s;
+      transition: opacity .5s, height 1s, width 1s;
+      height: 300px;
+
 
       img{
         max-height: 100%;
         max-width: 100%;
-        height: 300px;
       }
 
       &.show{
         max-height: 1400px;
         opacity: 1;
-        transition: opacity .8s;
+        transition: opacity .5s, height 1s, width 1s;
         //transition: opacity 1s ease-in-out;
       }
       &.hide{
@@ -66,15 +67,99 @@
 
       &.bookcover{
         background: #eeeeee;
+        img{
+          max-height: 70%;
+        }
       }
       &.posterchallange{
         background: #f57bae;
+        img{
+          max-height: 80%;
+        }
       }
-      &.pieceofplant{
+      &.pieceofplant {
         background: #fae4f9;
+        img{
+          max-height: 40%;
+        }
       }
-      &.otis{
+      &.otis {
         background: #dbdbdb;
+        img {
+          max-height: 60%;
+        }
+      }
+      &.booky {
+        background: #f2f2f2;
+        img{
+          max-height: 30%;
+        }
+      }
+      &.valentines {
+        background: #ededed;
+        img{
+          max-height: 80%;
+        }
+      }
+      &.letsgo{
+        background: #efefef;
+        img{
+          max-height: 50%;
+        }
+      }
+      &.bug{
+        background: #323232;
+        img {
+          max-height: 60%;
+        }
+
+      }
+      &.rowforwater{
+        background: #f4f4f4;
+        img{
+          max-height: 40%;
+        }
+      }
+      &.stpatrick{
+        background: #eaeaea;
+        img{
+          max-height: 60%;
+        }
+      }
+      &.esport{
+        background: #e8e8e8;
+        img {
+          max-height: 30%;
+        }
+      }
+      &.well{
+        background: #262626;
+
+      }
+      &.geometry{
+        background: #efefef;
+      }
+      &.webBug{
+        background: #323232;
+        justify-content: flex-end;
+
+        img {
+          max-height: 15%;
+        }
+      }
+      &.moha_visual{
+        background-size: contain;
+        background-image: url("../../../assets/images/home/animated-box/moha.jpg");
+        img{
+          max-height: 30%;
+        }
+
+      }
+      &.moha_logo{
+        background: #f9efdc;
+        img{
+          max-height: 30%;
+        }
       }
     }
   }
@@ -83,6 +168,8 @@
   .projects-holder{
     padding-top: 0;
     margin-top: 30px;
+    //overflow: hidden;
+
     ul{
       max-width: 400px;
       margin-top: -41px;
@@ -91,19 +178,55 @@
       padding-top: 60px;
       margin-bottom: 40px;
     }
+    .images-wrapper{
+      overflow: hidden;
+    }
     .image-holder{
       justify-content: flex-start;
       align-items: flex-start;
       flex-direction: row;
       flex-wrap: wrap;
+      width: calc(100vw + 12px);
 
       .image-container{
-        height: calc(50vh - 115px);
-        width: 33%;
+        height: calc(50vh - 35px);
+        width: calc(100vw/3);
         display: flex;
         justify-content: center;
         align-items: center;
 
+        &.posterchallange{
+          //&.hover{
+          //  width: 40%;
+          //  height: calc(70vh - 35px);
+          //  transition: opacity .5s, height 1s, width 1s;
+          //}
+        }
+        &.letsgo{
+          background: #efefef;
+
+          //&.hover{
+          //  height: calc(70vh - 35px);
+          //  width: 30%;
+          //}
+
+          img{
+            max-height: 50%;
+          }
+        }
+        &.moha_visual{
+          background-size: contain;
+
+          //&.hover{
+          //  height: calc(70vh - 35px);
+          //  width: 30%;
+          //}
+          background-image: url("../../../assets/images/home/animated-box/moha.jpg");
+          img{
+            max-height: 30%;
+          }
+
+        }
         img{
           max-width: 100%;
           max-height: 100%;
