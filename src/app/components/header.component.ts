@@ -29,6 +29,7 @@ export class HeaderComponent {
   public onNavigate(url){
     window.open(url, "_blank");
   }
+
   public homeLoader(){
     this.loadingService.homeLoader.subscribe(value => {
         this.isHomeLoaded = value;

@@ -1,5 +1,6 @@
-import {AfterViewInit, Component, ElementRef, HostListener} from '@angular/core';
+import {AfterViewInit, asNativeElements, Component, ElementRef, HostListener, Inject, ViewChild} from '@angular/core';
 import {LoadingService} from "../../services/loading.service";
+import {DOCUMENT} from "@angular/common";
 
 
 @Component({
@@ -9,6 +10,8 @@ import {LoadingService} from "../../services/loading.service";
 // animations: scrollUp
 
 export class ProjectsComponent  implements AfterViewInit{
+  @ViewChild('moha_logo_img') myId: ElementRef;
+
   filter: string;
   imgHolder: HTMLElement;
   imagesArray: Array<string>;
@@ -16,9 +19,11 @@ export class ProjectsComponent  implements AfterViewInit{
   isMobile: boolean;
   isLoading:boolean;
   projectHover: boolean;
+  defaultMaxHeight: object;
 
   // enableAnimation: boolean;
-  constructor( private loadingService: LoadingService, private elRef: ElementRef){
+  constructor( private loadingService: LoadingService, private elRef: ElementRef,
+               @Inject(DOCUMENT) document){
     this.imagesArray = [];
     this.filter = 'all';
     // this.loadingService.homeLoader.next(true);
@@ -26,7 +31,7 @@ export class ProjectsComponent  implements AfterViewInit{
     this.isLoading = true;
     this.isMobile = ((window.innerWidth) < 1024);
     this.projectHover = false;
-
+    this._defaultMaxHeight();
     this._checkDevice();
     // this.enableAnimation = true;
   }
@@ -34,6 +39,46 @@ export class ProjectsComponent  implements AfterViewInit{
   onResize(event?): void {
     this._checkDevice();
   }
+  private _defaultMaxHeight(){
+    this.defaultMaxHeight = {
+      //poster
+      posterchallange: {default: '85%', animate: '60%'},
+      //moha
+      mohaLogo: {default: '30%', animate: '20%'},
+      //esport
+      esport: {default: '15%', animate: '10%'},
+      //otis
+      otis: {default: '75%', animate: '50%'},
+      //well
+      well: {default: '60%', animate: '60%'},
+      //pieceofplant
+      pieceofplant: {default: '30%', animate: '20%'},
+      //bug
+      bug: {default: '40%', animate: '20%'},
+      //mohaVisual
+      mohaVisual: {default: '70%', animate: '45%'},
+      //rowforwater
+      rowforwater: {default: '30%', animate: '20%'},
+      //valentines
+      valentines: {default: '60%', animate: '40%'},
+      //webBug
+      webBug: {default: '15%', animate: '10%'},
+      //bookcover
+      bookcover: {default: '70%', animate: '50%'},
+    //let go
+      letsgo: {default: '50%', animate: '35%'},
+     //st patrick
+      stpatrick: {default: '60%', animate: '40%'},
+    //booky
+      booky: {default: '20%', animate: '15%'},
+    //geometry
+      geometry: {default: '62%', animate: '40%'},
+    //bookyWeb
+      bookyWeb: {default: '70%', animate: '50%'},
+    //leaf
+    leaf: {default: '45%', animate: '30%'},
+    };
+    }
   private _checkDevice() {
     const innerWidth = (window.innerWidth);
     //check if state is diff
@@ -67,6 +112,8 @@ export class ProjectsComponent  implements AfterViewInit{
     },500)
   }
   hover(className: string){
+    console.log('on hover', className);
+
     // this.projectHover = value;
     if(!this.projectHover &&  !this.isMobile) {
 
@@ -99,46 +146,37 @@ export class ProjectsComponent  implements AfterViewInit{
             switch (position){
               case 1:
                 if(myShown[indexPosition-1]){
-                    myShown[indexPosition-1].classList.add('customAnimation1');
-                    myShown[indexPosition-1].style.width = '30%';
-                    myShown[indexPosition-1].style.height = 'calc(70vh - 35px)';
+                  this.setStyleOnHover(myShown,indexPosition-1);
                 }
                 if(myShown[indexPosition-2]){
-                  myShown[indexPosition-2].classList.add('customAnimation1');
-                  myShown[indexPosition-2].style.width = '30%';
-                  myShown[indexPosition-2].style.height = 'calc(70vh - 35px)';
+                  this.setStyleOnHover(myShown,indexPosition-2);
+
                 }
                 break;
               case 0.67:
                 if(myShown[indexPosition-1]){
-                  myShown[indexPosition-1].classList.add('customAnimation1');
-                  myShown[indexPosition-1].style.width = '30%';
-                  myShown[indexPosition-1].style.height = 'calc(70vh - 35px)';
+                  this.setStyleOnHover(myShown,indexPosition-1);
+
                 }
                 if(myShown[indexPosition+1]){
-                  myShown[indexPosition+1].classList.add('customAnimation1');
-                  myShown[indexPosition+1].style.width = '30%';
-                  myShown[indexPosition+1].style.height = 'calc(70vh - 35px)';
+                  this.setStyleOnHover(myShown,indexPosition+1);
+
                 }
                 break;
               case 0.33:
                 if(myShown[indexPosition+2]){
-                  myShown[indexPosition+2].classList.add('customAnimation1');
-                  myShown[indexPosition+2].style.width = '30%';
-                  myShown[indexPosition+2].style.height = 'calc(70vh - 35px)';
+                  this.setStyleOnHover(myShown,indexPosition+2);
+
                 }
                 if(myShown[indexPosition+1]){
-                  myShown[indexPosition+1].classList.add('customAnimation1');
-                  myShown[indexPosition+1].style.width = '30%';
-                  myShown[indexPosition+1].style.height = 'calc(70vh - 35px)';
+                  this.setStyleOnHover(myShown,indexPosition+1);
+
                 }
 
 
             }
-
-
             myShown[b].style.width = '39%';
-            myShown[b].style.height = 'calc(70vh - 35px)';
+            myShown[b].style.height = 'calc(60vh - 35px)';
           }
           // else{
           //   myShown[b].classList.add('customAnimation1');
@@ -153,9 +191,20 @@ export class ProjectsComponent  implements AfterViewInit{
 
       // tempEl.style.width = '40%';
       // tempEl.style.height = 'calc(70vh - 35px)';
+
     }
   }
-  hoverLeave() {
+  setStyleOnHover(myShown, index){
+    let img = myShown[index].childNodes[0] as HTMLElement;
+      img.style.maxHeight = this.defaultMaxHeight[img.id].animate;
+      myShown[index].classList.add('customAnimation1');
+      myShown[index].style.width = '30%';
+      myShown[index].style.height = 'calc(60vh - 35px)';
+    // }
+
+
+  }
+  hoverLeave(classname: string) {
     let myEl: HTMLCollection;
     // get all of project images
     myEl = document.getElementsByClassName('image-container');
@@ -171,6 +220,11 @@ export class ProjectsComponent  implements AfterViewInit{
         }
         if (myEl[i].classList.contains('show') && myEl[i].classList.contains('customAnimation1')) {
           let tempEl = myEl[i] as HTMLElement;
+          let img = tempEl.childNodes[0] as HTMLElement;
+          let newHeight = this.defaultMaxHeight[img.id].default;
+
+          img.style.maxHeight = newHeight;
+          console.log('height on leaving', newHeight, i)
           tempEl.classList.remove('customAnimation1');
           tempEl.style.width = 'calc(100vw/3)';
           tempEl.style.height = 'calc(50vh - 35px)';
@@ -204,8 +258,21 @@ export class ProjectsComponent  implements AfterViewInit{
     }
   }
 
+  // setD
   ngAfterViewInit(): void {
+    setTimeout(()=>{
+
+    }, 9000);
+    // console.log(document.getElementById('moha_logo_img').style, '<--- img img ');
+    // console.log(
+    //   window.getComputedStyle(this.myId.nativeElement, null)
+    //     .getPropertyValue("max-height"));
+
+    // console.log(this.myId.nativeElement.getComputedStyle(), 'height');
+    // var myElement = angular.element( document.querySelector( '#some-id' ) );
+
     this.imgHolder = document.getElementById('image-holder');
-    console.log(this.imgHolder);
+    // console.log(this.imgHolder);
+
   }
 }

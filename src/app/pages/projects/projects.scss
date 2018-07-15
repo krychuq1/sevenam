@@ -49,6 +49,8 @@
 
 
       img{
+        transition: max-height 1s;
+
         max-height: 100%;
         max-width: 100%;
       }
@@ -74,19 +76,19 @@
       &.posterchallange{
         background: #f57bae;
         img{
-          max-height: 80%;
+          //max-height: 80%;
         }
       }
       &.pieceofplant {
         background: #fae4f9;
         img{
-          max-height: 40%;
+          //max-height: 40%;
         }
       }
       &.otis {
         background: #dbdbdb;
         img {
-          max-height: 60%;
+          //max-height: 60%;
         }
       }
       &.booky {
@@ -98,7 +100,7 @@
       &.valentines {
         background: #ededed;
         img{
-          max-height: 80%;
+          //max-height: 80%;
         }
       }
       &.letsgo{
@@ -110,14 +112,14 @@
       &.bug{
         background: #323232;
         img {
-          max-height: 60%;
+          //max-height: 60%;
         }
 
       }
       &.rowforwater{
         background: #f4f4f4;
         img{
-          max-height: 40%;
+          //max-height: 40%;
         }
       }
       &.stpatrick{
@@ -129,7 +131,7 @@
       &.esport{
         background: #e8e8e8;
         img {
-          max-height: 30%;
+          //max-height: 20%;
         }
       }
       &.well{
@@ -137,7 +139,10 @@
 
       }
       &.geometry{
-        background: #efefef;
+        background: #fffefb;
+        img{
+          //max-height: 62%;
+        }
       }
       &.webBug{
         background: #323232;
@@ -147,18 +152,32 @@
           max-height: 15%;
         }
       }
-      &.moha_visual{
+      &.mohaLogo{
         background-size: contain;
         background-image: url("../../../assets/images/home/animated-box/moha.jpg");
         img{
-          max-height: 30%;
+          //max-height: 30%;
         }
 
       }
-      &.moha_logo{
+      &.bookyWeb{
+        background: #e8e1da;
+        img{
+          //max-height: 70%;
+        }
+      }
+      &.mohaVisual{
         background: #f9efdc;
         img{
-          max-height: 30%;
+          margin-right: 50px;
+          //max-height: 70%;
+          margin-top: 40px;
+        }
+      }
+      &.leaf{
+        background: #fae4f9;
+        img{
+          //max-height: 52%;
         }
       }
     }
@@ -203,7 +222,7 @@
           //}
         }
         &.letsgo{
-          background: #efefef;
+          background: #fbfbfb;
 
           //&.hover{
           //  height: calc(70vh - 35px);
@@ -211,10 +230,10 @@
           //}
 
           img{
-            max-height: 50%;
+            max-height: 64%;
           }
         }
-        &.moha_visual{
+        &.mohaLogo{
           background-size: contain;
 
           //&.hover{
