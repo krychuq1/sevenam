@@ -52,24 +52,33 @@
              class="projectImage">
       </div>
 
-      <div class="image-container letsgo"
-           (mouseover)="hover('letsgo')"
+      <!--logo-->
+      <div class="image-container esport"
+           (mouseover)="hover('esport')"
            (mouseleave)="hoverLeave()"
-           [ngClass]="{'show' : (filter ==='print' || filter ==='all'),
-         'hide' : (filter !=='print' && filter !=='all'),
-         'hover': projectHover}">
-        <img src="../../../assets/images/home/animated-box/letsgo.png"
+           [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'">
+        <img src="../../../assets/images/home/animated-box/esport.png"
              class="projectImage">
       </div>
-      <div class="image-container moha_logo"
-           (mouseover)="hover('moha_logo')"
+
+      <!--print-->
+      <div class="image-container otis"
+           (mouseover)="hover('otis')"
            (mouseleave)="hoverLeave()"
-           [ngClass]="{'show' : (filter ==='logos' || filter ==='all'),
-         'hide' : (filter !=='logos' && filter !=='all'),
-         'hover': projectHover}">
-        <img src="../../../assets/images/home/animated-box/moha_logo.png"
+           [ngClass]="(filter ==='print' || filter ==='all') ? 'show' : 'hide'">
+        <img src="../../../assets/images/home/animated-box/otis.png"
              class="projectImage">
       </div>
+
+      <!--print-->
+      <div class="image-container well"
+           (mouseover)="hover('well')"
+           (mouseleave)="hoverLeave()"
+           [ngClass]="(filter ==='print' || filter ==='all') ? 'show' : 'hide'">
+        <img src="../../../assets/images/home/animated-box/well.png"
+             class="projectImage">
+      </div>
+
       <!--website-->
       <div class="image-container pieceofplant"
            (mouseover)="hover('pieceofplant')"
@@ -79,6 +88,26 @@
         <img src="../../../assets/images/home/animated-box/pieceofplant.png"
              class="projectImage">
       </div>
+
+      <!--logos-->
+      <div class="image-container bug"
+           (mouseover)="hover('bug')"
+           (mouseleave)="hoverLeave()"
+           [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'">
+        <img src="../../../assets/images/home/animated-box/bug.png"
+             class="projectImage">
+      </div>
+
+      <div class="image-container moha_logo"
+           (mouseover)="hover('moha_logo')"
+           (mouseleave)="hoverLeave()"
+           [ngClass]="{'show' : (filter ==='logos' || filter ==='all'),
+         'hide' : (filter !=='logos' && filter !=='all'),
+         'hover': projectHover}">
+        <img src="../../../assets/images/home/animated-box/moha_logo.png"
+             class="projectImage">
+      </div>
+
       <!--logos-->
       <div class="image-container rowforwater"
            (mouseover)="hover('rowforwater')"
@@ -95,12 +124,31 @@
         <img src="../../../assets/images/home/animated-box/valentines.png"
              class="projectImage">
       </div>
+
+      <div class="image-container webBug"
+           (mouseover)="hover('webBug')"
+           (mouseleave)="hoverLeave()"
+           [ngClass]="(filter ==='website' || filter ==='all') ? 'show' : 'hide'">
+        <img src="../../../assets/images/home/animated-box/webBug.png"
+             class="projectImage">
+      </div>
+
       <!--print-->
       <div class="image-container bookcover"
            (mouseover)="hover('bookcover')"
            (mouseleave)="hoverLeave()"
            [ngClass]="(filter ==='print' || filter ==='all') ? 'show' : 'hide'">
         <img src="../../../assets/images/home/animated-box/bookcover.png"
+             class="projectImage">
+      </div>
+
+      <div class="image-container letsgo"
+           (mouseover)="hover('letsgo')"
+           (mouseleave)="hoverLeave()"
+           [ngClass]="{'show' : (filter ==='print' || filter ==='all'),
+         'hide' : (filter !=='print' && filter !=='all'),
+         'hover': projectHover}">
+        <img src="../../../assets/images/home/animated-box/letsgo.png"
              class="projectImage">
       </div>
 
@@ -120,39 +168,7 @@
         <img src="../../../assets/images/home/animated-box/booky.png"
              class="projectImage">
       </div>
-      <!--logo-->
-      <div class="image-container esport"
-           (mouseover)="hover('esport')"
-           (mouseleave)="hoverLeave()"
-           [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'">
-        <img src="../../../assets/images/home/animated-box/esport.png"
-             class="projectImage">
-      </div>
-      <!--logos-->
-      <div class="image-container bug"
-           (mouseover)="hover('bug')"
-           (mouseleave)="hoverLeave()"
-           [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'">
-        <img src="../../../assets/images/home/animated-box/bug.png"
-             class="projectImage">
-      </div>
-      <!--print-->
-      <div class="image-container otis"
-           (mouseover)="hover('otis')"
-           (mouseleave)="hoverLeave()"
-           [ngClass]="(filter ==='print' || filter ==='all') ? 'show' : 'hide'">
-        <img src="../../../assets/images/home/animated-box/otis.png"
-             class="projectImage">
-      </div>
 
-      <!--print-->
-      <div class="image-container well"
-           (mouseover)="hover('well')"
-           (mouseleave)="hoverLeave()"
-           [ngClass]="(filter ==='print' || filter ==='all') ? 'show' : 'hide'">
-        <img src="../../../assets/images/home/animated-box/well.png"
-             class="projectImage">
-      </div>
       <!--print-->
       <div class="image-container geometry"
            (mouseover)="hover('geometry')"
@@ -161,13 +177,7 @@
         <img src="../../../assets/images/home/animated-box/geomerty.png"
              class="projectImage">
       </div>
-      <div class="image-container webBug"
-           (mouseover)="hover('webBug')"
-           (mouseleave)="hoverLeave()"
-           [ngClass]="(filter ==='website' || filter ==='all') ? 'show' : 'hide'">
-        <img src="../../../assets/images/home/animated-box/webBug.png"
-             class="projectImage">
-      </div>
+
 
     </div>
   </div>
