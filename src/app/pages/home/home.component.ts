@@ -10,6 +10,7 @@ import {fade} from "../../animations";
   styleUrls: ['./home.scss'],
   animations: fade
 
+
 })
 export class HomeComponent {
   navBurger:boolean;

@@ -12,8 +12,8 @@
   <div class="navigation" [ngClass]="navBurger ? 'is-active' : ''">
     <ul>
       <li routerLink="" (click)="openBurger()">{{content['home']}}</li>
-      <li routerLink="/projects" (click)="openBurger()">projects</li>
-      <li routerLink="/services" (click)="openBurger()">services</li>
+      <li routerLink="/projects" (click)="openBurger()">{{content['projects']}}</li>
+      <li routerLink="/services" (click)="openBurger()">{{content['services']}}</li>
       <li routerLink="/about-us" (click)="openBurger()">about</li>
       <li routerLink="/contact" (click)="openBurger()">contact</li>
     </ul>

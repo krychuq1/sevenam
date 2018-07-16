@@ -8,6 +8,7 @@ import {ContentService} from "../services/content.service";
   templateUrl: './header.html',
   styleUrls: ['./header.scss']
 })
+
 export class HeaderComponent {
   navBurger: boolean;
   isHomeLoaded: boolean;
