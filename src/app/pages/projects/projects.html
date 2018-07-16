@@ -2,12 +2,12 @@
   <span class="load" ></span>
   <p>loading</p>
 </div>
-<div class="projects-holder" *ngIf="!isLoading" >
+<div class="projects-holder" *ngIf="!isLoading && content">
   <!--<p (click)="setFilter('off')">fade out {{filter}}</p>-->
 
   <ul>
     <li class="nav" [ngClass]="{'pink' : filter ==='all'}"
-        (click)="setFilter('all')">all</li>
+        (click)="setFilter('all')">{{content['all']}}</li>
     <li>|</li>
     <li class="nav"  [ngClass]="{'pink' : filter ==='website'}"
         (click)="setFilter('website')">Website</li>

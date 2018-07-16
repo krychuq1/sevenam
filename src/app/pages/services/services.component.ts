@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {LoadingService} from "../../services/loading.service";
+import {ContentService} from "../../services/content.service";
 
 @Component({
   selector: 'services',
@@ -8,14 +9,27 @@ import {LoadingService} from "../../services/loading.service";
 })
 export class ServicesComponent {
   packages;
-  constructor(private loadingService: LoadingService){
+  contentUrl: string;
+  content: object;
+  constructor(private loadingService: LoadingService,
+              private contentService: ContentService){
     this.packages = {
       first: false,
       second: false,
       third: false
-    }
+    };
+    this.contentUrl = 'page/services/';
+    this.getContent();
     this.loadingService.homeLoader.next(true);
 
+  }
+  getContent() {
+    this.contentService.getContent(this.contentUrl).then((content) =>{
+      this.content = content;
+      console.log(this.content);
+    }, err => {
+      console.error(err);
+    });
   }
   setPackages(packageName){
     switch(packageName) {

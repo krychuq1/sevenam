@@ -1,6 +1,7 @@
 import {AfterViewInit, asNativeElements, Component, ElementRef, HostListener, Inject, ViewChild} from '@angular/core';
 import {LoadingService} from "../../services/loading.service";
 import {DOCUMENT} from "@angular/common";
+import {ContentService} from "../../services/content.service";
 
 
 @Component({
@@ -20,10 +21,11 @@ export class ProjectsComponent  implements AfterViewInit{
   isLoading:boolean;
   projectHover: boolean;
   defaultMaxHeight: object;
-
+  contentUrl: string;
+  content: object;
   // enableAnimation: boolean;
   constructor( private loadingService: LoadingService, private elRef: ElementRef,
-               @Inject(DOCUMENT) document){
+               @Inject(DOCUMENT) document, private contentService: ContentService){
     this.imagesArray = [];
     this.filter = 'all';
     // this.loadingService.homeLoader.next(true);
@@ -33,11 +35,21 @@ export class ProjectsComponent  implements AfterViewInit{
     this.projectHover = false;
     this._defaultMaxHeight();
     this._checkDevice();
+    this.contentUrl = 'page/projects/';
+    this.getContent();
     // this.enableAnimation = true;
   }
   @HostListener('window:resize', ['$event'])
   onResize(event?): void {
     this._checkDevice();
+  }
+  getContent() {
+    this.contentService.getContent(this.contentUrl).then((content) =>{
+      this.content = content;
+      console.log(this.content);
+    }, err => {
+      console.error(err);
+    });
   }
   private _defaultMaxHeight(){
     this.defaultMaxHeight = {

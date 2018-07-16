@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {LoadingService} from "../../services/loading.service";
 import {MailerService} from "../../services/mailer.service";
+import {ContentService} from "../../services/content.service";
 
 @Component({
   selector: 'contact',
@@ -17,15 +18,27 @@ export class ContactComponent {
   isProcessing: boolean;
   isSent : boolean;
   isError: boolean;
+  contentUrl: string;
+  content: object;
   constructor(private formBuilder : FormBuilder, private loadingService: LoadingService,
-              private mailerService: MailerService){
+              private mailerService: MailerService, private contentService: ContentService){
     this.buildForm();
     this.loadingService.homeLoader.next(true);
+    this.contentUrl = 'page/contact/';
+    this.getContent();
+
     // this.isError = true;
     // this.isProcessing = false;
 
   }
-
+  getContent() {
+    this.contentService.getContent(this.contentUrl).then((content) =>{
+      this.content = content;
+      console.log(this.content);
+    }, err => {
+      console.error(err);
+    });
+  }
   private buildForm(){
     this.contactForm = this.formBuilder.group({
       name  : this.formBuilder.control(null, [Validators.required, Validators.minLength(3)]),

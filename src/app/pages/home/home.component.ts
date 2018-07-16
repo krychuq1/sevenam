@@ -3,6 +3,7 @@ import {BurgerService} from "../../services/burger.service";
 import {HttpClient} from "@angular/common/http";
 import {LoadingService} from "../../services/loading.service";
 import {fade} from "../../animations";
+import {ContentService} from "../../services/content.service";
 
 @Component({
   selector: 'home',
@@ -28,14 +29,18 @@ export class HomeComponent {
   homeHover: boolean;
   animationBoxHover: boolean;
   servicesHover: boolean;
+  contentUrl: string;
+  content: object;
   constructor(private burgerService: BurgerService, private http: HttpClient,
-              private loadingService: LoadingService){
+              private loadingService: LoadingService, private contentService: ContentService){
     this.isLoading = true;
     this.homeHover = false;
     this.subscribe();
     this.urlArray = [];
     this.counter = 1;
     this._checkDevice();
+    this.contentUrl = 'page/home/';
+    this.getContent();
 
     // this.animationBoxHover = true;
   }
@@ -43,6 +48,15 @@ export class HomeComponent {
   onResize(event?): void {
     this._checkDevice();
   }
+  getContent() {
+    this.contentService.getContent(this.contentUrl).then((content) =>{
+      this.content = content;
+      console.log(this.content);
+    }, err => {
+      console.error(err);
+    });
+  }
+
   private _checkDevice() {
     const innerWidth = (window.innerWidth);
     this.isMobile = (innerWidth < 1024);

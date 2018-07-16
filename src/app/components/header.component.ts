@@ -20,12 +20,7 @@ export class HeaderComponent {
     this.navBurger = false;
     this.isHomeLoaded = false;
     this.homeLoader();
-    this.contentService.getContent(this.contentUrl).then((content) =>{
-      this.content = content;
-      console.log(this.content);
-    }, err => {
-      console.error(err);
-    });
+    this.getContent();
   }
 
 
@@ -48,6 +43,14 @@ export class HeaderComponent {
     this.loadingService.homeLoader.subscribe(value => {
         this.isHomeLoaded = value;
     })
+  }
+  getContent() {
+    this.contentService.getContent(this.contentUrl).then((content) =>{
+      this.content = content;
+      console.log(this.content);
+    }, err => {
+      console.error(err);
+    });
   }
 
 

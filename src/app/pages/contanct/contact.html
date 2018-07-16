@@ -1,4 +1,4 @@
-<div class="contact-holder">
+<div class="contact-holder" *ngIf="content">
   <div class="contact" [ngClass]="{'processing': isProcessing}">
     <img src="../../../assets/images/contact/spinacz_one.png" class="spinacz one">
     <img src="../../../assets/images/contact/spinacz_two.png" class="spinacz two">
@@ -9,7 +9,7 @@
         <div class="spinner spinner-contact" *ngIf="isProcessing"></div>
 
         <div *ngIf="!isProcessing && !isSent && !isError" class="text-holder">
-          <h1>Say Hello!</h1>
+          <h1>{{content['hello']}}</h1>
           <h3>For business and coffee, please ask here:</h3>
         </div>
 

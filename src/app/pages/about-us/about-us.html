@@ -1,5 +1,5 @@
-<div class="about-us-holder">
-  <h3>About us</h3>
+<div class="about-us-holder" *ngIf="content">
+  <h3>{{content['title']}}</h3>
   <p>We are an independent design studio, working remotely worldwide.
     We are on a mission to ensure that every customer using
     our services will receive a meaningful experience and high

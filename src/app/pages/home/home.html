@@ -4,7 +4,7 @@
   <p>loading</p>
 </div>
 
-<div class="home-holder" *ngIf="!navBurger && !isLoading">
+<div class="home-holder" *ngIf="!navBurger && !isLoading && content">
   <!--about section-->
   <!-- [ngStyle]="{'background-image': 'url(../../../assets/images/home/VIDEO.png)'}"-->
   <div class="section home"
@@ -14,7 +14,7 @@
         [ngClass]="{'hover' : homeHover, 'hoverRight': animationBoxHover, 'hoverServices': servicesHover}">
     <img src="../../../assets/images/home/VIDEO.png" class="video">
     <div class="footer" routerLink="about-us">
-      <p>about us</p>
+      <p>{{content['aboutUs']}}</p>
       <img src="../../../assets/images/home/light-arrow.png">
     </div>
   </div>
