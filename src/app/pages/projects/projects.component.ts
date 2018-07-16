@@ -224,7 +224,7 @@ export class ProjectsComponent  implements AfterViewInit{
           let newHeight = this.defaultMaxHeight[img.id].default;
 
           img.style.maxHeight = newHeight;
-          console.log('height on leaving', newHeight, i)
+          console.log('height on leaving', newHeight, i);
           tempEl.classList.remove('customAnimation1');
           tempEl.style.width = 'calc(100vw/3)';
           tempEl.style.height = 'calc(50vh - 35px)';
@@ -234,7 +234,6 @@ export class ProjectsComponent  implements AfterViewInit{
       this.projectHover = false;
 
     }
-
 
   }
 

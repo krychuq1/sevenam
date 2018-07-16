@@ -83,7 +83,7 @@ export class HomeComponent {
       if(this.urlArray[0]['justifyContent']){
       }
       this.justifyContent = this.urlArray[0]['justifyContent'] ? this.urlArray[0]['justifyContent']  : 'center';
-      console.log(this.backgroundImageCustom);
+      // console.log(this.backgroundImageCustom);
       this.isLoading = false;
       this.loadingService.homeLoader.next(true);
       setInterval(()=>{
