@@ -11,6 +11,7 @@ import {ContentService} from "../../services/content.service";
   styleUrls: ['./home.scss'],
   animations: fade
 
+
 })
 export class HomeComponent {
   navBurger:boolean;
