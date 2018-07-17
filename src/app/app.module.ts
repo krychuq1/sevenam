@@ -17,6 +17,7 @@ import {LoadingService} from "./services/loading.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MailerService} from "./services/mailer.service";
 import {ContentService} from "./services/content.service";
+import {SingleProjectComponent} from "./pages/single-project/single-project.component";
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import {ContentService} from "./services/content.service";
     AboutUsComponent,
     ServicesComponent,
     ProjectsComponent,
+    SingleProjectComponent,
     Autosize
   ],
   providers: [BurgerService, LoadingService, MailerService, ContentService],

@@ -57,6 +57,10 @@ export class HomeComponent {
       console.error(err);
     });
   }
+  public setLanguage(lan: string){
+    localStorage.setItem('lan', lan);
+    this.getContent();
+    }
 
   private _checkDevice() {
     const innerWidth = (window.innerWidth);

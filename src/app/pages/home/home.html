@@ -4,6 +4,10 @@
   <p>loading</p>
 </div>
 
+<div class="languages">
+  <p (click)="setLanguage('en')">en</p> | <p (click)="setLanguage('pl')">pl</p>
+</div>
+
 <div class="home-holder" *ngIf="!navBurger && !isLoading && content">
   <!--about section-->
   <!-- [ngStyle]="{'background-image': 'url(../../../assets/images/home/VIDEO.png)'}"-->
@@ -12,6 +16,7 @@
        (mouseleave)="homeHover = false"
        routerLink="about-us"
         [ngClass]="{'hover' : homeHover, 'hoverRight': animationBoxHover, 'hoverServices': servicesHover}">
+
     <img src="../../../assets/images/home/VIDEO.png" class="video">
     <div class="footer" routerLink="about-us">
       <p>{{content['aboutUs']}}</p>

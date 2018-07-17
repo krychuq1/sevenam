@@ -18,7 +18,13 @@ export class AppComponent implements OnInit {
   imgSrc1 = 'https://img-0.journaldunet.com/fHxo62BTNKztTbwMO8DHZ06ou10=/1280x/smart/3834e8aee43e4ba58e7e05219842cb7b/ccmcms-jdn/10226772.png';
   imgSrc2 = 'https://phototrend.fr/wp-content/uploads/2016/03/affinity-on-windows.jpg';
   constructor(private router: Router) {
-    localStorage.setItem('lan', 'pl');
+    const lan = navigator.language ||navigator['userLanguage'];
+    if(lan === 'pl'){
+      localStorage.setItem('lan', 'pl');
+    }else{
+      localStorage.setItem('lan', 'en');
+
+    }
 
   }
   ngOnInit() {

@@ -73,7 +73,8 @@
       <div class="image-container otis"
            (mouseover)="hover('otis')"
            (mouseleave)="hoverLeave('otis')"
-           [ngClass]="(filter ==='print' || filter ==='all') ? 'show' : 'hide'">
+           [ngClass]="(filter ==='print' || filter ==='all') ? 'show' : 'hide'"
+           [routerLink]="['otis']">
         <img src="../../../assets/images/home/animated-box/otis.png"
              class="projectImage"
              [ngStyle]="{'maxHeight': defaultMaxHeight['otis'].default}"
