@@ -9,6 +9,7 @@ import {ContentService} from "../services/content.service";
   styleUrls: ['./header.scss']
 })
 
+
 export class HeaderComponent {
   navBurger: boolean;
   isHomeLoaded: boolean;

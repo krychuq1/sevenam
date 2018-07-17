@@ -10,24 +10,24 @@
 
         <div *ngIf="!isProcessing && !isSent && !isError" class="text-holder">
           <h1>{{content['hello']}}</h1>
-          <h3>For business and coffee, please ask here:</h3>
+          <h3>{{content['businessandcoffee']}}</h3>
         </div>
 
         <div *ngIf="!isProcessing && isError" class="text-holder error">
-          <h1>Ups, something went wrong!</h1>
-          <h3>Please try again
-            <span class="bold pink" (click)="reset()">here</span> or on our
-            <span class="bold pink" (click)="openChat()">chat.</span></h3>
+          <h1>{{content['ups']}}</h1>
+          <h3>{{content['tryagain']}}
+            <span class="bold pink" (click)="reset()">{{content['here']}}</span>{{content['or on our']}}
+            <span class="bold pink" (click)="openChat()">{{content['chat.']}}</span></h3>
         </div>
 
         <div *ngIf="!isProcessing && isSent" class="confirm">
-          <h1>Thank you!</h1>
-          <h3>We will get back to you as soon as possible </h3>
-          <h3>Want more? Check out our
+          <h1>{{content['thankyou']}}</h1>
+          <h3>{{content['getbackasap']}}</h3>
+          <h3>{{content['more']}}
             <span class="bold pink"
-                  (click)="onNavigate('https://www.facebook.com/sevenamstudio/')">Facebook</span>
+                  (click)="onNavigate('https://www.facebook.com/sevenamstudio/')">{{content['Facebook']}}</span>
             <span class="bold pink"
-                  (click)="onNavigate('https://www.instagram.com/sevenamstudio/')"> & Instagram.</span></h3>
+                  (click)="onNavigate('https://www.instagram.com/sevenamstudio/')">{{content['insta']}} </span></h3>
 
         </div>
 
@@ -36,24 +36,24 @@
               <input formControlName="name" type="text" placeholder="name"
                      [class.input-error]="nameControl.errors && nameControl.touched">
               <div *ngIf="nameControl.errors && nameControl.touched">
-                <p *ngIf="nameControl.errors.required">name is required</p>
-                <p *ngIf="nameControl.errors.minlength">Name should be at least
-                  {{nameControl.errors.minlength.requiredLength}} characters.</p>
+                <p *ngIf="nameControl.errors.required">{{content['name']}}</p>
+                <p *ngIf="nameControl.errors.minlength">{{content['name-number']}}
+                  {{nameControl.errors.minlength.requiredLength}} {{content['characters.']}} </p>
               </div>
               <input formControlName="email" class="mail" type="email" placeholder="email">
               <div *ngIf="emailControl.errors && emailControl.touched">
-                <p *ngIf="emailControl.errors.required">Email is required.</p>
-                <p *ngIf="emailControl.errors.pattern">Please insert correct email.</p>
+                <p *ngIf="emailControl.errors.required">{{content['email']}}</p>
+                <p *ngIf="emailControl.errors.pattern">{{content['email-correct']}}</p>
               </div>
               <textarea formControlName="message" autosize
                         rows="1" type="text" placeholder="message">
           </textarea>
               <div *ngIf="messageControl.errors && messageControl.touched">
-                <p *ngIf="messageControl.errors.required">Message is required.</p>
-                <p *ngIf="messageControl.errors.minlength">Message should be at least
-                  {{messageControl.errors.minlength.requiredLength}} characters.</p>
+                <p *ngIf="messageControl.errors.required">{{content['message']}}</p>
+                <p *ngIf="messageControl.errors.minlength">{{content['message-number']}}
+                  {{messageControl.errors.minlength.requiredLength}} {{content['characters-two']}}</p>
               </div>
-              <button type="submit" class="button" >send</button>
+              <button type="submit" class="button" >{{content['send']}}</button>
               <!--[disabled]="!contactForm.valid"-->
             </form>
           </div>
@@ -61,9 +61,9 @@
       <div class="contact-footer" [ngClass]="{'isSent' : isSent || isError, 'processing': isProcessing}">
         <div class="contact-footer-inner">
           <h1>Info</h1>
-          <p class="bold amparagraph">Sevenam design studio</p>
-          <p>Telephone: <span class="bold">91 82 78 16, 52 22 00 49</span></p>
-          <p>Email: <span class="bold">info@sevenamstudio.com</span></p>
+          <p class="bold amparagraph">{{content['sevenam']}}</p>
+          <p> {{content['Telephone:']}}<span class="bold">{{content['phone']}}</span></p>
+          <p>{{content['Email:']}} <span class="bold">{{content['our-email']}}</span></p>
           <!--image holder-->
           <div class="contact--footer--text--socialMedia">
             <a  target="_blank" href="https://www.facebook.com/sevenamstudio" class="logo-margin">

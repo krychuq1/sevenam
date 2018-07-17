@@ -10,19 +10,19 @@
         (click)="setFilter('all')">{{content['all']}}</li>
     <li>|</li>
     <li class="nav"  [ngClass]="{'pink' : filter ==='website'}"
-        (click)="setFilter('website')">Website</li>
+        (click)="setFilter('website')">{{content['Website']}}</li>
     <li>|</li>
     <li class="nav"  [ngClass]="{'pink' : filter ==='visual'}"
-        (click)="setFilter('visual')">Visual identity</li>
+        (click)="setFilter('visual')">{{content['Visual identity']}}</li>
     <li>|</li>
     <li class="nav" [ngClass]="{'pink' : filter ==='logos'}"
-        (click)="setFilter('logos')">logos</li>
+        (click)="setFilter('logos')">{{content['logos']}}</li>
     <li>|</li>
     <li class="nav"  [ngClass]="{'pink' : filter ==='print'}"
-        (click)="setFilter('print')">Print</li>
+        (click)="setFilter('print')">{{content['Print']}}</li>
     <li>|</li>
     <li class="nav"  [ngClass]="{'pink' : filter ==='games'}"
-        (click)="setFilter('games')">Games</li>
+        (click)="setFilter('games')">{{content['Games']}}</li>
   </ul>
   <div class="images-wrapper">
     <div class="image-holder" id="image-holder">
