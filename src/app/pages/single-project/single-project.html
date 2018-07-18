@@ -1,1 +1,10 @@
-<h1>Sinle project</h1>
+<div class="single-project" *ngIf="isLoaded">
+  <div class="text">
+    <h1>{{content[key+'Title']}}</h1>
+    <h3>{{content[key+'Des']}}</h3>
+  </div>
+
+  <img [src]="imgSrc" alt="project_images">
+
+
+</div>

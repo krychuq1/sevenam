@@ -12,17 +12,21 @@ export class SingleProjectComponent implements OnInit{
   contentUrl: string;
   content: object;
   projectName: string;
+  key: string;
+  isLoaded: boolean;
+  imgSrc: string;
   constructor(private contentService: ContentService,
               private loadingService: LoadingService,
               private activatedRoute: ActivatedRoute){
+    this.isLoaded = false;
     this.contentUrl = 'page/single-project/';
     this.getContent();
-
   }
+
   getContent() {
     this.contentService.getContent(this.contentUrl).then((content) =>{
+
       this.content = content;
-      console.log(this.content);
     }, err => {
       console.error(err);
     });
@@ -31,10 +35,19 @@ export class SingleProjectComponent implements OnInit{
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params =>{
       this.projectName = params.projectName;
-      console.log(this.projectName);
-      this.loadingService.homeLoader.next(true);
+      this.key = this.paramToCamelCase(this.projectName);
+      var img = new Image();
+      this.imgSrc = '../assets/images/projects/'+ this.key +'.jpg';
+      img.src = this.imgSrc;
+      img.onload = () => {
+        this.isLoaded = true;
+        this.loadingService.homeLoader.next(true);
 
+      };
     });
+  }
+  paramToCamelCase(param: string): string {
+    return param.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
   }
 
 }

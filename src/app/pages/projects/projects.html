@@ -120,7 +120,8 @@
       <div class="image-container mohaVisual"
            (mouseover)="hover('mohaVisual')"
            (mouseleave)="hoverLeave('mohaVisual')"
-           [ngClass]="(filter ==='visual' || filter ==='all') ? 'show' : 'hide'">
+           [ngClass]="(filter ==='visual' || filter ==='all') ? 'show' : 'hide'"
+           [routerLink]="['moha-visual-identity']">
         <img src="../../../assets/images/home/animated-box/moha_vi.png"
              class="projectImage"
              [ngStyle]="{'maxHeight': defaultMaxHeight['mohaVisual'].default}"
