@@ -31,7 +31,6 @@ export class SingleProjectComponent implements OnInit{
       console.error(err);
     });
   }
-
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params =>{
       this.projectName = params.projectName;
