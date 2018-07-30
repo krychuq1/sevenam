@@ -35,6 +35,7 @@
       <div class="image-container posterchallange"
            (mouseover)="hover('posterchallange')"
            (mouseleave)="hoverLeave('posterchallange')"
+           [routerLink]="['summerPosters']"
            [ngClass]="{'show' : (filter ==='print' || filter ==='all'),
          'hide' : (filter !=='print' && filter !=='all'),
          'hover': projectHover}">

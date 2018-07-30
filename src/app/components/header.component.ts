@@ -53,6 +53,4 @@ export class HeaderComponent {
       console.error(err);
     });
   }
-
-
 }
