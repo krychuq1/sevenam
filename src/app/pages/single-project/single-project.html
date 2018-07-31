@@ -1,9 +1,9 @@
-<div class="single-project" *ngIf="isLoaded">
+<div class="single-project">
   <div class="text">
     <h1>{{content[key+'Title']}}</h1>
     <h3>{{content[key+'Des']}}</h3>
   </div>
-  <div>
+  <div id="singleImgHolder" class="singleImgHolder">
     <img [src]="imgSrc" alt="project_images">
 
   </div>

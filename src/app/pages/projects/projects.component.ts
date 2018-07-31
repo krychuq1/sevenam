@@ -93,7 +93,7 @@ export class ProjectsComponent  implements AfterViewInit{
     }
   private _checkDevice() {
     const innerWidth = (window.innerWidth);
-    //check if state is diff
+    // check if state is diff
     let tempState = (innerWidth < 1024);
     if(this.isMobile != tempState) {
       this.isMobile = (innerWidth < 1024);
@@ -271,7 +271,7 @@ export class ProjectsComponent  implements AfterViewInit{
 
   // setD
   ngAfterViewInit(): void {
-    setTimeout(()=>{
+    setTimeout(() => {
 
     }, 9000);
     // console.log(document.getElementById('moha_logo_img').style, '<--- img img ');
