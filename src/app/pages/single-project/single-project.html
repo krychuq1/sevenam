@@ -1,11 +1,19 @@
+<div class="container-loading" *ngIf="!isLoaded">
+  <span class="load" ></span>
+  <p>loading</p>
+</div>
+
 <div class="single-project">
-  <div class="text">
+  <div class="text" *ngIf="isLoaded">
     <h1>{{content[key+'Title']}}</h1>
     <h3>{{content[key+'Des']}}</h3>
   </div>
   <div id="singleImgHolder" class="singleImgHolder">
-    <img [src]="imgSrc" alt="project_images">
-
+    <img [src]="imgSrc" alt="project_images" *ngIf="isLoaded">
+  </div>
+  <div class="footer" *ngIf="isLoaded">
+    <p routerLink="../../projects">{{content['goBack']}}</p>
+    <img src="../../../assets/images/home/arrow.png" class="singleArrow">
   </div>
 
 

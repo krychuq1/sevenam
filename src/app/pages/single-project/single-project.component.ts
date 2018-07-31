@@ -25,7 +25,6 @@ export class SingleProjectComponent implements OnInit {
     this.contentUrl = 'page/single-project/';
     this.getContent();
   }
-
   getContent() {
     this.contentService.getContent(this.contentUrl).then((content) =>{
 
@@ -61,21 +60,27 @@ export class SingleProjectComponent implements OnInit {
   setBackground(projectName: string): void {
     switch (projectName) {
       case 'mohaLogo':
-        this.imgHolder.style.backgroundColor = '#f9efdc';
+        this.setStyle('#f9efdc');
         break;
       case 'esportLogo':
-        this.imgHolder.style.backgroundColor = '#f4f4f4';
+        this.setStyle('#f4f4f4');
         break;
       case 'rowForWaterLogo':
-        this.imgHolder.style.backgroundColor = '#f4f4f4';
+        this.setStyle('#f4f4f4');
         break;
       case 'theBugLogo':
-        this.imgHolder.style.backgroundColor = '#323232';
+        this.setStyle('#323232');
         break;
       case 'bookyLogo':
-        this.imgHolder.style.backgroundColor = '#f4f4f4';
+        this.setStyle('#f4f4f4');
         break;
     }
+
+  }
+  setStyle(backgroundColor: string) {
+    this.imgHolder.style.backgroundColor = backgroundColor;
+    this.imgHolder.style.padding = '30px';
+
   }
 
   paramToCamelCase(param: string): string {
