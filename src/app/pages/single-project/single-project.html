@@ -13,7 +13,7 @@
   </div>
   <div class="footer" *ngIf="isLoaded">
     <p routerLink="../../projects">{{content['goBack']}}</p>
-    <img src="../../../assets/images/home/arrow.png" class="singleArrow">
+    <img src="../../../assets/images/home/arrow.png" class="singleArrow" *ngIf="isScroll" (click)="scrollToTop()">
   </div>
 
 

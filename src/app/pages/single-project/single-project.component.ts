@@ -17,11 +17,13 @@ export class SingleProjectComponent implements OnInit {
   isLoaded: boolean;
   imgSrc: string;
   imgHolder: HTMLElement;
+  isScroll: boolean;
   constructor(private contentService: ContentService,
               private loadingService: LoadingService,
               private activatedRoute: ActivatedRoute,
               @Inject(DOCUMENT) document) {
     this.isLoaded = false;
+    this.isScroll = false;
     this.contentUrl = 'page/single-project/';
     this.getContent();
   }
@@ -49,6 +51,10 @@ export class SingleProjectComponent implements OnInit {
       img.onload = () => {
         this.isLoaded = true;
         this.loadingService.homeLoader.next(true);
+        setTimeout(() => {
+          this.isScroll = window.innerWidth > document.documentElement.clientWidth;
+        }, 1000);
+
 
       };
       img.onerror = () => {
@@ -85,6 +91,9 @@ export class SingleProjectComponent implements OnInit {
 
   paramToCamelCase(param: string): string {
     return param.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
+  }
+  scrollToTop(): void{
+    window.scrollTo({ left: 0, top: 0, behavior: 'smooth' });
   }
 
 }

@@ -13,19 +13,25 @@
     flex: 1;
   }
   .footer{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 40px 0;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
     p{
       cursor: pointer;
     }
   }
   .singleArrow{
     position: absolute;
-    right: 90px;
+    right: 30px;
     transform: rotate(270deg);
     cursor: pointer;
+    bottom: 140px;
+
   }
   .text{
     padding: 0 30px;
