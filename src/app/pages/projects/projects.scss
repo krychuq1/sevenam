@@ -21,7 +21,7 @@
     list-style: none;
     display: flex;
     justify-content: space-between;
-    font-size: 0.60rem;
+    font-size: 0.50rem;
     padding: 0 $wrapper;
     li{
       z-index: 6;
@@ -184,6 +184,14 @@
     }
   }
 }
+// only small for iphone 5
+@media (max-width: 22em) {
+  .projects-holder {
+    ul{
+      font-size: 0.4rem;
+    }
+  }
+}
 @include breakpoint(laptop) {
   .projects-holder{
     padding-top: 0;
@@ -191,7 +199,7 @@
     //overflow: hidden;
 
     ul{
-      max-width: 400px;
+      max-width: 480px;
       margin-top: -41px;
       margin-left: 110px;
       font-size: 0.75rem;

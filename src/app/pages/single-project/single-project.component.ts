@@ -80,15 +80,46 @@ export class SingleProjectComponent implements OnInit {
       case 'bookyLogo':
         this.setStyle('#f4f4f4');
         break;
+      case 'stPatrickGame':
+        this.setStyle('#eaeaea');
+        break;
+      case 'geometryPosters':
+        this.setStyle('#232323');
+        break;
+      case 'pieceOfPlantLogo':
+        this.setStyle('#efefef');
+        break;
+      case 'mohaVisualIdentity':
+        this.setStyle('#faefdd');
+        break;
+      case 'theBugWebsite':
+        this.setStyle('#e2e2e2');
+        break;
+      case 'bookyWebApp':
+        this.setStyle('#eaeaea');
+        break;
+      case 'bookCover':
+        this.setStyle('#efefef');
+        break;
+      case 'valentinesBoo':
+        this.setStyle('#f4c5dd');
+        break;
+      case 'sketchPosters':
+        this.setStyle('#e6e6e8');
+        break;
+      case 'otisBook':
+        this.setStyle('#dadada');
+        break;
+      case 'beforeYouSayAnythingPosters':
+        this.setStyle('#eaeaea');
+        break;
     }
 
   }
   setStyle(backgroundColor: string) {
     this.imgHolder.style.backgroundColor = backgroundColor;
     this.imgHolder.style.padding = '30px';
-
   }
-
   paramToCamelCase(param: string): string {
     return param.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
   }

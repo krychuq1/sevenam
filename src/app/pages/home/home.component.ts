@@ -58,7 +58,7 @@ export class HomeComponent {
     });
   }
   public setLanguage(lan: string){
-    localStorage.setItem('lan', lan);
+    localStorage.setItem('lan', 'dk');
     this.getContent();
     }
 

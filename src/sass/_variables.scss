@@ -25,6 +25,5 @@ $desktop: 1240px;
   }
   @else if $point == mobileonly {
     @media (max-width: 37.5em)  { @content ; }
-
   }
 }
