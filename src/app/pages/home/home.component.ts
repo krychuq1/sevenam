@@ -58,10 +58,9 @@ export class HomeComponent {
     });
   }
   public setLanguage(lan: string){
-    localStorage.setItem('lan', 'dk');
+    localStorage.setItem('lan', lan);
     this.getContent();
     }
-
   private _checkDevice() {
     const innerWidth = (window.innerWidth);
     this.isMobile = (innerWidth < 1024);

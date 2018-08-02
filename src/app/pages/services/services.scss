@@ -4,6 +4,7 @@
   background: $yellow-color;
   position: relative;
   overflow-x: hidden;
+  min-height: calc(100vh - 400px);
   .img-holder{
     display: flex;
     justify-content: flex-end;
@@ -28,6 +29,39 @@
         max-height: 700px;
       }
 
+    }
+  }
+}
+@include breakpoint(laptop) {
+  .services-holder{
+    display: flex;
+    //align-items: center;
+    justify-content: center;
+    padding-bottom: 0;
+    padding-top: 40px;
+    min-height: calc(100vh - 40px);
+    .services{
+      display: flex;
+      max-width: 1000px;
+
+    }
+    .services-holder-inner{
+      h1{
+        color: $header-color;
+        text-transform: uppercase;
+      }
+      padding-top: 80px;
+      padding-right: 130px;
+      align-self: flex-start;
+    }
+
+    .img-holder{
+      position: static;
+      align-self: flex-end;
+      img{
+        max-width: 130%;
+        height: auto;
+      }
     }
   }
 }
