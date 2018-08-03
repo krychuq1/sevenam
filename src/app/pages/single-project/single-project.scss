@@ -52,12 +52,35 @@
     max-width: 100%;
     max-height: 100%;
     margin: 0 auto;
+    &.mohaLogo {
+      max-width: 250px;
+    }
+    &.esportLogo{
+      max-width: 285px;
+    }
+    &.pieceOfPlantLogo{
+      max-width: 140px;
+    }
+    &.theBugLogo{
+      max-width: 100px;
+    }
+    &.rowForWaterLogo{
+      max-width: 120px;
+    }
+    &.bookyLogo{
+      max-width: 150px;
+
+    }
   }
 }
+
 @include breakpoint(laptop) {
   .single-project{
     .text{
       //padding: 0 30px 30px 30px;
+    }
+    .singleImgHolder{
+      min-height: 400px;
     }
     h1{
       margin-top: 0;
@@ -70,6 +93,32 @@
       font-weight: normal;
     }
     img{
+      &.otisBook{
+        max-width: 950px;
+      }
+      &.mohaLogo {
+        max-width: 333px;
+      }
+      &.pieceOfPlantLogo{
+        max-width: 260px;
+      }
+      &.theBugLogo{
+        max-width: 149px;
+      }
+      &.rowForWaterLogo{
+        max-width: 200px;
+      }
+      &.theBugWebsite{
+        max-width: 950px;
+      }
+      &.bookCover{
+        max-width: 600px;
+      }
+      &.bookyLogo{
+        max-width: 260px;
+      }
+
+
       max-width: 800px;
     }
   }

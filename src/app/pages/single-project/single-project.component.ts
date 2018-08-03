@@ -37,6 +37,7 @@ export class SingleProjectComponent implements OnInit {
   }
   ngOnInit(): void {
     this.imgHolder = document.getElementById('singleImgHolder');
+    console.log(this.imgHolder.childNodes)
     // mohaLogo #f9efdc
     this.activatedRoute.params.subscribe(params => {
       console.log(this.imgHolder, document.getElementById('singleImgHolder'),
@@ -89,6 +90,9 @@ export class SingleProjectComponent implements OnInit {
       case 'pieceOfPlantLogo':
         this.setStyle('#efefef');
         break;
+      case 'pieceOfPlantWeb':
+        this.setStyle('#efefef');
+        break;
       case 'mohaVisualIdentity':
         this.setStyle('#faefdd');
         break;
@@ -96,7 +100,7 @@ export class SingleProjectComponent implements OnInit {
         this.setStyle('#e2e2e2');
         break;
       case 'bookyWebApp':
-        this.setStyle('#eaeaea');
+        this.setStyle('#efefef');
         break;
       case 'bookCover':
         this.setStyle('#efefef');
@@ -120,6 +124,7 @@ export class SingleProjectComponent implements OnInit {
     this.imgHolder.style.backgroundColor = backgroundColor;
     this.imgHolder.style.padding = '30px';
   }
+
   paramToCamelCase(param: string): string {
     return param.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
   }

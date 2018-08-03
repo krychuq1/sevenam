@@ -9,7 +9,16 @@
     <h3>{{content[key+'Des']}}</h3>
   </div>
   <div id="singleImgHolder" class="singleImgHolder">
-    <img [src]="imgSrc" alt="project_images" *ngIf="isLoaded">
+    <img [src]="imgSrc" alt="project_images" *ngIf="isLoaded"
+         [ngClass]="{'otisBook': key ==='otisBook',
+         'mohaLogo': key === 'mohaLogo',
+         'esportLogo': key === 'esportLogo',
+         'pieceOfPlantLogo': key === 'pieceOfPlantLogo',
+         'theBugLogo' : key === 'theBugLogo',
+         'rowForWaterLogo': key === 'rowForWaterLogo',
+         'theBugWebsite': key === 'theBugWebsite',
+         'bookCover': key === 'bookCover',
+         'bookyLogo': key === 'bookyLogo'}">
   </div>
   <div class="footer" *ngIf="isLoaded">
     <p routerLink="../../projects">{{content['goBack']}}</p>

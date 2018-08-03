@@ -245,6 +245,7 @@
       <div class="image-container leaf"
            (mouseover)="hover('leaf')"
            (mouseleave)="hoverLeave()"
+           [routerLink]="['pieceOfPlantWeb']"
            [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'">
         <img src="../../../assets/images/home/animated-box/leaf.png"
              class="projectImage"
