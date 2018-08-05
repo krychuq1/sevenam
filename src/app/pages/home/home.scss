@@ -32,7 +32,7 @@
     p{
       color: #000000;
     }
-    background-color: #1d1d1d;
+    background-color: #1a1a1a;
     position: relative;
     text-transform: uppercase;
     color: $home-light;
@@ -59,6 +59,7 @@
 
     .video {
       position: relative;
+      overflow: hidden;
       //padding-bottom: 82.25%; /* 16:9 */
       //height: 0;
       //max-height: 1000000px;

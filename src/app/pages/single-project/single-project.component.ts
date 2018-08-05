@@ -42,7 +42,6 @@ export class SingleProjectComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       console.log(this.imgHolder, document.getElementById('singleImgHolder'),
         document.getElementById('singleImgHolder'));
-
       this.projectName = params.projectName;
       this.key = this.paramToCamelCase(this.projectName);
       var img = new Image();

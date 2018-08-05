@@ -35,6 +35,8 @@ export class HomeComponent {
   content: object;
   videoWidth: string;
   videoHeight: string;
+  scaleX = 1;
+  scaleY = 1;
   constructor(private burgerService: BurgerService, private http: HttpClient,
               private loadingService: LoadingService, private contentService: ContentService,
               @Inject(DOCUMENT) document){
@@ -62,16 +64,54 @@ export class HomeComponent {
     });
   }
 
-
   public setLanguage(lan: string){
     localStorage.setItem('lan', lan);
     this.getContent();
     }
+
   private _checkDevice() {
-    this.videoWidth = window.innerWidth * 0.6 + 'px';
-    this.videoHeight = window.innerHeight + 'px';
     const innerWidth = (window.innerWidth);
     this.isMobile = (innerWidth < 1024);
+    let videoHeightHolder = window.innerHeight + 10;
+    let videoWeightHolder = window.innerWidth * 0.6;
+    if(this.isMobile){
+      //get width of video holder
+      this.videoWidth = window.innerWidth  + 'px';
+      //get height of vide holder
+      this.videoHeight = '300px';
+      videoHeightHolder = 300;
+      videoWeightHolder = window.innerWidth;
+    }else{
+      //get width of video holder
+      this.videoWidth = videoWeightHolder + 'px';
+      //get height of vide holder
+      this.videoHeight = window.innerHeight + 'px';
+    }
+
+    //video ratio
+    const videoRatio = 1.778;
+    //get current height without black bars
+    let currentHeightOfVideo = videoWeightHolder / videoRatio;
+    //get current width withoud bars
+    let currentWidthOfVideo = videoRatio * videoHeightHolder;
+    // window.innerHeight / videoRatio;
+    // diffrence
+    let scaleHeight = videoHeightHolder / currentHeightOfVideo;
+    let scaleWidth = videoWeightHolder / currentWidthOfVideo;
+
+      if(scaleHeight > 1){
+        this.scaleY = scaleHeight;
+        this.scaleX = this.scaleY;
+      }
+      if(scaleWidth > 1) {
+        this.scaleY = scaleWidth;
+        this.scaleX = scaleWidth;
+
+      }
+
+
+
+
   }
   public subscribe(){
     this.burgerService.navigation.subscribe(value => {
