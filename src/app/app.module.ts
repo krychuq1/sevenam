@@ -18,6 +18,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MailerService} from "./services/mailer.service";
 import {ContentService} from "./services/content.service";
 import {SingleProjectComponent} from "./pages/single-project/single-project.component";
+import {TestComponent} from "./pages/test/test.component";
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import {SingleProjectComponent} from "./pages/single-project/single-project.comp
     ServicesComponent,
     ProjectsComponent,
     SingleProjectComponent,
+    TestComponent,
     Autosize
   ],
   providers: [BurgerService, LoadingService, MailerService, ContentService],

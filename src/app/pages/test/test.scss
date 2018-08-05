@@ -1,0 +1,14 @@
+.videoWrapper {
+  height:600px;
+  width:600px;
+  position:relative;
+  overflow:hidden;
+}
+
+.videoWrapper iframe {
+  height:100%;
+  width:100%;
+  position:absolute;
+  top:0;
+  bottom:0;
+}

@@ -1,9 +1,10 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, HostListener, Inject} from '@angular/core';
 import {BurgerService} from "../../services/burger.service";
 import {HttpClient} from "@angular/common/http";
 import {LoadingService} from "../../services/loading.service";
 import {fade} from "../../animations";
 import {ContentService} from "../../services/content.service";
+import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'home',
@@ -32,8 +33,11 @@ export class HomeComponent {
   servicesHover: boolean;
   contentUrl: string;
   content: object;
+  videoWidth: string;
+  videoHeight: string;
   constructor(private burgerService: BurgerService, private http: HttpClient,
-              private loadingService: LoadingService, private contentService: ContentService){
+              private loadingService: LoadingService, private contentService: ContentService,
+              @Inject(DOCUMENT) document){
     this.isLoading = true;
     this.homeHover = false;
     this.subscribe();
@@ -64,10 +68,11 @@ export class HomeComponent {
     this.getContent();
     }
   private _checkDevice() {
+    this.videoWidth = window.innerWidth * 0.6 + 'px';
+    this.videoHeight = window.innerHeight + 'px';
     const innerWidth = (window.innerWidth);
     this.isMobile = (innerWidth < 1024);
   }
-
   public subscribe(){
     this.burgerService.navigation.subscribe(value => {
       this.navBurger = value;
@@ -85,9 +90,9 @@ export class HomeComponent {
 
   public imgLoaded(imgObj){
     this.urlArray.push(imgObj);
-    console.log(this.urlArray.length);
     //13
     if(this.urlArray.length === 16){
+
 
       this.imgUrl = this.urlArray[0]['imgUrl'];
       this.animationBackground = this.urlArray[0]['background'];
@@ -106,6 +111,9 @@ export class HomeComponent {
       // console.log(this.backgroundImageCustom);
       this.isLoading = false;
       this.loadingService.homeLoader.next(true);
+      console.log(document.getElementById('ytPlayer'));
+
+      // document.getElementById('ytPlayer').style.width = this.videoWidth;
       setInterval(()=>{
         this.animateBackground();
       }, 4000);
