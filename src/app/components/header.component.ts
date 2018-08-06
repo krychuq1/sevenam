@@ -28,6 +28,8 @@ export class HeaderComponent {
 
   public openBurger(){
     this.navBurger = !this.navBurger;
+    this.getContent();
+
     if(this.navBurger){
       document.body.style.height = '100vh';
       document.body.style.overflow = 'hidden';

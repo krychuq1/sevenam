@@ -16,25 +16,14 @@
        (mouseleave)="homeHover = false"
        routerLink="about-us"
         [ngClass]="{'hover' : homeHover, 'hoverRight': animationBoxHover, 'hoverServices': servicesHover}">
-    <!--<iframe-->
-      <!--class="ng-tns-c2-1"-->
-      <!--allow="autoplay; encrypted-media"-->
-      <!--allowfullscreen="1"-->
-      <!--frameborder="0" height="461"-->
-      <!--id="ytPlayer"-->
-      <!--src="https://www.youtube.com/embed/UxUN6uTjcAU?iv_load_policy=3&amp;
-      modestbranding=1&amp;autoplay=1&amp;controls=0&amp;
-      showinfo=0&amp;
-      wmode=transparent&amp;branding=0&amp;autohide=0&amp;rel=0&amp;origin=http%3A%2F%2Fnovembro.net&amp;enablejsapi=1&amp;widgetid=1"-->
-      <!--autoplay=1-->
-      <!--style="top: 0px;" [ngStyle]="{'width': videoWidth, 'height': videoHeight}"  title="YouTube video player"></iframe>-->
     <div class="video">
       <iframe
         id="ytPlayer"
         allow="autoplay; encrypted-media"
         allowfullscreen="allowfullscreen"
-        src="https://www.youtube.com/embed/ccH-Ks_sdso?iv_load_policy=3&modestbranding=1&autoplay=1&loop=1&playlist=ccH-Ks_sdso&controls=0&showinfo=0&wmode=transparent&branding=0&autohide=0&rel=0&origin=http%3A%2F%2Fnovembro.net&enablejsapi=1&widgetid=1"
-        frameborder="0"
+        src="https://www.youtube.com/embed/ccH-Ks_sdso?iv_load_policy=3&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=ccH-Ks_sdso&controls=0&showinfo=0&wmode=transparent&branding=0&autohide=0&rel=0&origin=http%3A%2F%2Fnovembro.net&enablejsapi=1&widgetid=1"
+      frameborder="0"
+        disablekb="1"
         [ngStyle]="{'width': videoWidth, 'height': videoHeight,
         'transform': 'scaleX('+scaleX + ') scaleY('+scaleY + ')'}">
 <!--  [ngStyle]="{'width': videoWidth, 'height': videoHeight}"-->
@@ -42,9 +31,9 @@
       </iframe>
     </div>
 
-    <div class="footer" routerLink="about-us">
-      <p>{{content['aboutUs']}}</p>
-      <img src="../../../assets/images/home/light-arrow.png">
+    <div class="footer" routerLink="contact">
+      <p>{{content['contact']}}</p>
+      <img src="../../../assets/images/home/arrow.png">
     </div>
   </div>
   <div class="right-elements"

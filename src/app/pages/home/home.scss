@@ -1,8 +1,14 @@
 @import "../../../styles";
-
+#vyThq5M-1533578821478{
+  bottom: 50px !important;
+}
+#chuj{
+  bottom: 100px !important;
+}
 .languages{
   position: absolute;
-  top: 110px;
+  top: 50px;
+  right: 100px;
   color: white;
   display: flex;
   //background: yellow;
@@ -35,7 +41,7 @@
     background-color: #1a1a1a;
     position: relative;
     text-transform: uppercase;
-    color: $home-light;
+    //color: $home-light;
     font-weight: 300;
     .footer{
       position: absolute;
@@ -67,6 +73,7 @@
     .video iframe,
     .video object,
     .video embed {
+      pointer-events: none;
       //position: absolute;
       //top: 0;
       //left: 0;
@@ -75,7 +82,7 @@
     }
 
     p{
-      color: $home-light;
+      //color: $home-light;
     }
   }
   .services{
@@ -113,7 +120,7 @@
         width: 60%;
         transition: width 1s;
        img{
-         display: none;
+         //display: none;
        }
 
         &.hover{

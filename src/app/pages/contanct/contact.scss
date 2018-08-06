@@ -176,3 +176,13 @@
       }
     }
 }
+@include breakpoint(laptop) {
+  .contact-holder{
+    .contact{
+      .form{
+        width: 50%;
+        
+      }
+    }
+  }
+}

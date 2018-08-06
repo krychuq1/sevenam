@@ -1,4 +1,4 @@
-import {Component, HostListener, Inject} from '@angular/core';
+import {AfterViewInit, Component, HostListener, Inject} from '@angular/core';
 import {BurgerService} from "../../services/burger.service";
 import {HttpClient} from "@angular/common/http";
 import {LoadingService} from "../../services/loading.service";
@@ -14,7 +14,7 @@ import {DOCUMENT} from "@angular/common";
 
 
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit{
   navBurger:boolean;
   urlArray: Array<any>;
   counter: number;
@@ -68,7 +68,6 @@ export class HomeComponent {
     localStorage.setItem('lan', lan);
     this.getContent();
     }
-
   private _checkDevice() {
     const innerWidth = (window.innerWidth);
     this.isMobile = (innerWidth < 1024);
@@ -188,5 +187,17 @@ export class HomeComponent {
       //
       // }, 510)
     }
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(()=> {
+      if(!this.isMobile ){
+        document.getElementsByTagName('iframe')[2].removeAttribute('style');
+        document.getElementsByTagName('iframe')[2].setAttribute('style', 'outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; position: fixed !important; border: 0px !important; padding: 0px !important; transition-property: none !important; z-index: 1000001 !important; cursor: auto !important; float: none !important; height: 66px !important; min-height: 66px !important; max-height: 66px !important; width: 62px !important; min-width: 62px !important; max-width: 62px !important; transform: rotate(0deg) translateZ(0px) !important; transform-origin: 0px center 0px !important; margin: 0px !important; top: auto !important; bottom: 50px !important; right: 15px !important; left: auto !important; display: block !important;');
+      }
+
+
+    },1000);
+
   }
 }

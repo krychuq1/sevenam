@@ -20,7 +20,7 @@
   }
 
   .packages{
-    padding-top: 60px;
+    padding-top: 30px;
     .container{
       max-height: 0;
       transition: max-height 0.4s ease-out;
@@ -45,7 +45,10 @@
       max-width: 1000px;
 
     }
-    .services-holder-inner{
+    .packages{
+      padding-top: 60px;
+    }
+      .services-holder-inner{
       h1{
         color: $header-color;
         text-transform: uppercase;

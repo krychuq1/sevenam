@@ -55,7 +55,6 @@ export class SingleProjectComponent implements OnInit {
           this.isScroll = window.innerWidth > document.documentElement.clientWidth;
         }, 1000);
 
-
       };
       img.onerror = () => {
         this.imgSrc = '../assets/images/projects/' + this.key + '.png';
