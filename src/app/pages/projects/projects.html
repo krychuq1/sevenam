@@ -100,7 +100,7 @@
       <div class="image-container pieceofplant"
            (mouseover)="hover('pieceofplant')"
            (mouseleave)="hoverLeave('pieceofplant')"
-           [ngClass]="(filter ==='website' || filter ==='all') ? 'show' : 'hide'"
+           [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'"
            [routerLink]="['pieceOfPlantLogo']">
       <img src="../../../assets/images/home/animated-box/pieceofplant.png"
              class="projectImage"
@@ -246,7 +246,7 @@
            (mouseover)="hover('leaf')"
            (mouseleave)="hoverLeave()"
            [routerLink]="['pieceOfPlantWeb']"
-           [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'">
+           [ngClass]="(filter ==='website' || filter ==='all') ? 'show' : 'hide'">
         <img src="../../../assets/images/home/animated-box/leaf.png"
              class="projectImage"
              [ngStyle]="{'maxHeight': defaultMaxHeight['leaf'].default}"

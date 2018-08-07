@@ -6,7 +6,8 @@
 <div class="single-project">
   <div class="text" *ngIf="isLoaded">
     <h1>{{content[key+'Title']}}</h1>
-    <h3>{{content[key+'Des']}}</h3>
+    <h3 innerHTML="{{content[key+'Des']}}"></h3>
+    <!--{{content[key+'Des']}}-->
   </div>
   <div id="singleImgHolder" class="singleImgHolder">
     <img [src]="imgSrc" alt="project_images" *ngIf="isLoaded"

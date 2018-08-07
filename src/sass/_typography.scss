@@ -24,3 +24,19 @@ p{
 .bold{
   font-weight: bold;
 }
+.single-link{
+  color: $pink-color;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  &:hover{
+    color: $pink-color;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  &:visited{
+    color: $pink-color;
+    text-decoration: none;
+  }
+
+}
