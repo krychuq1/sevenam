@@ -15,6 +15,7 @@ export class HeaderComponent {
   isHomeLoaded: boolean;
   contentUrl: string;
   content: object;
+  navAllow: boolean;
   @ViewChild('headerHolder') headerHolder: ElementRef;
 
   constructor(private burgerService: BurgerService,
@@ -23,6 +24,7 @@ export class HeaderComponent {
     this.contentUrl = 'component/header/';
     this.navBurger = false;
     this.isHomeLoaded = false;
+    this.navAllow = true;
     this.homeLoader();
     this.getContent();
   }
@@ -31,30 +33,34 @@ export class HeaderComponent {
   public openBurger(){
 
     let headerHolder: HTMLElement = this.headerHolder.nativeElement;
+    if(this.navAllow) {
+      this.navAllow = false;
+      // console.log();
+      // headerHolder.style.height = '100vh';
+      this.navBurger = !this.navBurger;
+      this.getContent();
+      if(this.navBurger){
+        document.body.style.height = '100vh';
+        document.body.style.overflow = 'hidden';
+        headerHolder.style.height = '0';
+        headerHolder.classList.add('is-active');
+        setTimeout(()=>{
+          headerHolder.style.height = '100vh';
+          this.navAllow = true;
 
-    // console.log();
-    // headerHolder.style.height = '100vh';
-    this.navBurger = !this.navBurger;
-    this.getContent();
-    if(this.navBurger){
-      document.body.style.height = '100vh';
-      document.body.style.overflow = 'hidden';
-      headerHolder.style.height = '0';
-      headerHolder.classList.add('is-active');
-      setTimeout(()=>{
-        headerHolder.style.height = '100vh'
-      },100);
-    }else{
-      document.body.style.height = 'auto';
-      document.body.style.overflow = 'visible';
-      setTimeout(()=>{
-        headerHolder.style.height = '114px'
+        },100);
+      }else{
+        document.body.style.height = 'auto';
+        document.body.style.overflow = 'visible';
+        headerHolder.classList.remove('is-active');
         setTimeout(() => {
-          headerHolder.classList.remove('is-active');
+          headerHolder.style.height = '114px';
+          this.navAllow = true;
 
-        },300);
-      },100);
+        }, 800);
     }
+    }
+
     this.burgerService.navigation.next(this.navBurger);
   }
   public onNavigate(url){

@@ -5,7 +5,7 @@
   width: 100%;
   z-index: 4;
   background-color: transparent;
-  transition: height 1s, background-color 1s;
+  transition: background-color 1s;
   overflow: hidden;
   height: 114px;
   &.is-active{
@@ -60,7 +60,7 @@
   .navigation{
     //background: $navigation-background;
     height: calc(100vh - 104px);
-    //display: none;
+    display: none;
     &.is-active{
       display: block;
       position: relative;
