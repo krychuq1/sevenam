@@ -7,8 +7,8 @@
 <div class="languages">
   <p (click)="setLanguage('en')">en</p> | <p (click)="setLanguage('pl')">pl</p>
 </div>
-
-<div class="home-holder" *ngIf="!navBurger && !isLoading && content">
+<!--!navBurger &&-->
+<div class="home-holder" *ngIf=" !isLoading && content">
   <!--about section-->
   <!-- [ngStyle]="{'background-image': 'url(../../../assets/images/home/VIDEO.png)'}"-->
   <div class="section home"

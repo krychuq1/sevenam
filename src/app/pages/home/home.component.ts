@@ -126,7 +126,6 @@ export class HomeComponent implements AfterViewInit{
     }
     this.toggleState();
   }
-
   public imgLoaded(imgObj){
     this.urlArray.push(imgObj);
     //13
