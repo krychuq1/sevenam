@@ -55,6 +55,7 @@ export class HeaderComponent {
         },300);
       },100);
     }
+
     this.burgerService.navigation.next(this.navBurger);
   }
   public onNavigate(url){

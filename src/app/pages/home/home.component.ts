@@ -88,7 +88,7 @@ export class HomeComponent implements AfterViewInit{
     }
 
     //video ratio
-    const videoRatio = 1.778;
+    const videoRatio = 1.542;
     //get current height without black bars
     let currentHeightOfVideo = videoWeightHolder / videoRatio;
     //get current width withoud bars
