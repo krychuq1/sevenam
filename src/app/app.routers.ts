@@ -6,11 +6,14 @@ import {ServicesComponent} from "./pages/services/services.component";
 import {ProjectsComponent} from "./pages/projects/projects.component";
 import {SingleProjectComponent} from "./pages/single-project/single-project.component";
 import {TestComponent} from "./pages/test/test.component";
+import {VideoComponent} from "./pages/about-us/video/video.component";
 
 export const routes: Route[] = [
   { path: '', component: HomeComponent,  pathMatch: 'full'  },
   { path: 'contact', component: ContactComponent},
-  { path: 'about-us', component: AboutUsComponent},
+  { path: 'about-us', component: AboutUsComponent,
+    children: [{path: 'video', component: VideoComponent}]
+      },
   { path: 'services', component: ServicesComponent},
   { path: 'projects', component: ProjectsComponent},
   { path: 'test', component: TestComponent},

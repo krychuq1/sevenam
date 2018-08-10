@@ -12,8 +12,8 @@
   <!--about section-->
   <!-- [ngStyle]="{'background-image': 'url(../../../assets/images/home/VIDEO.png)'}"-->
   <div class="section home"
-       (mouseover)="homeHover = true"
-       (mouseleave)="homeHover = false"
+       (mouseover)="homeHover = true; scaleVideo(true)"
+       (mouseleave)="homeHover = false; scaleVideo(false)"
        routerLink="about-us"
         [ngClass]="{'hover' : homeHover, 'hoverRight': animationBoxHover, 'hoverServices': servicesHover}">
     <div class="video">
@@ -30,6 +30,7 @@
 <!--https://www.youtube.com/watch?v=-1MCi370NT4-->
         <!--<iframe width="1383" height="629" src="https://www.youtube.com/embed/-1MCi370NT4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
       </iframe>
+      <img src="../../../assets/images/home/gif.gif" alt="gif" id="gif">
     </div>
 
     <div class="footer" routerLink="contact">

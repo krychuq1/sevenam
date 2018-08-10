@@ -66,6 +66,16 @@
     .video {
       position: relative;
       overflow: hidden;
+      //height: 380px;
+      #ytPlayer{
+        display: none;
+        transition: 1s ease-in-out;
+
+      }
+      img{
+        height: 300px;
+        width: 100%;
+      }
       //padding-bottom: 82.25%; /* 16:9 */
       //height: 0;
       //max-height: 1000000px;
@@ -104,6 +114,21 @@
   }
 
 }
+@include breakpoint(tablet) {
+  .home-holder {
+    .home {
+      .video {
+        height: auto;
+        #ytPlayer {
+          display: block;
+        }
+        #gif{
+          display: none;
+        }
+      }
+    }
+  }
+}
 
 @include breakpoint(laptop) {
   .home-holder{
@@ -119,6 +144,7 @@
         max-height: 100vh;
         width: 60%;
         transition: width 1s;
+
        img{
          //display: none;
        }

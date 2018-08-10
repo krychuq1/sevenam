@@ -19,6 +19,7 @@ import {MailerService} from "./services/mailer.service";
 import {ContentService} from "./services/content.service";
 import {SingleProjectComponent} from "./pages/single-project/single-project.component";
 import {TestComponent} from "./pages/test/test.component";
+import {VideoComponent} from "./pages/about-us/video/video.component";
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import {TestComponent} from "./pages/test/test.component";
     AboutUsComponent,
     ServicesComponent,
     ProjectsComponent,
+    VideoComponent,
     SingleProjectComponent,
     TestComponent,
     Autosize

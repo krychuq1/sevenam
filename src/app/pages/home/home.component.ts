@@ -63,7 +63,16 @@ export class HomeComponent implements AfterViewInit{
       console.error(err);
     });
   }
-
+  public scaleVideo(scale: boolean) {
+    if(scale && !this.isMobile){
+      this.scaleY = this.scaleY +0.2;
+      this.scaleX = this.scaleX +0.2;
+    }
+    if(!scale && !this.isMobile){
+      this.scaleY = this.scaleY - 0.2;
+      this.scaleX = this.scaleX - 0.2;
+    }
+  }
   public setLanguage(lan: string){
     localStorage.setItem('lan', lan);
     this.getContent();
