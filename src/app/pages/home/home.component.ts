@@ -37,11 +37,13 @@ export class HomeComponent implements AfterViewInit{
   videoHeight: string;
   scaleX = 1;
   scaleY = 1;
+  scaleUp: boolean;
   constructor(private burgerService: BurgerService, private http: HttpClient,
               private loadingService: LoadingService, private contentService: ContentService,
               @Inject(DOCUMENT) document){
     this.isLoading = true;
     this.homeHover = false;
+    this.scaleUp = false;
     this.subscribe();
     this.urlArray = [];
     this.counter = 1;
@@ -64,11 +66,13 @@ export class HomeComponent implements AfterViewInit{
     });
   }
   public scaleVideo(scale: boolean) {
-    if(scale && !this.isMobile){
+    if(scale && !this.isMobile && !this.scaleUp){
+      this.scaleUp = true;
       this.scaleY = this.scaleY +0.2;
       this.scaleX = this.scaleX +0.2;
     }
     if(!scale && !this.isMobile){
+      this.scaleUp = false;
       this.scaleY = this.scaleY - 0.2;
       this.scaleX = this.scaleX - 0.2;
     }

@@ -5,11 +5,17 @@ import * as config from '../config';
 @Injectable()
 export class ContentService {
   contentService: string;
+  contactContact: object;
 
   constructor(private http: HttpClient) {
     this.contentService = config.content;
   }
 
+  public getContactContent(url){
+    this.getContent(url).then((con)=>{
+
+    })
+  }
   public getContent(path): Promise<any> {
     return new Promise((resolve, reject) => {
       this.http.get(this.contentService + path + localStorage.getItem('lan')).subscribe((res) => {

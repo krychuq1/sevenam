@@ -2,6 +2,7 @@ import {AfterViewInit, asNativeElements, Component, ElementRef, HostListener, In
 import {LoadingService} from "../../services/loading.service";
 import {DOCUMENT} from "@angular/common";
 import {ContentService} from "../../services/content.service";
+import {LanguageService} from "../../services/language.service";
 
 
 @Component({
@@ -25,7 +26,8 @@ export class ProjectsComponent  implements AfterViewInit{
   content: object;
   // enableAnimation: boolean;
   constructor( private loadingService: LoadingService, private elRef: ElementRef,
-               @Inject(DOCUMENT) document, private contentService: ContentService){
+               @Inject(DOCUMENT) document, private contentService: ContentService,
+               private languageService: LanguageService){
     this.imagesArray = [];
     this.filter = 'all';
     // this.loadingService.homeLoader.next(true);
@@ -37,6 +39,9 @@ export class ProjectsComponent  implements AfterViewInit{
     this._checkDevice();
     this.contentUrl = 'page/projects/';
     this.getContent();
+    this.languageService.changeLanguage.subscribe(()=>{
+      this.getContent();
+    })
     // this.enableAnimation = true;
   }
   @HostListener('window:resize', ['$event'])

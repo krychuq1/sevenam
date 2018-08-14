@@ -20,6 +20,8 @@ import {ContentService} from "./services/content.service";
 import {SingleProjectComponent} from "./pages/single-project/single-project.component";
 import {TestComponent} from "./pages/test/test.component";
 import {VideoComponent} from "./pages/about-us/video/video.component";
+import {LanguageService} from "./services/language.service";
+import {ContactThankYouComponent} from "./pages/contanct/contact-thank-you/contact-thank-you.component";
 
 
 @NgModule({
@@ -42,9 +44,10 @@ import {VideoComponent} from "./pages/about-us/video/video.component";
     VideoComponent,
     SingleProjectComponent,
     TestComponent,
-    Autosize
+    Autosize,
+    ContactThankYouComponent
   ],
-  providers: [BurgerService, LoadingService, MailerService, ContentService],
+  providers: [BurgerService, LoadingService, MailerService, ContentService, LanguageService],
   bootstrap: [AppComponent]
 })
 

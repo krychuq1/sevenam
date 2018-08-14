@@ -1,12 +1,20 @@
 <div class="contact-holder" *ngIf="content">
   <div class="contact" [ngClass]="{'processing': isProcessing}">
+    <!--mobile fotos-->
     <img src="../../../assets/images/contact/spinacz_one.png" class="spinacz one">
     <img src="../../../assets/images/contact/spinacz_two.png" class="spinacz two">
     <img src="../../../assets/images/contact/spinacz_three.png" class="spinacz three">
     <img src="../../../assets/images/contact/spinacz_four.png" class="spinacz four">
+    <!--desktop fotos-->
+    <img src="../../../assets/images/contact/s1.png" class="big-spinacz one">
+    <img src="../../../assets/images/contact/s2.png" class="big-spinacz two">
+    <img src="../../../assets/images/contact/s3.png" class="big-spinacz three">
+    <img src="../../../assets/images/contact/s4.png" class="big-spinacz four">
 
     <!--form holder-->
-        <div class="spinner spinner-contact" *ngIf="isProcessing"></div>
+    <div class="container-loading spinner-contact" *ngIf="isProcessing">
+      <span class="load" ></span>
+    </div>
 
         <div *ngIf="!isProcessing && !isSent && !isError" class="text-holder">
           <h1>{{content['hello']}}</h1>
@@ -16,20 +24,21 @@
         <div *ngIf="!isProcessing && isError" class="text-holder error">
           <h1>{{content['ups']}}</h1>
           <h3>{{content['tryagain']}}
-            <span class="bold pink" (click)="reset()">{{content['here']}}</span>{{content['or on our']}}
+            <span class="bold pink" (click)="reset()">{{content['here']}}</span> {{content['or on our']}}
             <span class="bold pink" (click)="openChat()">{{content['chat.']}}</span></h3>
         </div>
+      <router-outlet></router-outlet>
 
-        <div *ngIf="!isProcessing && isSent" class="confirm">
-          <h1>{{content['thankyou']}}</h1>
-          <h3>{{content['getbackasap']}}</h3>
-          <h3>{{content['more']}}
-            <span class="bold pink"
-                  (click)="onNavigate('https://www.facebook.com/sevenamstudio/')">{{content['Facebook']}}</span>
-            <span class="bold pink"
-                  (click)="onNavigate('https://www.instagram.com/sevenamstudio/')">{{content['insta']}} </span></h3>
+        <!--<div *ngIf="!isProcessing && isSent" class="confirm">-->
+          <!--<h1>{{content['thankyou']}}</h1>-->
+          <!--<h3>{{content['getbackasap']}}</h3>-->
+          <!--<h3>{{content['more']}}-->
+            <!--<span class="bold pink"-->
+                  <!--(click)="onNavigate('https://www.facebook.com/sevenamstudio/')">{{content['Facebook']}}</span>-->
+            <!--<span class="bold pink"-->
+                  <!--(click)="onNavigate('https://www.instagram.com/sevenamstudio/')">{{content['insta']}} </span></h3>-->
 
-        </div>
+        <!--</div>-->
 
           <div class="form" *ngIf="!isProcessing && !isSent && !isError">
             <form [formGroup]="contactForm" (ngSubmit)="onSubmitForm()">
@@ -47,7 +56,7 @@
               </div>
               <textarea formControlName="message" autosize
                         rows="1" type="text" placeholder="message">
-          </textarea>
+             </textarea>
               <div *ngIf="messageControl.errors && messageControl.touched">
                 <p *ngIf="messageControl.errors.required">{{content['message']}}</p>
                 <p *ngIf="messageControl.errors.minlength">{{content['message-number']}}
@@ -83,4 +92,5 @@
         </div>
       </div>
     </div>
+
 </div>

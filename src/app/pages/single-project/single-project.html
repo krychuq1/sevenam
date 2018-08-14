@@ -19,7 +19,8 @@
          'rowForWaterLogo': key === 'rowForWaterLogo',
          'theBugWebsite': key === 'theBugWebsite',
          'bookCover': key === 'bookCover',
-         'bookyLogo': key === 'bookyLogo'}">
+         'bookyLogo': key === 'bookyLogo',
+         'summerPosters': key === 'summerPosters' && !isMobile}">
   </div>
   <div class="footer" *ngIf="isLoaded">
     <p routerLink="../../projects">{{content['goBack']}}</p>

@@ -4,9 +4,9 @@
   <p>loading</p>
 </div>
 
-<div class="languages">
-  <p (click)="setLanguage('en')">en</p> | <p (click)="setLanguage('pl')">pl</p>
-</div>
+<!--<div class="languages">-->
+  <!--<p (click)="setLanguage('en')">en</p> | <p (click)="setLanguage('pl')">pl</p>-->
+<!--</div>-->
 <!--!navBurger &&-->
 <div class="home-holder" *ngIf=" !isLoading && content">
   <!--about section-->
@@ -14,7 +14,7 @@
   <div class="section home"
        (mouseover)="homeHover = true; scaleVideo(true)"
        (mouseleave)="homeHover = false; scaleVideo(false)"
-       routerLink="about-us"
+       routerLink="contact"
         [ngClass]="{'hover' : homeHover, 'hoverRight': animationBoxHover, 'hoverServices': servicesHover}">
     <div class="video">
       <iframe
@@ -37,6 +37,7 @@
       <p>{{content['contact']}}</p>
       <img src="../../../assets/images/home/arrow.png">
     </div>
+
   </div>
   <div class="right-elements"
        [ngClass]="{'hover' : homeHover, 'hoverRight': animationBoxHover, 'hoverServices': servicesHover}">

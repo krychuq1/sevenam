@@ -2,14 +2,21 @@
      *ngIf="isHomeLoaded && content">
   <!--[ngClass]="navBurger ? 'is-active' : ''"-->
   <div class="header" [ngClass]="navBurger ? 'is-active' : ''">
-    <img src="../../assets/images/header/logo.png"  routerLink="" class="logo">
-    <button class="hamburger hamburger--collapse"
-            (click)="openBurger()" [ngClass]="navBurger ? 'is-active' : ''"
-            type="button">
+    <img src="../../assets/images/header/logo.png" routerLink="" class="logo">
+    <div class="burger-language-holder">
+      <button class="hamburger hamburger--collapse"
+              (click)="openBurger()" [ngClass]="navBurger ? 'is-active' : ''"
+              type="button">
     <span class="hamburger-box">
       <span class="hamburger-inner"></span>
     </span>
-    </button>
+      </button>
+      <div class="languages" *ngIf="router.url !== '/'">
+        <p (click)="setLanguage('en')" class="en">en</p> <span class="line">|</span> <p (click)="setLanguage('pl')" class="pl">pl</p>
+      </div>
+    </div>
+
+
   </div>
   <div class="navigation" [ngClass]="navBurger ? 'is-active' : ''">
     <ul>
@@ -28,4 +35,12 @@
       <div class="icon yt" (click)="onNavigate('https://www.youtube.com/watch?v=Yt3CyRBL_E8')"></div>
     </div>
   </div>
+  <img src="../../assets/images/navigation/fb_hover.png" style="display: none">
+  <img src="../../assets/images/navigation/insta_hover.png" style="display: none">
+  <img src="../../assets/images/navigation/blog_hover.png" style="display: none">
+  <img src="../../assets/images/navigation/twitter_hover.png" style="display: none">
+  <img src="../../assets/images/navigation/yt_hover.png" style="display: none">
+
+  <img src="">
+
 </div>

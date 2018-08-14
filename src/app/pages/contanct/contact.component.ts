@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {LoadingService} from "../../services/loading.service";
 import {MailerService} from "../../services/mailer.service";
 import {ContentService} from "../../services/content.service";
+import {LanguageService} from "../../services/language.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'contact',
@@ -21,19 +23,28 @@ export class ContactComponent {
   contentUrl: string;
   content: object;
   constructor(private formBuilder : FormBuilder, private loadingService: LoadingService,
-              private mailerService: MailerService, private contentService: ContentService){
+              private mailerService: MailerService, private contentService: ContentService,
+              private languageService: LanguageService, public router: Router){
     this.buildForm();
     this.loadingService.homeLoader.next(true);
     this.contentUrl = 'page/contact/';
     this.getContent();
-
+    this.languageService.changeLanguage.subscribe(()=>{
+      this.getContent();
+    });
+    // setTimeout(()=>{
+    //   this.isSent = true;
+    //   this.router.navigate(['contact/thank-you'])
+    // },1000);
     // this.isError = true;
-    // this.isProcessing = false;
-
+    // this.isSent = true;
+    // this.isProcessing = true;
   }
+
   getContent() {
     this.contentService.getContent(this.contentUrl).then((content) =>{
       this.content = content;
+      this.contentService.contactContact = content;
       console.log(this.content);
     }, err => {
       console.error(err);
@@ -62,10 +73,12 @@ export class ContactComponent {
       success => {
         this.isSent = true;
         this.isProcessing = false;
+        this.router.navigate(['contact/thank-you']);
         this.contactForm.reset();
       },
       err => {
         this.isProcessing = false;
+        this.isError = true;
         this.contactForm.reset();
 
       }

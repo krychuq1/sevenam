@@ -1,8 +1,9 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, HostListener, Inject, OnInit} from '@angular/core';
 import {ContentService} from "../../services/content.service";
 import {LoadingService} from "../../services/loading.service";
 import {ActivatedRoute} from "@angular/router";
 import {DOCUMENT} from '@angular/common';
+import {LanguageService} from "../../services/language.service";
 
 @Component({
   selector: 'singleProject',
@@ -18,16 +19,36 @@ export class SingleProjectComponent implements OnInit {
   imgSrc: string;
   imgHolder: HTMLElement;
   isScroll: boolean;
+  isMobile: boolean;
+
   constructor(private contentService: ContentService,
               private loadingService: LoadingService,
               private activatedRoute: ActivatedRoute,
+              private languageService: LanguageService,
               @Inject(DOCUMENT) document) {
+    this._checkDevice();
     this.isLoaded = false;
     this.isScroll = false;
     this.contentUrl = 'page/single-project/';
     this.getContent();
+    this.languageService.changeLanguage.subscribe(()=>{
+      this.getContent();
+    })
+
   }
-  getContent() {
+  @HostListener('window:resize', ['$event'])
+  onResize(event?): void {
+    this._checkDevice();
+  }
+
+  private _checkDevice() {
+    const innerWidth = (window.innerWidth);
+    this.isMobile = (innerWidth < 1024);
+  }
+
+
+
+    getContent() {
     this.contentService.getContent(this.contentUrl).then((content) =>{
 
       this.content = content;
@@ -46,7 +67,13 @@ export class SingleProjectComponent implements OnInit {
       this.key = this.paramToCamelCase(this.projectName);
       var img = new Image();
       this.setBackground(this.key);
-      this.imgSrc = '../assets/images/projects/' + this.key + '.jpg';
+      // if summer posters on desktop
+      if(this.key === 'summerPosters' && !this.isMobile){
+        this.imgSrc = '../assets/images/projects/' + this.key + 'Desktop.jpg';
+
+      }else{
+        this.imgSrc = '../assets/images/projects/' + this.key + '.jpg';
+      }
       img.src = this.imgSrc;
       img.onload = () => {
         this.isLoaded = true;

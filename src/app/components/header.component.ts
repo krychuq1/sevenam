@@ -2,13 +2,14 @@ import {Component, ElementRef, ViewChild} from '@angular/core';
 import {BurgerService} from "../services/burger.service";
 import {LoadingService} from "../services/loading.service";
 import {ContentService} from "../services/content.service";
+import {Router} from "@angular/router";
+import {LanguageService} from "../services/language.service";
 
 @Component({
   selector: 'header',
   templateUrl: './header.html',
   styleUrls: ['./header.scss']
 })
-
 
 export class HeaderComponent {
   navBurger: boolean;
@@ -20,12 +21,18 @@ export class HeaderComponent {
 
   constructor(private burgerService: BurgerService,
               private loadingService: LoadingService,
-              private contentService: ContentService){
+              private contentService: ContentService,
+              public router: Router, private languageService: LanguageService){
     this.contentUrl = 'component/header/';
     this.navBurger = false;
     this.isHomeLoaded = false;
     this.navAllow = true;
     this.homeLoader();
+    this.getContent();
+  }
+  public setLanguage(lan: string){
+    console.log(this.languageService);
+    this.languageService.setLanguage(lan);
     this.getContent();
   }
 
@@ -45,9 +52,8 @@ export class HeaderComponent {
         headerHolder.style.height = '0';
         headerHolder.classList.add('is-active');
         setTimeout(()=>{
-          headerHolder.style.height = '100vh';
+          headerHolder.style.height = '110vh';
           this.navAllow = true;
-
         },100);
       }else{
         document.body.style.height = 'auto';
@@ -74,7 +80,6 @@ export class HeaderComponent {
   getContent() {
     this.contentService.getContent(this.contentUrl).then((content) =>{
       this.content = content;
-      console.log(this.content);
     }, err => {
       console.error(err);
     });

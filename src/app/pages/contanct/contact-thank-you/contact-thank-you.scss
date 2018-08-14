@@ -1,0 +1,21 @@
+@import "../../../../styles";
+
+.confirm  {
+  padding-top: 70px;
+  span{
+    cursor: pointer;
+  }
+  h1{
+    margin-bottom: 0;
+    color: $contact-color;
+    font-size: 1.4rem;
+
+  }
+  h3{
+    margin-top: 0.5rem;
+    color: $contact-color;
+    font-weight: normal;
+    font-size: 1rem;
+    text-transform: none;
+  }
+}

@@ -7,10 +7,14 @@ import {ProjectsComponent} from "./pages/projects/projects.component";
 import {SingleProjectComponent} from "./pages/single-project/single-project.component";
 import {TestComponent} from "./pages/test/test.component";
 import {VideoComponent} from "./pages/about-us/video/video.component";
+import {ContactThankYouComponent} from "./pages/contanct/contact-thank-you/contact-thank-you.component";
 
 export const routes: Route[] = [
   { path: '', component: HomeComponent,  pathMatch: 'full'  },
-  { path: 'contact', component: ContactComponent},
+  { path: 'contact', component: ContactComponent,
+    children: [{path: 'thank-you', component: ContactThankYouComponent}]
+  },
+
   { path: 'about-us', component: AboutUsComponent,
     children: [{path: 'video', component: VideoComponent}]
       },
@@ -18,4 +22,6 @@ export const routes: Route[] = [
   { path: 'projects', component: ProjectsComponent},
   { path: 'test', component: TestComponent},
   { path: 'projects/:projectName', component: SingleProjectComponent}
+
 ];
+

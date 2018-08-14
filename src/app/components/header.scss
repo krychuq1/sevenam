@@ -19,6 +19,34 @@
     padding: 40px $wrapper;
     width: calc(100% - 60px);
     display: flex;
+    .burger-language-holder{
+      width: 150px;
+      display: flex;
+      flex-direction: row-reverse;
+      //justify-content: space-between;
+
+      .languages{
+        align-items: center;
+        display: flex;
+        margin-right: 27px;
+        cursor: pointer;
+        .en{
+          margin-right: 5px;
+          &:hover{
+            color: $pink-color;
+          }
+        }
+        .pl{
+          &:hover{
+            color: $pink-color;
+          }
+          margin-left: 5px;
+        }
+        span{
+          color: $header-color;
+        }
+      }
+    }
     .logo{
       cursor: pointer;
     }
