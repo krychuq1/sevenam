@@ -87,7 +87,6 @@ export class ContactComponent {
   public openChat(){
     window['Tawk_API'].maximize();
   }
-
   public reset(){
     this.isError = false;
     this.isSent = false;

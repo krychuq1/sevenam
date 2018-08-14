@@ -15,4 +15,7 @@ export class ContactThankYouComponent {
     // this.isError = true;
     // this.isSent = true;
     // t
+  public onNavigate(url){
+    window.open(url, "_blank");
+  }
 }
