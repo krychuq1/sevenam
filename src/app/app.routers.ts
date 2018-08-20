@@ -20,8 +20,10 @@ export const routes: Route[] = [
       },
   { path: 'services', component: ServicesComponent},
   { path: 'projects', component: ProjectsComponent},
+  { path: 'projects/:filter', component: ProjectsComponent},
+
   { path: 'test', component: TestComponent},
-  { path: 'projects/:projectName', component: SingleProjectComponent}
+  { path: 'product/:projectName', component: SingleProjectComponent}
 
 ];
 

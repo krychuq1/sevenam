@@ -3,6 +3,7 @@ import {LoadingService} from "../../services/loading.service";
 import {DOCUMENT} from "@angular/common";
 import {ContentService} from "../../services/content.service";
 import {LanguageService} from "../../services/language.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 
 @Component({
@@ -27,7 +28,8 @@ export class ProjectsComponent  implements AfterViewInit{
   // enableAnimation: boolean;
   constructor( private loadingService: LoadingService, private elRef: ElementRef,
                @Inject(DOCUMENT) document, private contentService: ContentService,
-               private languageService: LanguageService){
+               private languageService: LanguageService, private activatedRoute: ActivatedRoute,
+               private router: Router){
     this.imagesArray = [];
     this.filter = 'all';
     // this.loadingService.homeLoader.next(true);
@@ -41,7 +43,8 @@ export class ProjectsComponent  implements AfterViewInit{
     this.getContent();
     this.languageService.changeLanguage.subscribe(()=>{
       this.getContent();
-    })
+    });
+
     // this.enableAnimation = true;
   }
   @HostListener('window:resize', ['$event'])
@@ -118,8 +121,11 @@ export class ProjectsComponent  implements AfterViewInit{
       this.loadingService.homeLoader.next(true);
     }
   }
+
   setFilter(filter) {
     this.filter = 'off';
+    let url = 'projects/' + filter;
+    this.router.navigate([url]);
     setTimeout(()=>{
       this.filter = filter;
     },450);
@@ -279,6 +285,15 @@ export class ProjectsComponent  implements AfterViewInit{
     setTimeout(() => {
 
     }, 9000);
+    this.activatedRoute.params.subscribe(params => {
+      console.log(params);
+      if(params.filter){
+        setTimeout(()=>{
+          this.setFilter(params.filter);
+        },200);
+        // this.loopElements();
+      }
+    });
     // console.log(document.getElementById('moha_logo_img').style, '<--- img img ');
     // console.log(
     //   window.getComputedStyle(this.myId.nativeElement, null)
