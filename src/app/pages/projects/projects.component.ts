@@ -31,7 +31,6 @@ export class ProjectsComponent  implements AfterViewInit{
                private languageService: LanguageService, private activatedRoute: ActivatedRoute,
                private router: Router){
     this.imagesArray = [];
-    this.filter = 'all';
     // this.loadingService.homeLoader.next(true);
     this.state = '';
     this.isLoading = true;
@@ -117,6 +116,14 @@ export class ProjectsComponent  implements AfterViewInit{
     this.imagesArray.push('loaded');
     console.log('loade', this.imagesArray.length);
     if(this.imagesArray.length === 21){
+      this.activatedRoute.params.subscribe(params => {
+        console.log(params);
+        if(params.filter){
+            this.setFilter(params.filter);
+        }else{
+          this.filter = 'all';
+        }
+      });
       this.isLoading = false;
       this.loadingService.homeLoader.next(true);
     }
@@ -287,12 +294,12 @@ export class ProjectsComponent  implements AfterViewInit{
     }, 9000);
     this.activatedRoute.params.subscribe(params => {
       console.log(params);
-      if(params.filter){
-        setTimeout(()=>{
-          this.setFilter(params.filter);
-        },200);
-        // this.loopElements();
-      }
+      // if(params.filter){
+      //   setTimeout(()=>{
+      //     this.setFilter(params.filter);
+      //   },200);
+      //   // this.loopElements();
+      // }
     });
     // console.log(document.getElementById('moha_logo_img').style, '<--- img img ');
     // console.log(
