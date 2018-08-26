@@ -38,18 +38,22 @@ export class HomeComponent implements AfterViewInit{
   scaleX = 1;
   scaleY = 1;
   scaleUp: boolean;
+  numberOfAnimatedImages: number;
+
   constructor(private burgerService: BurgerService, private http: HttpClient,
               private loadingService: LoadingService, private contentService: ContentService,
               @Inject(DOCUMENT) document){
     this.isLoading = true;
     this.homeHover = false;
     this.scaleUp = false;
+    this.numberOfAnimatedImages = 17;
     this.subscribe();
     this.urlArray = [];
     this.counter = 1;
     this._checkDevice();
     this.contentUrl = 'page/home/';
     this.getContent();
+
 
     // this.animationBoxHover = true;
   }
@@ -142,8 +146,7 @@ export class HomeComponent implements AfterViewInit{
   public imgLoaded(imgObj){
     this.urlArray.push(imgObj);
     //13
-    if(this.urlArray.length === 16){
-
+    if(this.urlArray.length === this.numberOfAnimatedImages){
 
       this.imgUrl = this.urlArray[0]['imgUrl'];
       this.animationBackground = this.urlArray[0]['background'];

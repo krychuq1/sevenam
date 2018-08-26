@@ -95,7 +95,17 @@
              id="well">
 
       </div>
-
+      <!--visual-->
+      <div class="image-container drunken"
+           (mouseover)="hover('drunken')"
+           (mouseleave)="hoverLeave()"
+           [routerLink]="['/product/tattoo']"
+           [ngClass]="(filter ==='visual' || filter ==='all') ? 'show' : 'hide'">
+        <img src="../../../assets/images/home/animated-box/drunken_display.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['drunken'].default}"
+             id="drunken">
+      </div>
       <!--website-->
       <div class="image-container pieceofplant"
            (mouseover)="hover('pieceofplant')"
@@ -251,10 +261,7 @@
              class="projectImage"
              [ngStyle]="{'maxHeight': defaultMaxHeight['leaf'].default}"
              id="leaf">
-
-
       </div>
-
     </div>
   </div>
 

@@ -96,8 +96,11 @@ export class ProjectsComponent  implements AfterViewInit{
       bookyWeb: {default: '70%', animate: '50%'},
     //leaf
     leaf: {default: '45%', animate: '30%'},
+      //leaf
+      drunken: {default: '60%', animate: '50%'}
     };
-    }
+  }
+
   private _checkDevice() {
     const innerWidth = (window.innerWidth);
     // check if state is diff
@@ -111,7 +114,6 @@ export class ProjectsComponent  implements AfterViewInit{
   test(){
     this.state = 'in';
   }
-
   public imgLoaded(){
     this.imagesArray.push('loaded');
     console.log('loade', this.imagesArray.length);
