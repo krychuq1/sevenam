@@ -1,0 +1,60 @@
+<div class="services-holder" *ngIf="content">
+  <div class="services">
+    <div class="services-holder-inner">
+      <!--<h1>{{content['services']}}</h1>-->
+      <h3>{{content['services']}}</h3>
+      <p>{{content['offer']}}
+        <span class="pink link" routerLink="/contact">{{content['here!']}}</span></p>
+      <p></p>
+      <p>{{content['details']}}<a href="../../../assets/materials/get-started-with-sevenam.pdf"
+                                  class="pink link" target="_blank">{{content['here-two']}}</a> {{content['youwillsee']}}
+        <a  href="../../../assets/materials/get-started-with-sevenam.pdf"
+            class="pink link" target="_blank">{{content['guide']}}</a>
+      </p>
+
+      <div class="packages">
+        <p class="pink link" (click)="setPackages('first')">{{content['FULL PACKAGE']}} ></p>
+        <div class="container" [ngClass]="{'show': packages.first}">
+          <p>{{content['perfect']}}<span class="bold">{{content['design']}}</span>
+            {{content['materials']}}<br></p>
+          <p class="bold">{{content['vi']}}</p>
+          <p>{{content['vi-types']}}</p>
+          <p class="bold">{{content['web']}}</p>
+          <p>{{content['web-types']}}</p>
+          <p class="bold">{{content['bc']}}</p>
+          <p>{{content['bc-type']}}</p>
+          <p class="bold">{{content['sm']}}</p>
+          <p>{{content['sm-type']}}</p>
+          <p class="bold">{{content['print']}}</p>
+          <p>{{content['print-type']}}</p>
+        </div>
+
+
+        <p class="pink link" (click)="setPackages('second')">{{content['SINGLE PACKAGE']}} ></p>
+        <div class="container" [ngClass]="{'show': packages.second}">
+          <p>{{content['package-1-explanation']}}</p>
+          <p class="bold">{{content['package-1-types']}}
+          </p>
+        </div>
+
+        <p class="pink link" (click)="setPackages('third')">{{content['SOMETHING ELSE?']}} ></p>
+        <div class="container" [ngClass]="{'show': packages.third}">
+          <p>{{content['package-2-explanation']}}</p>
+          <p class="bold">
+            {{content['Visual Identity + Logo + Website']}}<br>
+            {{content['Business card + Logo']}} <br>
+            {{content['Website + Social media banners']}}<br>
+            {{content['Poster + Stickers']}} <br>
+            {{content['Custom Illustrations']}} <br>
+            {{content['Anything you choose + Anything you choose']}}</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="img-holder">
+      <img src="../../../assets/images/services/yellow.png">
+    </div>
+  </div>
+
+</div>

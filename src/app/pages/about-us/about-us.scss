@@ -1,0 +1,44 @@
+@import "../../../styles";
+.about-us-holder{
+  padding: 100px $wrapper 0 $wrapper;
+  background-color: $navigation-background;
+  min-height: 100vh;
+
+  img{
+    margin-top: 30px;
+    max-width: 100%;
+    //min-width: 50%;
+  }
+  .seeVideo{
+    color: $pink-color;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+}
+@include breakpoint(laptop) {
+  .about-us-holder{
+    .aboutText{
+      padding-right: 80px;
+      padding-top: 40px;
+    }
+    .about-inner{
+      display: flex;
+      max-width: 1200px;
+      //display: block;
+      margin: 0 auto;
+      .aboutImage{
+        width: 50%;
+        min-width: 50%;
+        position: relative;
+        p{
+          position: absolute;
+          bottom: 0;
+          right: 20px;
+        }
+      }
+
+    }
+  }
+
+}

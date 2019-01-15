@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "sevenam-stg",
+    "prod": "sevenam-5066b"
+  }
+}

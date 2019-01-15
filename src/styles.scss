@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import "sass/variables";
+@import "sass/typography";
+@import "sass/icons";
+@import "sass/loader";
+body{
+  margin: 0;
+  padding: 0;
+}
+*:focus {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;  // i.e. Nexus5/Chrome and Kindle Fire HD 7'
+}
+*{
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}

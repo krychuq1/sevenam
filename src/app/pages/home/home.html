@@ -1,0 +1,205 @@
+<!--<span class="spinner" *ngIf="isLoading"></span>-->
+<div class="container-loading" *ngIf="isLoading">
+  <span class="load" ></span>
+  <p>loading</p>
+</div>
+
+<!--<div class="languages">-->
+  <!--<p (click)="setLanguage('en')">en</p> | <p (click)="setLanguage('pl')">pl</p>-->
+<!--</div>-->
+<!--!navBurger &&-->
+<div class="home-holder" *ngIf=" !isLoading && content">
+  <!--about section-->
+  <!-- [ngStyle]="{'background-image': 'url(../../../assets/images/home/VIDEO.png)'}"-->
+  <div class="section home"
+       (mouseover)="homeHover = true; scaleVideo(true)"
+       (mouseleave)="homeHover = false; scaleVideo(false)"
+       routerLink="contact"
+        [ngClass]="{'hover' : homeHover, 'hoverRight': animationBoxHover, 'hoverServices': servicesHover}">
+    <div class="video">
+      <iframe
+        id="ytPlayer"
+        allow="autoplay; encrypted-media"
+        allowfullscreen="allowfullscreen"
+        src="https://www.youtube.com/embed/-1MCi370NT4?iv_load_policy=3&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=-1MCi370NT4&controls=0&showinfo=0&wmode=transparent&branding=0&autohide=0&rel=0&origin=http%3A%2F%2Fnovembro.net&enablejsapi=1&widgetid=1"
+      frameborder="0"
+        disablekb="1"
+        [ngStyle]="{'width': videoWidth, 'height': videoHeight,
+        'transform': 'scaleX('+scaleX + ') scaleY('+scaleY + ')'}">
+<!--  [ngStyle]="{'width': videoWidth, 'height': videoHeight}"-->
+<!--https://www.youtube.com/watch?v=-1MCi370NT4-->
+        <!--<iframe width="1383" height="629" src="https://www.youtube.com/embed/-1MCi370NT4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+      </iframe>
+      <img src="../../../assets/images/home/gif.gif" alt="gif" id="gif">
+    </div>
+
+    <div class="footer" routerLink="contact">
+      <p>{{content['contact']}}</p>
+      <img src="../../../assets/images/home/arrow.png">
+    </div>
+
+  </div>
+  <div class="right-elements"
+       [ngClass]="{'hover' : homeHover, 'hoverRight': animationBoxHover, 'hoverServices': servicesHover}">
+    <!--products section-->
+    <div class="products" id="products" routerLink="projects/"
+         (mouseover)="animationBoxHover = true"
+         (mouseleave)="animationBoxHover = false">
+    <!--{{backgroundImageCustom}}-->
+      <!--(@fade.done)="onDone($event)"-->
+      <div class="products-holder"
+           [@fade]="state" (@fade.done)="onDone($event)"
+           [ngStyle]="{
+           'backgroundColor': animationBackground,
+           'background-image': backgroundImageCustom ? 'url(' + backgroundImageCustom +')' : 'none',
+           'justify-content': justifyContent}" >
+        <img   [src]="imgUrl"
+             [ngStyle]="
+             {'maxHeight': isMobile ? mobileHeight : maxHeight}"/>
+        <div class="footer">
+          <p>{{content['projects']}}</p>
+          <img src="../../../assets/images/home/arrow.png">
+        </div>
+      </div>
+    </div>
+    <!--services section-->
+    <div class="section services" routerLink="services"
+         (mouseover)="servicesHover = true"
+         (mouseleave)="servicesHover = false">
+      <div class="services-holder">
+        <img src="../../../assets/images/services/yellow.png">
+
+      </div>
+      <div class="footer">
+        <p>{{content['services']}}</p>
+        <img src="../../../assets/images/home/arrow.png">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<img src="../../../assets/images/home/animated-box/posterchallange.jpg" style="display: none;"
+     (load)="imgLoaded({
+     imgUrl: '../../../assets/images/home/animated-box/posterchallange.jpg',
+     background: '#f57bae',
+     maxHeight: '330px',
+     mobileHeight: '330px'})">
+
+<img src="../../../assets/images/home/animated-box/otis.png" style="display: none;"
+      (load)="imgLoaded({
+      imgUrl: '../../../assets/images/home/animated-box/otis.png',
+      background: '#dbdbdb',
+      maxHeight: '300px',
+      mobileHeight: '270px'})">
+
+<img src="../../../assets/images/home/animated-box/well.png" style="display: none;"
+     (load)="imgLoaded({
+  imgUrl: '../../../assets/images/home/animated-box/well.png',
+  background: '#262626',
+  maxHeight: '300px',
+  mobileHeight: '300px'})">
+
+<img src="../../../assets/images/home/animated-box/moha_logo.png" style="display: none;" (load)="imgLoaded(
+    {imgUrl: '../../../assets/images/home/animated-box/moha_logo.png',
+    background: '#faefdd',
+    maxHeight: '120px',
+    mobileHeight: '100px',
+    backgroundImage: '../../../assets/images/home/animated-box/moha.jpg'})">
+
+<img src="../../../assets/images/home/animated-box/drunken_display.png" style="display: none;" (load)="imgLoaded(
+    {imgUrl: '../../../assets/images/home/animated-box/drunken_display.png',
+    background: '#e7cfb5',
+    maxHeight: '220px',
+    mobileHeight: '220px',
+    backgroundImage: '../../../assets/images/home/animated-box/drunken_display.jpg'})">
+
+<img src="../../../assets/images/home/animated-box/webBug.png" style="display: none;"
+     (load)="imgLoaded({
+  imgUrl: '../../../assets/images/home/animated-box/webBug.png',
+  background: '#323232',
+  maxHeight: '60px',
+  mobileHeight: '60px',
+  justifyContent: 'flex-end'})">
+
+  <img src="../../../assets/images/home/animated-box/bookcover.png" style="display: none;"
+       (load)="imgLoaded({
+       imgUrl: '../../../assets/images/home/animated-box/bookcover.png',
+       background: '#eeeeee',
+       maxHeight: '300px',
+       mobileHeight: '300px'})">
+
+<img src="../../../assets/images/home/animated-box/rowforwater.png" style="display: none;"
+       (load)="imgLoaded(
+       {imgUrl: '../../../assets/images/home/animated-box/rowforwater.png',
+        background: '#f4f4f4',
+        maxHeight: '150px',
+        mobileHeight: '150px'})">
+
+<img src="../../../assets/images/home/animated-box/geomerty.png" style="display: none;"
+  (load)="imgLoaded({
+  imgUrl: '../../../assets/images/home/animated-box/geomerty.png',
+  background: '#efefef',
+  maxHeight: '250px',
+  mobileHeight: '250px'})">
+
+<img src="../../../assets/images/home/animated-box/stpatrick.png" style="display: none;"
+       (load)="imgLoaded({
+       imgUrl: '../../../assets/images/home/animated-box/stpatrick.png',
+       background: '#eaeaea',
+       maxHeight: '270px',
+       mobileHeight: '250px'})">
+
+       <img src="../../../assets/images/home/animated-box/esport.png" style="display: none;"
+            (load)="imgLoaded({
+            imgUrl: '../../../assets/images/home/animated-box/esport.png',
+            background: '#e8e8e8',
+            maxHeight: '80px',
+        mobileHeight: '70px'})">
+
+<img src="../../../assets/images/home/animated-box/letsgo.png" style="display: none;"
+     (load)="imgLoaded(
+     {imgUrl: '../../../assets/images/home/animated-box/letsgo.png',
+      background: '#efefef',
+      maxHeight: '200px',
+      mobileHeight: '180px'})">
+
+<img src="../../../assets/images/home/animated-box/pieceofplant.png" style="display: none;"
+     (load)="imgLoaded(
+     {imgUrl: '../../../assets/images/home/animated-box/pieceofplant.png',
+      background: '#fae4f9',
+      maxHeight: '140px',
+       mobileHeight: '120px'})"  >
+
+<img src="../../../assets/images/home/animated-box/valentines.png" style="display: none;"
+     (load)="imgLoaded(
+     {imgUrl: '../../../assets/images/home/animated-box/valentines.png',
+      background: '#ededed',
+      maxHeight: '240px',
+      mobileHeight: '220px'})">
+
+
+
+<img src="../../../assets/images/home/animated-box/booky.png" style="display: none;"
+     (load)="imgLoaded({
+     imgUrl: '../../../assets/images/home/animated-box/booky.png',
+     background: '#f2f2f2',
+     maxHeight: '100px',
+     mobileHeight: '80px'})">
+
+
+<img src="../../../assets/images/home/animated-box/bug.png" style="display: none;" (load)="imgLoaded(
+     {imgUrl: '../../../assets/images/home/animated-box/bug.png',
+      background: '#323232',
+      maxHeight: '160px',
+      mobileHeight: '140px'})">
+
+
+<img src="../../../assets/images/home/animated-box/leaf.png" style="display: none;"
+     (load)="imgLoaded({
+     imgUrl: '../../../assets/images/home/animated-box/leaf.png',
+     background: '#fce7fa',
+     maxHeight: '180px',
+     mobileHeight: '160px'})">

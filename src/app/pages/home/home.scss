@@ -1,0 +1,253 @@
+@import "../../../styles";
+#vyThq5M-1533578821478{
+  bottom: 50px !important;
+}
+#chuj{
+  bottom: 100px !important;
+}
+.languages{
+  position: absolute;
+  top: 200px;
+  right: 100px;
+  color: white;
+  display: flex;
+  //background: yellow;
+  z-index: 2;
+  width: 60px;
+  justify-content: space-around;
+}
+
+.home-holder{
+
+  .products {
+    margin-top: -10px;
+    cursor: pointer;
+    height: 380px;
+
+    .products-holder{
+      height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: contain;
+    }
+    img{
+      max-width: 100%;
+      max-height: 100%;
+    }
+    p{
+      color: #000000;
+    }
+    background-color: #1a1a1a;
+    position: relative;
+    text-transform: uppercase;
+    //color: $home-light;
+    font-weight: 300;
+    .footer{
+      position: absolute;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      bottom: 0;
+      width: 100%;
+      justify-content: flex-end;
+      padding-bottom: 20px;
+      img{
+        width: 20px;
+        margin-left: 10px;
+        margin-right: $wrapper;
+      }
+    }
+  }
+  .home{
+    @extend .products;
+    height: auto;
+
+    .video {
+      position: relative;
+      overflow: hidden;
+      //height: 380px;
+      #ytPlayer{
+        display: none;
+        transition: 1s ease-in-out;
+
+      }
+      img{
+        height: 300px;
+        width: 100%;
+      }
+      //padding-bottom: 82.25%; /* 16:9 */
+      //height: 0;
+      //max-height: 1000000px;
+    }
+    .video iframe,
+    .video object,
+    .video embed {
+      pointer-events: none;
+      //position: absolute;
+      //top: 0;
+      //left: 0;
+      //width: 100%;
+      //height: 100%;
+    }
+
+    p{
+      //color: $home-light;
+    }
+  }
+  .services{
+    @extend .products;
+    margin-top: 0;
+
+    .services-holder{
+      height: 380px;
+      margin-top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      img{
+        max-height: 80%;
+      }
+    }
+    background: $yellow-color;
+
+  }
+
+}
+@include breakpoint(tablet) {
+  .home-holder {
+    .home {
+      .video {
+        height: auto;
+        #ytPlayer {
+          display: block;
+        }
+        #gif{
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(laptop) {
+  .home-holder{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-height: 100vh;
+    overflow: hidden;
+    .section{
+      &.home{
+        margin-top: 0;
+        height: 100vh;
+        max-height: 100vh;
+        width: 60%;
+        transition: width 1s;
+
+       img{
+         //display: none;
+       }
+
+        &.hover{
+          width: 65%;
+        }
+        &.hoverRight{
+          width: 55%;
+
+        }
+        &.hoverServices{
+          width: 55%;
+
+        }
+        //height: 100vh;
+        .video{
+          //width: 100%;
+          //height: 100%;
+        }
+      }
+    }
+    .right-elements{
+      width: 40%;
+      height: 100vh;
+      transition: width 1s;
+      &.hover{
+        width: 35%;
+      }
+
+      &.hoverRight{
+        width: 45%;
+        .products{
+          height: 60vh;
+
+          .products-holder{
+            height: 60vh;
+          }
+        }
+        .services{
+          height: 40vh;
+        }
+        .services-holder{
+          height: 40vh;
+        }
+
+      }
+      &.hoverServices{
+        width: 45%;
+        .products{
+          height: 40vh;
+
+          .products-holder{
+            height: 40vh;
+          }
+        }
+        .services{
+          height: 60vh;
+        }
+        .services-holder{
+          height: 60vh;
+        }
+
+      }
+      .services-holder{
+        transition: height 1s;
+
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        background-color: #f7da3e;
+        align-items: flex-end;
+        img{
+          max-height: 85%;
+        }
+      }
+      .products{
+        height: 50vh;
+        margin-top: 0;
+        transition: height 1s;
+
+        .products-holder{
+          height: 50vh;
+          display: flex;
+          //justify-content: center;
+          //align-items: center;
+          transition: height 1s;
+
+          //background-image: url("../../../assets/images/home/animated-box/moha.jpg");
+          background-size: contain;
+          //background-color: #eeeeee;
+        }
+
+
+      }
+
+      .services{
+        margin-top: 0;
+
+      }
+
+    }
+
+  }
+
+}

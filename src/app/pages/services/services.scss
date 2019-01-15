@@ -1,0 +1,70 @@
+@import "../../../styles";
+.services-holder{
+  padding: 100px $wrapper 300px $wrapper;
+  background: $yellow-color;
+  position: relative;
+  overflow-x: hidden;
+  min-height: calc(100vh - 400px);
+  .img-holder{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    right: -51px;
+    bottom: 0;
+    img{
+      max-width: 100%;
+      height: 350px;
+      //margin-right: -80px;
+    }
+  }
+
+  .packages{
+    padding-top: 30px;
+    .container{
+      max-height: 0;
+      transition: max-height 0.4s ease-out;
+      overflow: hidden;
+      &.show{
+        max-height: 700px;
+      }
+
+    }
+  }
+}
+@include breakpoint(laptop) {
+  .services-holder{
+    display: flex;
+    //align-items: center;
+    justify-content: center;
+    padding-bottom: 0;
+    padding-top: 40px;
+    min-height: calc(100vh - 40px);
+    .services{
+      display: flex;
+      max-width: 1000px;
+
+    }
+    .packages{
+      padding-top: 60px;
+    }
+      .services-holder-inner{
+      h1{
+        color: $header-color;
+        text-transform: uppercase;
+      }
+      padding-top: 80px;
+      padding-right: 130px;
+      align-self: flex-start;
+    }
+
+    .img-holder{
+      position: static;
+      align-self: flex-end;
+      img{
+        max-width: 370px;
+        height: auto;
+      }
+    }
+  }
+}

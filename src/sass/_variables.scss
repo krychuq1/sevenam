@@ -1,0 +1,29 @@
+$wrapper: 30px;
+$home-dark: #2d2d2d;
+$home-light: #cdcdcd;
+$navigation-background: #f7f7f7;
+$navigation-gray: #c5c5c5;
+$contact-color: #535353;
+$pink-color: #ff00f2;
+$header-color: #535353;
+$paragraph-color: #525252;
+$yellow-color: #F7DA3E;
+$desktop: 1240px;
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 70em) { @content ; }
+  }
+  @else if $point == laptop {
+    @media (min-width: 64em) { @content ; }
+  }
+  @else if $point == tablet {
+    @media (min-width: 50em) { @content ; }
+  }
+  @else if $point == phablet {
+    @media (min-width: 37.5em)  { @content ; }
+  }
+  @else if $point == mobileonly {
+    @media (max-width: 37.5em)  { @content ; }
+  }
+}

@@ -1,0 +1,67 @@
+import {Injectable} from "@angular/core";
+import {HttpClient} from "@angular/common/http";
+import * as config from '../config';
+
+@Injectable()
+export class ContentService {
+  contentService: string;
+  newcontentService: string;
+  contactContact: object;
+
+  constructor(private http: HttpClient) {
+    this.contentService = config.content;
+    this.newcontentService = config.newcontent;
+  }
+
+  public getContactContent(url){
+    this.getContent(url).then((con)=>{
+
+    })
+  }
+  public getContent(path): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.http.get(this.contentService + path + localStorage.getItem('lan')).subscribe((res) => {
+        if (res[0]) {
+          const response = res[0].content;
+          // init variable
+          const content = {};
+          // for each to make obj out of array
+          response.forEach(function (row) {
+            content[row.key] = row.value;
+          });
+          resolve(content);
+        } else {
+          resolve([]);
+          console.log('NO DATA FROM CONTENT SERVICE ', res);
+        }
+        /**
+         * @event Cms#contentFetched
+         * @type { void }
+         */
+      }, (err) => {
+        reject(err);
+      });
+    });
+  }
+  public getNewContent(path): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.http.get(this.newcontentService + path + 'English').subscribe((res) => {
+        if (res[0]) {
+          const response = res[0].content;
+          // init variable
+          const content = {};
+          // for each to make obj out of array
+          response.forEach(function (row) {
+            content[row.key] = row.value;
+          });
+          resolve(content);
+        } else {
+          resolve([]);
+          console.log('NO DATA FROM CONTENT SERVICE ', res);
+        }
+        }, (err) => {
+        reject(err);
+      });
+    });
+  }
+}

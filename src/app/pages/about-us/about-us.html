@@ -1,0 +1,17 @@
+<div class="about-us-holder" *ngIf="content">
+  <div *ngIf="router.url !== '/about-us/video'" class="about-inner">
+    <div class="aboutText">
+      <h3>{{content['title']}}</h3>
+      <p>{{content['aboutus_p1']}}</p>
+    </div>
+
+    <div class="aboutImage">
+      <img src="../../../assets/images/about-us/about.jpg" alt="about-us">
+      <p class="seeVideo" routerLink="video">{{content['seeVideo']}}</p>
+    </div>
+
+  </div>
+
+  <router-outlet></router-outlet>
+
+</div>

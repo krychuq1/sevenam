@@ -1,0 +1,290 @@
+<div class="container-loading" *ngIf="isLoading">
+  <span class="load" ></span>
+  <p>loading</p>
+</div>
+<div class="projects-holder" *ngIf="!isLoading && content">
+  <!--<p (click)="setFilter('off')">fade out {{filter}}</p>-->
+
+  <ul>
+    <li class="nav" [ngClass]="{'pink' : filter ==='all'}"
+        (click)="setFilter('all')">{{content['all']}}</li>
+    <li>|</li>
+    <li class="nav"  [ngClass]="{'pink' : filter ==='website'}"
+        (click)="setFilter('website')">{{content['Website']}}</li>
+    <li>|</li>
+    <li class="nav"  [ngClass]="{'pink' : filter ==='visual'}"
+        (click)="setFilter('visual')">{{content['Visual identity']}}</li>
+    <li>|</li>
+    <li class="nav" [ngClass]="{'pink' : filter ==='logos'}"
+        (click)="setFilter('logos')">{{content['logos']}}</li>
+    <li>|</li>
+    <li class="nav"  [ngClass]="{'pink' : filter ==='print'}"
+        (click)="setFilter('print')">{{content['Print']}}</li>
+    <li>|</li>
+    <li class="nav"  [ngClass]="{'pink' : filter ==='games'}"
+        (click)="setFilter('games')">{{content['Games']}}</li>
+  </ul>
+  <div class="images-wrapper">
+    <div class="image-holder" id="image-holder">
+      <div class="cover" [ngClass]="{'active': enableAnimation}">
+
+      </div>
+
+      <!--[ngClass]="(filter ==='print' || filter ==='all') ? 'show' : 'hide'"-->
+      <!--print-->
+      <div class="image-container posterchallange"
+           (mouseover)="hover('posterchallange')"
+           (mouseleave)="hoverLeave('posterchallange')"
+           routerLink="/product/summerPosters"
+           [ngClass]="{'show' : (filter ==='print' || filter ==='all'),
+         'hide' : (filter !=='print' && filter !=='all'),
+         'hover': projectHover}">
+        <img src="../../../assets/images/home/animated-box/posterchallange.jpg"
+             class="projectImage"
+              [ngStyle]="{'maxHeight': defaultMaxHeight['posterchallange'].default}"
+              id="posterchallange">
+      </div>
+      <!--logo-->
+      <div class="image-container mohaLogo"
+           (mouseover)="hover('mohaLogo')"
+           (mouseleave)="hoverLeave('mohaLogo')"
+           [ngClass]="{'show' : (filter ==='logos' || filter ==='all'),
+         'hide' : (filter !=='logos' && filter !=='all'),
+         'hover': projectHover}"
+          [routerLink]="['/product/mohaLogo']">
+        <img src="../../../assets/images/home/animated-box/moha_logo.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['mohaLogo'].default}"
+             id="mohaLogo">
+      </div>
+
+      <!--logo-->
+      <div class="image-container esport"
+           (mouseover)="hover('esport')"
+           (mouseleave)="hoverLeave('esport')"
+           [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'"
+            [routerLink]="['/product/esportLogo']">
+        <img src="../../../assets/images/home/animated-box/esport.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['esport'].default}"
+             id="esport">
+      </div>
+
+      <!--print-->
+      <div class="image-container otis"
+           (mouseover)="hover('otis')"
+           (mouseleave)="hoverLeave('otis')"
+           [ngClass]="(filter ==='print' || filter ==='all') ? 'show' : 'hide'"
+           [routerLink]="['/product/otisBook']">
+        <img src="../../../assets/images/home/animated-box/otis.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['otis'].default}"
+              id="otis">
+
+      </div>
+
+      <!--print-->
+      <div class="image-container well"
+           (mouseover)="hover('well')"
+           (mouseleave)="hoverLeave('well')"
+           [ngClass]="(filter ==='print' || filter ==='all') ? 'show' : 'hide'"
+           [routerLink]="['/product/beforeYouSayAnythingPosters']">
+        <img src="../../../assets/images/home/animated-box/well.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['well'].default}"
+             id="well">
+
+      </div>
+      <!--visual-->
+      <div class="image-container drunken"
+           (mouseover)="hover('drunken')"
+           (mouseleave)="hoverLeave()"
+           [routerLink]="['/product/tattoo']"
+           [ngClass]="(filter ==='visual' || filter ==='all') ? 'show' : 'hide'">
+        <img src="../../../assets/images/home/animated-box/drunken_display.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['drunken'].default}"
+             id="drunken">
+      </div>
+      <!--website-->
+      <div class="image-container pieceofplant"
+           (mouseover)="hover('pieceofplant')"
+           (mouseleave)="hoverLeave('pieceofplant')"
+           [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'"
+           [routerLink]="['/product/pieceOfPlantLogo']">
+      <img src="../../../assets/images/home/animated-box/pieceofplant.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['pieceofplant'].default}"
+             id="pieceofplant">
+      </div>
+
+      <!--logos-->
+      <div class="image-container bug"
+           (mouseover)="hover('bug')"
+           (mouseleave)="hoverLeave('bug')"
+           [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'"
+           [routerLink]="['/product/theBugLogo']">
+        <img src="../../../assets/images/home/animated-box/bug.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['bug'].default}"
+             id="bug">
+
+      </div>
+
+      <div class="image-container mohaVisual"
+           (mouseover)="hover('mohaVisual')"
+           (mouseleave)="hoverLeave('mohaVisual')"
+           [ngClass]="(filter ==='visual' || filter ==='all') ? 'show' : 'hide'"
+           [routerLink]="['/product/moha-visual-identity']">
+        <img src="../../../assets/images/home/animated-box/moha_vi.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['mohaVisual'].default}"
+        id="mohaVisual">
+      </div>
+
+      <!--logos-->
+      <div class="image-container rowforwater"
+           (mouseover)="hover('rowforwater')"
+           (mouseleave)="hoverLeave('rowforwater')"
+           [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'"
+           [routerLink]="['/product/rowForWaterLogo']">
+      <img src="../../../assets/images/home/animated-box/rowforwater.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['rowforwater'].default}"
+             id="rowforwater">
+      </div>
+      <!--games-->
+      <div class="image-container valentines"
+           (mouseover)="hover('valentines')"
+           (mouseleave)="hoverLeave('valentines')"
+           [ngClass]="(filter ==='games' || filter ==='all') ? 'show' : 'hide'"
+           [routerLink]="['/product/valentinesBoo']">
+        <img src="../../../assets/images/home/animated-box/valentines.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['valentines'].default}"
+             id="valentines">
+
+      </div>
+
+      <div class="image-container webBug"
+           (mouseover)="hover('webBug')"
+           (mouseleave)="hoverLeave('webBug')"
+           [ngClass]="(filter ==='website' || filter ==='all') ? 'show' : 'hide'"
+           [routerLink]="['/product/theBugWebsite']">
+      <img src="../../../assets/images/home/animated-box/webBug.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['webBug'].default}"
+             id="webBug">
+      </div>
+
+      <!--print-->
+      <div class="image-container bookcover"
+           (mouseover)="hover('bookcover')"
+           (mouseleave)="hoverLeave('bookcover')"
+           [ngClass]="(filter ==='print' || filter ==='all') ? 'show' : 'hide'"
+           [routerLink]="['/product/bookCover']">
+        <img src="../../../assets/images/home/animated-box/bookcover.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['bookcover'].default}"
+             id="bookcover">
+
+
+      </div>
+
+      <div class="image-container letsgo"
+           (mouseover)="hover('letsgo')"
+           (mouseleave)="hoverLeave('letsgo')"
+           [ngClass]="{'show' : (filter ==='print' || filter ==='all'),
+         'hide' : (filter !=='print' && filter !=='all'),
+         'hover': projectHover}"
+           [routerLink]="['/product/sketchPosters']">
+        <img src="../../../assets/images/home/animated-box/letsgo.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['letsgo'].default}"
+             id="letsgo">
+      </div>
+
+      <div class="image-container stpatrick"
+           (mouseover)="hover('stpatrick')"
+           (mouseleave)="hoverLeave('stpatrick')"
+           [ngClass]="(filter ==='games' || filter ==='all') ? 'show' : 'hide'"
+           [routerLink]="['/product/stPatrickGame']">
+      <!--logo-->
+        <img src="../../../assets/images/home/animated-box/stpatrick.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['stpatrick'].default}"
+             id="stpatrick">
+
+      </div>
+      <!--website-->
+      <div class="image-container booky"
+           (mouseover)="hover('booky')"
+           (mouseleave)="hoverLeave('booky')"
+           [ngClass]="(filter ==='logos' || filter ==='all') ? 'show' : 'hide'"
+           [routerLink]="['/product/bookyLogo']">
+      <img src="../../../assets/images/home/animated-box/booky.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['booky'].default}"
+             id="booky">
+
+      </div>
+
+      <!--print-->
+      <div class="image-container geometry"
+           (mouseover)="hover('geometry')"
+           (mouseleave)="hoverLeave('geometry')"
+           [ngClass]="(filter ==='print' || filter ==='all') ? 'show' : 'hide'"
+           [routerLink]="['/product/geometryPosters']">
+        <img src="../../../assets/images/home/animated-box/geomerty.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['geometry'].default}"
+             id="geometry">
+      </div>
+      <div class="image-container bookyWeb"
+           (mouseover)="hover('bookyWeb')"
+           (mouseleave)="hoverLeave()"
+           [ngClass]="(filter ==='website' || filter ==='all') ? 'show' : 'hide'"
+           [routerLink]="['/product/bookyWebApp']">
+        <img src="../../../assets/images/home/animated-box/booky_web.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['bookyWeb'].default}"
+             id="bookyWeb">
+
+      </div>
+      <!--logos-->
+      <div class="image-container leaf"
+           (mouseover)="hover('leaf')"
+           (mouseleave)="hoverLeave()"
+           [routerLink]="['/product/pieceOfPlantWeb']"
+           [ngClass]="(filter ==='website' || filter ==='all') ? 'show' : 'hide'">
+        <img src="../../../assets/images/home/animated-box/leaf.png"
+             class="projectImage"
+             [ngStyle]="{'maxHeight': defaultMaxHeight['leaf'].default}"
+             id="leaf">
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<img src="../../../assets/images/home/animated-box/booky.png" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/booky_logo.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/bug.png" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/letsgo.png" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/moha.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/moha_logo.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/numbers.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/otis.png" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/pieceofplant.png" style="display: none;" (load)="imgLoaded()"  >
+<img src="../../../assets/images/home/animated-box/rowforwater.png" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/valentines.png" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/well.png" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/VIDEO.png" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/yellow.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/bookcover.png" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/esport.png" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/posterchallange.jpg" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/stpatrick.png" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/webBug.png" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/geomerty.png" style="display: none;" (load)="imgLoaded()">
+<img src="../../../assets/images/home/animated-box/geomerty.png" style="display: none;" (load)="imgLoaded()">

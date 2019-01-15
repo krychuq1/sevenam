@@ -1,0 +1,42 @@
+@import "variables";
+body{
+  font-family: 'Poppins', sans-serif;;
+}
+
+h3{
+  color: $header-color;
+  text-transform: uppercase;
+}
+p{
+  font-size: 0.9rem;
+  line-height: 2rem;
+  color: $paragraph-color;
+  margin: 0;
+}
+.pink{
+  color: $pink-color;
+  font-weight: bold;
+}
+.link{
+  text-decoration: none;
+  cursor: pointer;
+}
+.bold{
+  font-weight: bold;
+}
+.single-link{
+  color: $pink-color;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  &:hover{
+    color: $pink-color;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  &:visited{
+    color: $pink-color;
+    text-decoration: none;
+  }
+
+}

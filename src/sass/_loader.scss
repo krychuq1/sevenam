@@ -1,0 +1,83 @@
+
+//Variables & Base Styles
+$loader-color: #ff00f6;
+
+//Begin Loaders
+//Loaders are numbered by class, with relevant animations listed directly after the styling
+.container-loading{
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  p{
+    margin-top: 20px;
+    color: $pink-color;
+    font-weight: bold;
+  }
+}
+.load {
+  display: inline-block;
+  width: 75px;
+  height: 5px;
+  background: $loader-color;
+  border-radius: 100px;
+  transform-origin: center center;
+  animation: load 4s ease infinite;
+  margin-top: 35px;
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(-20deg);
+    height: 5px;
+    width: 75px;
+  }
+  5% {
+    height: 5px;
+    width: 75px;
+  }
+  30% {
+    transform: rotate(380deg);
+    height: 5px;
+    width: 75px;
+  }
+  40% {
+    transform: rotate(360deg);
+    height: 5px;
+    width: 75px;
+  }
+  55% {
+    transform: rotate(0deg);
+    height: 5px;
+    width: 5px;
+  }
+  65% {
+    transform: rotate(0deg);
+    height: 5px;
+    width: 85px;
+  }
+  68% {
+    transform: rotate(0deg);
+    height: 5px;
+  }
+  75% {
+    transform: rotate(0deg);
+    height: 5px;
+    width: 1px;
+  }
+  78% {
+    height: 5px;
+    width: 5px;
+  }
+  90% {
+    height: 5px;
+    width: 75px;
+    transform: rotate(0deg);
+  }
+  99%, 100% {
+    height: 5px;
+    width: 75px;
+    transform: rotate(-20deg);
+  }
+}

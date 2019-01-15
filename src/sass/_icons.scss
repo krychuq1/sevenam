@@ -1,0 +1,54 @@
+//icons
+.icons{
+  //border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 0 auto;
+  &.icons-contact{
+    padding: 20px 0 0 0;
+    justify-content: flex-start;
+    margin:  0;
+  }
+  .icon{
+    height: 34px;
+    width: 33px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin-right: 15px;
+    background-size: contain;
+
+    &.fb{
+      background-image: url("/assets/images/navigation/fb.png");
+      &:hover{
+        background-image: url("/assets/images/navigation/fb_hover.png");
+      }
+    }
+    &.insta{
+      background-image: url("/assets/images/navigation/insta.png");
+      &:hover{
+        background-image: url("/assets/images/navigation/insta_hover.png");
+      }
+    }
+    &.blog{
+      background-image: url("/assets/images/navigation/blog.png");
+      &:hover{
+        background-image: url("/assets/images/navigation/blog_hover.png");
+      }
+    }
+    &.twitter{
+      background-image: url("/assets/images/navigation/twitter.png");
+      &:hover{
+        background-image: url("/assets/images/navigation/twitter_hover.png");
+      }
+    }
+    &.yt{
+      background-image: url("/assets/images/navigation/yt.png");
+      margin-right: 0;
+      &:hover{
+        background-image: url("/assets/images/navigation/yt_hover.png");
+      }
+    }
+  }
+}
+
+

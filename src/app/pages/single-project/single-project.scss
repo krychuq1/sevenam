@@ -1,0 +1,137 @@
+@import "../../../styles";
+
+.single-project{
+  padding: 110px 0 0 0;
+  min-height: calc(100vh - 150px);
+  display: flex;
+  flex-direction: column;
+  .singleImgHolder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //padding: 30px;
+    flex: 1;
+  }
+  .footer{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    //max-width: 800px;
+    //margin: 0 auto;
+    width: 100%;
+    p{
+      cursor: pointer;
+    }
+  }
+  .singleArrow{
+    position: absolute;
+    right: 30px;
+    transform: rotate(270deg);
+    cursor: pointer;
+    bottom: 140px;
+
+  }
+  .text{
+    padding: 0 30px 20px 30px;
+  }
+  h1{
+    margin-top: 0;
+    font-weight: normal;
+    font-size: 1rem;
+  }
+
+  h3{
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+    text-transform: none;
+    font-weight: normal;
+
+  }
+  img{
+    display: block;
+    //max-width: 800px;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    &.mohaLogo {
+      max-width: 250px;
+    }
+    &.esportLogo{
+      max-width: 285px;
+    }
+    &.pieceOfPlantLogo{
+      max-width: 140px;
+    }
+    &.theBugLogo{
+      max-width: 100px;
+    }
+    &.rowForWaterLogo{
+      max-width: 120px;
+    }
+    &.bookyLogo{
+      max-width: 150px;
+
+    }
+  }
+}
+
+@include breakpoint(laptop) {
+  .single-project{
+    .text{
+      //padding: 0 30px 30px 30px;
+    }
+    .singleImgHolder{
+      min-height: 400px;
+    }
+    h1{
+      color: #4c4c4c;
+      margin-top: 0;
+      font-weight: normal;
+      font-size: 1.2rem;
+    }
+    h3{
+      line-height: 1.7rem;
+      color: #565656;
+      font-size: .9rem;
+      text-transform: none;
+      font-weight: normal;
+    }
+    img{
+      &.otisBook{
+        max-width: 950px;
+      }
+      &.mohaLogo {
+        max-width: 333px;
+      }
+      &.pieceOfPlantLogo{
+        max-width: 260px;
+      }
+      &.theBugLogo{
+        max-width: 149px;
+      }
+      &.rowForWaterLogo{
+        max-width: 200px;
+      }
+      &.theBugWebsite{
+        max-width: 950px;
+      }
+      &.bookCover{
+        max-width: 600px;
+      }
+      &.bookyLogo{
+        max-width: 260px;
+      }
+      &.summerPosters{
+        max-width: 100%;
+      }
+      &.tattoo{
+        max-width: 100%;
+      }
+
+
+      max-width: 800px;
+    }
+  }
+}

@@ -1,0 +1,230 @@
+@import "../../../styles";
+.contact-holder{
+    min-height: 100vh;
+    display: flex;
+    background-color: #e5dfe8;
+    .contact{
+      position: relative;
+      width: 100%;
+      display: flex;
+      padding: 50px 30px;
+      flex-direction: column;
+      .confirm  {
+        padding-top: 70px;
+        span{
+          cursor: pointer;
+        }
+      }
+      .error{
+        padding-top: 70px;
+        span{
+          cursor: pointer;
+        }
+      }
+      div{
+        z-index: 2;
+      }
+      &.processing{
+        justify-content: center;
+        //align-items: center;
+      }
+      .big-spinacz{
+        display: none;
+      }
+      .spinacz{
+        z-index: 1;
+        width: 100px;
+        position: absolute;
+        &.one{
+          right: 20px;
+          top: 155px;
+        }
+        &.two{
+          top: 308px;
+          right: 0;
+          width: 55px;
+        }
+        &.three{
+          top: 396px;
+          right: 10px;
+          width: 122px;
+        }
+        &.four{
+          right: 0;
+          width: 24px;
+          top: 445px;
+        }
+      }
+
+      //height: inherit;
+      .text-holder{
+        margin-top: 40px;
+      }
+
+      .spinner-contact{
+        height: auto;
+        margin-bottom: 80px;
+        //margin: 100px  auto 150px auto;
+      }
+
+      h1{
+        margin-bottom: 0;
+        color: $contact-color;
+        font-size: 1.4rem;
+
+      }
+      h3{
+        margin-top: 0.5rem;
+        color: $contact-color;
+        font-weight: normal;
+        font-size: 1rem;
+        text-transform: none;
+      }
+
+    //  form
+      .form{
+        width: 100%;
+        //padding-top: 30px;
+        padding-bottom: 30px;
+        input{
+          border: none;
+          border-bottom: 1px solid #6d6d6d;
+          width: 100%;
+          margin-bottom: 20px;
+          font-family: 'Poppins';
+          padding-left: 10px;
+          box-sizing: border-box;
+          background: none;
+          &:focus{
+            outline: none;
+          }
+          &.mail{
+            margin-bottom: 5px;
+          }
+          &.input-error{
+            margin-bottom: 0;
+          }
+        }
+        p{
+          color: red;
+          font-size: 13px;
+          font-weight: bolder;
+          margin: 0 0 0 10px;
+
+        }
+        .button{
+          border: 1px solid #868686;
+          cursor: pointer;
+          text-align: center;
+          float: right;
+          margin-top: 15px;
+          height: 35px;
+          width: 100px;
+          font-family: 'Poppins';
+          color: #868686;
+          background: none;
+          &:hover{
+            color: white;
+            border: none;
+            background-color: $pink-color;
+          }
+        }
+        textarea{
+          background: transparent;
+          width: 100%;
+          line-height: 45px;
+          background-image: linear-gradient(transparent, transparent 44px, #6d6d6d 0px);
+          background-size: 100% 45px;
+          border: none;
+          overflow: auto;
+          outline: none;
+          font-family: 'Poppins';
+          padding-left: 10px;
+          box-sizing: border-box;
+        }
+      }
+    }
+    .contact-footer{
+      display: flex;
+      flex-direction: column;
+      //width: 100%;
+
+
+      &.processing, &.isSent{
+        position: absolute;
+        bottom: 20px;
+      }
+
+      .contact-footer-inner{
+        //width: 60%;
+        height: 100%;
+        h3{
+          font-weight: bold;
+        }
+        p{
+         line-height: 1.5rem;
+          .bold{
+            font-weight: bold;
+            color: $contact-color;
+
+          }
+          &.bold{
+            margin-top: 3px;
+            font-weight: bold;
+
+            &.space{
+              margin-top: 20px;
+              margin-bottom: 10px;
+            }
+          }
+          &.amparagraph{
+            margin-top: 7px;
+            //margin-bottom: 5px;
+            text-align: left;
+            color: $pink-color;
+          }
+        }
+      }
+    }
+}
+@include breakpoint(laptop) {
+  .contact-holder{
+    .contact{
+      max-width: 1200px;
+      margin: 0 auto;
+      .spinacz{
+        display: none;
+      }
+      .big-spinacz{
+        position: absolute;
+        display: block;
+        &.one{
+          left: 50%;
+          top: -20px;
+          max-height: 300px;
+        }
+        &.two{
+          left: calc(50% + 148px);
+          top: 257px;
+          max-height: 209px;
+        }
+        &.three{
+          bottom: 10px;
+          height: 150px;
+          right: 300px;
+        }
+        &.four{
+          bottom: 10px;
+          height: 150px;
+          right: 125px;
+        }
+
+      }
+
+      .form{
+        width: 50%;
+
+      }
+    }
+  }
+}
