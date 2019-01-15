@@ -18,9 +18,10 @@
 
 
   </div>
-  <div class="navigation" [ngClass]="navBurger ? 'is-active' : ''">
+  <div class="navigation" [ngClass]="navBurger ? 'is-active' : ''" *ngIf="newContent">
     <ul>
-      <li routerLink="" (click)="openBurger()">{{content['home']}}</li>
+      <!--{{newContent['home']}}-->
+      <li routerLink="" (click)="openBurger()" [innerHtml]="newContent['home']"></li>
       <li routerLink="/projects" (click)="openBurger()">{{content['projects']}}</li>
       <li routerLink="/services" (click)="openBurger()">{{content['services']}}</li>
       <li routerLink="/about-us" (click)="openBurger()">{{content['about']}}</li>

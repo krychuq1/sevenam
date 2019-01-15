@@ -16,6 +16,7 @@ export class HeaderComponent {
   isHomeLoaded: boolean;
   contentUrl: string;
   content: object;
+  newContent: object;
   navAllow: boolean;
   @ViewChild('headerHolder') headerHolder: ElementRef;
 
@@ -29,6 +30,7 @@ export class HeaderComponent {
     this.navAllow = true;
     this.homeLoader();
     this.getContent();
+    this.getNewContent();
   }
   public setLanguage(lan: string){
     console.log(this.languageService);
@@ -75,11 +77,20 @@ export class HeaderComponent {
   public homeLoader(){
     this.loadingService.homeLoader.subscribe(value => {
         this.isHomeLoaded = value;
-    })
+    });
   }
   getContent() {
     this.contentService.getContent(this.contentUrl).then((content) =>{
       this.content = content;
+    }, err => {
+      console.error(err);
+    });
+  }
+  getNewContent() {
+    this.contentService.getNewContent(this.contentUrl).then((content) =>{
+      this.newContent = content;
+      console.log('my content ', content);
+
     }, err => {
       console.error(err);
     });
