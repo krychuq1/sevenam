@@ -22,10 +22,10 @@
     <ul>
       <!--{{newContent['home']}}-->
       <li routerLink="" (click)="openBurger()" [innerHtml]="newContent['home']"></li>
-      <li routerLink="/projects" (click)="openBurger()">{{content['projects']}}</li>
-      <li routerLink="/services" (click)="openBurger()">{{content['services']}}</li>
-      <li routerLink="/about-us" (click)="openBurger()">{{content['about']}}</li>
-      <li routerLink="/contact" (click)="openBurger()">{{content['contact']}}</li>
+      <li routerLink="/projects" (click)="openBurger()"[innerHtml]="newContent['projects']"></li>
+      <li routerLink="/services" (click)="openBurger()"[innerHtml]="newContent['services']"></li>
+      <li routerLink="/about-us" (click)="openBurger()"[innerHtml]="newContent['about']"></li>
+      <li routerLink="/contact" (click)="openBurger()"[innerHtml]="newContent['contact']"></li>
     </ul>
     <div class="line"></div>
     <div class="icons">

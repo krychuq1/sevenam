@@ -1,52 +1,52 @@
-<div class="services-holder" *ngIf="content">
+<div class="services-holder" *ngIf="newContent">
   <div class="services">
-    <div class="services-holder-inner">
+    <div class="services-holder-inner" >
       <!--<h1>{{content['services']}}</h1>-->
-      <h3>{{content['services']}}</h3>
-      <p>{{content['offer']}}
-        <span class="pink link" routerLink="/contact">{{content['here!']}}</span></p>
+      <h3 [innerHtml]="newContent['services']"></h3>
+      <p  [innerHtml]="newContent['offer']">
+        <span class="pink link" routerLink="/contact" [innerHtml]="newContent['here!']"></span></p>
       <p></p>
-      <p>{{content['details']}}<a href="../../../assets/materials/get-started-with-sevenam.pdf"
-                                  class="pink link" target="_blank">{{content['here-two']}}</a> {{content['youwillsee']}}
-        <a  href="../../../assets/materials/get-started-with-sevenam.pdf"
-            class="pink link" target="_blank">{{content['guide']}}</a>
+      <p>{{newContent['details']}}
+        <a href="../../../assets/materials/get-started-with-sevenam.pdf" class="pink link" target="_blank">{{newContent['here-two']}}</a> 
+        {{newContent['youwillsee']}}
+        <a  [innerHtml]="newContent['guide']" href="../../../assets/materials/get-started-with-sevenam.pdf"
+            class="pink link" target="_blank"></a>
       </p>
 
-      <div class="packages">
-        <p class="pink link" (click)="setPackages('first')">{{content['FULL PACKAGE']}} ></p>
-        <div class="container" [ngClass]="{'show': packages.first}">
-          <p>{{content['perfect']}}<span class="bold">{{content['design']}}</span>
-            {{content['materials']}}<br></p>
-          <p class="bold">{{content['vi']}}</p>
-          <p>{{content['vi-types']}}</p>
-          <p class="bold">{{content['web']}}</p>
-          <p>{{content['web-types']}}</p>
-          <p class="bold">{{content['bc']}}</p>
-          <p>{{content['bc-type']}}</p>
-          <p class="bold">{{content['sm']}}</p>
-          <p>{{content['sm-type']}}</p>
-          <p class="bold">{{content['print']}}</p>
-          <p>{{content['print-type']}}</p>
+      <div class="packages" >
+        <p  [innerHtml]="newContent['FULL PACKAGE']" class="pink link" (click)="setPackages('first')">></p>
+        <div class="container" [ngClass]="{'show': packages.first}"> 
+          <p [innerHtml]="newContent['perfect']" >
+            <span class="bold" [innerHtml]="newContent['design']" ></span>
+            {{newContent['materials']}}<br></p>
+          <p class="bold"></p>
+          <p [innerHtml]="newContent['vi']"></p>
+          <p [innerHtml]="newContent['web']"class="bold"></p>
+          <p [innerHtml]="newContent['web-types']"></p>
+          <p [innerHtml]="newContent['bc']"class="bold"></p>
+          <p [innerHtml]="newContent['bc-type']"></p>
+          <p [innerHtml]="newContent['sm']"class="bold"></p>
+          <p [innerHtml]="newContent['sm-type']"></p>
+          <p [innerHtml]="newContent['print']"class="bold"></p>
+          <p [innerHtml]="newContent['print-type']"></p>
         </div>
 
-
-        <p class="pink link" (click)="setPackages('second')">{{content['SINGLE PACKAGE']}} ></p>
+        <p  [innerHtml]="newContent['SINGLE PACKAGE']" class="pink link" (click)="setPackages('second')">></p>
         <div class="container" [ngClass]="{'show': packages.second}">
-          <p>{{content['package-1-explanation']}}</p>
-          <p class="bold">{{content['package-1-types']}}
-          </p>
+          <p [innerHtml]="newContent['package-1-explanation']"></p>
+          <p [innerHtml]="newContent['package-1-types']"class="bold"></p>
         </div>
 
-        <p class="pink link" (click)="setPackages('third')">{{content['SOMETHING ELSE?']}} ></p>
+        <p class="pink link" (click)="setPackages('third')" [innerHtml]="newContent['SOMETHING ELSE?']">></p>
         <div class="container" [ngClass]="{'show': packages.third}">
-          <p>{{content['package-2-explanation']}}</p>
+          <p [innerHtml]="newContent['package-2-explanation']"></p>
           <p class="bold">
-            {{content['Visual Identity + Logo + Website']}}<br>
-            {{content['Business card + Logo']}} <br>
-            {{content['Website + Social media banners']}}<br>
-            {{content['Poster + Stickers']}} <br>
-            {{content['Custom Illustrations']}} <br>
-            {{content['Anything you choose + Anything you choose']}}</p>
+            {{newContent['Visual Identity + Logo + Website']}}<br>
+            {{newContent['Business card + Logo']}} <br>
+            {{newContent['Website + Social media banners']}}<br>
+            {{newContent['Poster + Stickers']}} <br>
+            {{newContent['Custom Illustrations']}} <br>
+            {{newContent['Anything you choose + Anything you choose']}}</p>
         </div>
       </div>
     </div>

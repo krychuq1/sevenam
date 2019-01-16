@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
     }
 
   }
+
   ngOnInit() {
     // scroll to top
     this.router.events.subscribe((evt) => {

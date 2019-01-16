@@ -12,6 +12,7 @@ export class ServicesComponent {
   packages;
   contentUrl: string;
   content: object;
+  newContent: object;
   constructor(private loadingService: LoadingService,
               private contentService: ContentService,
               private languageService: LanguageService){
@@ -23,15 +24,27 @@ export class ServicesComponent {
 
     this.contentUrl = 'page/services/';
     this.getContent();
+    this.getNewContent();
     this.loadingService.homeLoader.next(true);
     this.languageService.changeLanguage.subscribe(()=>{
-      this.getContent();
+    this.getContent();
+    this.getNewContent();
     })
   }
   getContent() {
     this.contentService.getContent(this.contentUrl).then((content) =>{
-      this.content = content;
-      console.log(this.content);
+      console.log("this is content",content);
+
+    }, err => {
+      console.error(err);
+    });
+  }
+
+
+  getNewContent() {
+    this.contentService.getNewContent(this.contentUrl).then((content) =>{
+      this.newContent = content;
+      console.log("this is from new content",this.newContent);
     }, err => {
       console.error(err);
     });

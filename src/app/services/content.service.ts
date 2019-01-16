@@ -48,6 +48,7 @@ export class ContentService {
       this.http.get(this.newcontentService + path + 'English').subscribe((res) => {
         if (res[0]) {
           const response = res[0].content;
+          console.log("this is from server",response);
           // init variable
           const content = {};
           // for each to make obj out of array
@@ -57,7 +58,6 @@ export class ContentService {
           resolve(content);
         } else {
           resolve([]);
-          console.log('NO DATA FROM CONTENT SERVICE ', res);
         }
         }, (err) => {
         reject(err);
