@@ -7,7 +7,7 @@
         <span class="pink link" routerLink="/contact" [innerHtml]="newContent['here!']"></span></p>
       <p></p>
       <p>{{newContent['details']}}
-        <a href="../../../assets/materials/get-started-with-sevenam.pdf" class="pink link" target="_blank">{{newContent['here-two']}}</a> 
+        <a href="../../../assets/materials/get-started-with-sevenam.pdf" class="pink link" target="_blank">{{newContent['here-two']}}</a>
         {{newContent['youwillsee']}}
         <a  [innerHtml]="newContent['guide']" href="../../../assets/materials/get-started-with-sevenam.pdf"
             class="pink link" target="_blank"></a>
@@ -15,10 +15,10 @@
 
       <div class="packages" >
         <p  [innerHtml]="newContent['FULL PACKAGE']" class="pink link" (click)="setPackages('first')">></p>
-        <div class="container" [ngClass]="{'show': packages.first}"> 
-          <p [innerHtml]="newContent['perfect']" >
-            <span class="bold" [innerHtml]="newContent['design']" ></span>
-            {{newContent['materials']}}<br></p>
+        <div class="container" [ngClass]="{'show': packages.first}">
+          <p [innerHtml]="newContent['perfect']" ></p>
+          <span class="bold" [innerHtml]="newContent['design']" ></span>
+          {{newContent['materials']}}<br>
           <p class="bold"></p>
           <p [innerHtml]="newContent['vi']"></p>
           <p [innerHtml]="newContent['web']"class="bold"></p>
