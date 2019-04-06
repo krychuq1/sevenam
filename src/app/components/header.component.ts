@@ -30,7 +30,7 @@ export class HeaderComponent {
     this.navAllow = true;
     this.homeLoader();
     this.getContent();
-    this.getNewContent();
+    // this.getNewContent();
   }
   public setLanguage(lan: string){
     console.log(this.languageService);
