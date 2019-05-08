@@ -20,9 +20,9 @@ export class AppComponent implements OnInit {
   constructor(private router: Router) {
     const lan = navigator.language ||navigator['userLanguage'];
     if(lan === 'pl'){
-      localStorage.setItem('lan', 'pl');
+      localStorage.setItem('lan', 'Polish');
     }else{
-      localStorage.setItem('lan', 'en');
+      localStorage.setItem('lan', 'English');
 
     }
 

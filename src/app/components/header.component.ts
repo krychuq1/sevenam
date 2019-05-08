@@ -48,6 +48,7 @@ export class HeaderComponent {
       // headerHolder.style.height = '100vh';
       this.navBurger = !this.navBurger;
       this.getContent();
+      // this.getNewContent();
       if(this.navBurger){
         document.body.style.height = '100vh';
         document.body.style.overflow = 'hidden';
@@ -88,7 +89,7 @@ export class HeaderComponent {
   }
   getNewContent() {
     this.contentService.getNewContent(this.contentUrl).then((content) =>{
-      this.newContent = content;
+      this.content = content;
       console.log('my content ', content);
 
     }, err => {
